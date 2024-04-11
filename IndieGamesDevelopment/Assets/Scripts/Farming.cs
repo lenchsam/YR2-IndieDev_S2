@@ -8,14 +8,12 @@ public class Farming : MonoBehaviour
     private int pointsToGive = 10;
     [SerializeField] private int timeBetweenPoints = 1;
 
-    public Points pointScript;
+    public Points pointScript; 
 
     private bool isWaiting = false;
-    // Start is called before the first frame update
     void Start()
     {
-        pointScript = GameObject.Find("PointsUpdator").GetComponent<Points>();
-        //Debug.Log("point script is " + pointScript);
+        pointScript = GameObject.Find("----PointsUpdator----").GetComponent<Points>();
     }
 
     // Update is called once per frame
@@ -23,7 +21,7 @@ public class Farming : MonoBehaviour
     {
         if (isWaiting == false)
         {
-            StartCoroutine(points());
+            StartCoroutine("points");
         }
     }
     IEnumerator points()

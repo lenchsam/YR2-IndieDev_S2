@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject thingToToggle;
 
 
-    private void LoadScene()
+    public void LoadScene()
     {
         SceneManager.LoadScene(SceneName);
     }

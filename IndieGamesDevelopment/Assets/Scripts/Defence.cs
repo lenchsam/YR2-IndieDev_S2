@@ -51,9 +51,10 @@ public class Defence : MonoBehaviour
     }
     IEnumerator Attack()
     {
+        enemyScript = primaryTarget.gameObject.GetComponent<Enemy>();
         //Debug.Log(primaryTarget);
-        if (primaryTarget != null){
-            enemyScript = primaryTarget.gameObject.GetComponent<Enemy>();
+        if (enemyScript != null){
+            //enemyScript = primaryTarget.gameObject.GetComponent<Enemy>();
             enemyScript.Damage(damage);
         }
 

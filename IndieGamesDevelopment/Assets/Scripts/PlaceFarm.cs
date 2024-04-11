@@ -9,15 +9,21 @@ public class PlaceFarm : MonoBehaviour
     [SerializeField] private GameObject FarmPrefab;
     [SerializeField] private Points pointScript;
 
+    private GameObject temp;
+
     // Update is called once per frame
     void Update()
     {
-        
+        if (pointScript == null)
+        {
+            temp = GameObject.Find("----PointsUpdator----");
+            pointScript = temp.GetComponent<Points>();
+        }
     }
     public void BuildFarm()
     {
         Instantiate(FarmPrefab, Vector3.zero, transform.rotation);
         pointScript.NumberOfFarms += 1;
-        Debug.Log(pointScript.NumberOfFarms);
+        //Debug.Log(pointScript.NumberOfFarms);
     }
 }

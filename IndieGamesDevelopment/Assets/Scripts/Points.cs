@@ -7,27 +7,46 @@ public class Points : MonoBehaviour
 {
     [Header("Basic Settings")]
     public int totalPoints = 0;
-    [SerializeField] private TMP_Text pointsText;
 
     [Space(2)]
     [Header("Farming")]
-    [SerializeField] private bool isFarmingScene = false;
-    [SerializeField] private float TimeToWait = 1f;
     [SerializeField] private int pointsPerFarm = 10;
 
-    private float timePassed = 0f;
     [HideInInspector] public int NumberOfFarms;
+    private TMP_Text pointsText;
+    private GameObject temp;
+    //making the gameobject stay between scenes
+    static Points instance;
+
+    public bool nextRound = true;
+
+    private void Awake()
+    {
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     private void Start()
     {
+        temp = GameObject.Find("AmmountOfPoints");
+        pointsText = temp.GetComponent<TMP_Text>();
         UpdatePointsText();
     }
     private void Update()
     {
-        timePassed += Time.deltaTime;
-        if (timePassed > TimeToWait)
+        if (pointsText == null)
+        {
+            temp = GameObject.Find("AmmountOfPoints");
+            if (temp != null)
+            {
+                pointsText = temp.GetComponent<TMP_Text>();
+            }
+            UpdatePointsText();
+        }
+
+        if (nextRound)
         {
             UpdateTotalPoints(pointsPerFarm * NumberOfFarms);
-            timePassed = 0f;
+            nextRound = false;
         }
     }
     //function called in the farming script after the points are updated

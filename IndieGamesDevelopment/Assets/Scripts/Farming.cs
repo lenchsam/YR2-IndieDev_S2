@@ -7,11 +7,11 @@ public class Farming : MonoBehaviour
 {
     private int pointsToGive = 10;
 
-    public Points pointScript; 
+    //public Points pointScript; 
 
     void Start()
     {
-        pointScript = GameObject.Find("----PointsUpdator----").GetComponent<Points>();
+        //pointScript = GameObject.Find("----PointsUpdator----").GetComponent<Points>();
     }
     
     // Update is called once per frame
@@ -21,8 +21,7 @@ public class Farming : MonoBehaviour
     //call every time wave changes
     public void points()
     {
-        pointScript.UpdateTotalPoints(pointsToGive);
         //Debug.Log("gained points" + pointScript.totalPoints);
-        pointScript.UpdatePointsText();
+        //pointScript.UpdatePointsText();
     }
 }

@@ -10,7 +10,6 @@ public class PlaceFarm : MonoBehaviour
     [SerializeField] private GameObject FarmPrefab;
     [SerializeField] private Points pointScript;
 
-
     private FarmingManager _farmingManager;
 
     private void Start()
@@ -39,6 +38,7 @@ public class PlaceFarm : MonoBehaviour
     {
         Instantiate(FarmPrefab, Vector3.zero, transform.rotation);
         pointScript.NumberOfFarms += 1;
+        pointScript.UpdatePointsText();
         //Debug.Log(pointScript.NumberOfFarms);
     }
 }

@@ -16,6 +16,8 @@ public class Spawner : MonoBehaviour
     private GameObject temp;
     [SerializeField] private WaveManager _waveManager;
 
+    [SerializeField] private Points _points;
+
     private void Start()
     {
         temp = GameObject.Find("----WaveManager----");
@@ -36,6 +38,7 @@ public class Spawner : MonoBehaviour
         for(int i = 0; i < EnemyTypes.Length; i++)
         {
             _waveManager._currentWave += 1;
+            _points.nextRound = true;
             for (int j = 0; j < EnemyTypes[i].Enemies.Count; j++)
             {
                 //spawns the enemeis in the scriptable objects

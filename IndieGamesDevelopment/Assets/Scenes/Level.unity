@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PointsPerFarm: 10
-  pointScript: {fileID: 0}
+  pointScript: {fileID: 828282954}
 --- !u!1 &520831788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2521,7 +2521,8 @@ MonoBehaviour:
   EnemyTypes:
   - {fileID: 11400000, guid: d1c2b26d2e2f02c418793f657d590aa9, type: 2}
   - {fileID: 11400000, guid: 3b1de9f282486fc42b05f5bb301f5380, type: 2}
-  _waveManager: {fileID: 0}
+  _waveManager: {fileID: 42050741}
+  _points: {fileID: 828282954}
 --- !u!1001 &1998312923
 PrefabInstance:
   m_ObjectHideFlags: 0

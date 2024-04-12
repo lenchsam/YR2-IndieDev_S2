@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Waves")]
-    [SerializeField] private int _waveNumber = 0;
-
     [Header("Scenes")]
     public GameState state;
 

@@ -15,13 +15,13 @@ public class MainMenu : MonoBehaviour
     }
     public void ToggleUI()
     {
-        if (thingToToggle.active)
+        if (!thingToToggle.activeInHierarchy)
         {
-            thingToToggle.SetActive(false);
+            thingToToggle.SetActive(true);
         }
         else
         {
-            thingToToggle.SetActive(true);
+            thingToToggle.SetActive(false);
         }
     }
     public void CloseGame()

@@ -8,9 +8,12 @@ public class PlaceDefence : MonoBehaviour
     [SerializeField] private Points pointScript;
     [SerializeField] private int DefenceCost = 10;
 
+    private GameManager gameManager;
+
     private void Start()
     {
-        pointScript = GameObject.Find("PointsUpdator").GetComponent<Points>();
+        //gameManager = 
+        //pointScript = GameObject.Find("PointsUpdator").GetComponent<Points>();
     }
 
     // Update is called once per frame

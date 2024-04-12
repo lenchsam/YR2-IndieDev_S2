@@ -2,50 +2,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Points : MonoBehaviour
 {
     [Header("Basic Settings")]
     public int totalPoints = 0;
 
-    [Space(2)]
-    [Header("Farming")]
-    [SerializeField] private int pointsPerFarm = 10;
-
     [HideInInspector] public int NumberOfFarms;
-    private TMP_Text pointsText;
+    private TMP_Text _pointsText;
+    private TMP_Text _PointsPerRoundText;
     private GameObject temp;
+    private FarmingManager _farmingManager;
     //making the gameobject stay between scenes
-    static Points instance;
 
     public bool nextRound = true;
 
-    private void Awake()
-    {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
     private void Start()
     {
         temp = GameObject.Find("AmmountOfPoints");
-        pointsText = temp.GetComponent<TMP_Text>();
+        _pointsText = temp.GetComponent<TMP_Text>();
+
+        temp = GameObject.Find("PointsPerRound");
+        _PointsPerRoundText = temp.GetComponent<TMP_Text>();
+
+        temp = GameObject.Find("----FarmingManager----");
+        _farmingManager = temp.GetComponent<FarmingManager>();
+
         UpdatePointsText();
+
+        temp = null;
+    }
+    private void OnLevelWasLoaded(int level)
+    {
+        temp = GameObject.Find("AmmountOfPoints");
+        _pointsText = temp.GetComponent<TMP_Text>();
+
+        temp = GameObject.Find("PointsPerRound");
+        _PointsPerRoundText = temp.GetComponent<TMP_Text>();
+
+        temp = GameObject.Find("----FarmingManager----");
+        _farmingManager = temp.GetComponent<FarmingManager>();
+
+        UpdatePointsText();
+
+        temp = null;
     }
     private void Update()
     {
-        if (pointsText == null)
-        {
-            temp = GameObject.Find("AmmountOfPoints");
-            if (temp != null)
-            {
-                pointsText = temp.GetComponent<TMP_Text>();
-            }
-            UpdatePointsText();
-        }
-
         if (nextRound)
         {
-            UpdateTotalPoints(pointsPerFarm * NumberOfFarms);
+            UpdateTotalPoints(NumberOfFarms * _farmingManager.PointsPerFarm);
             nextRound = false;
         }
     }
@@ -54,7 +61,12 @@ public class Points : MonoBehaviour
     public void UpdatePointsText()
     {
         //Debug.Log("changed points text");
-        pointsText.text = totalPoints.ToString();
+        _pointsText.text = totalPoints.ToString();
+        _PointsPerRoundText.text = (NumberOfFarms* _farmingManager.PointsPerFarm).ToString();
+    }
+    private void PointsPerRound()
+    {
+        UpdatePointsText();
     }
     public void UpdateTotalPoints(int PointsToGive)
     {

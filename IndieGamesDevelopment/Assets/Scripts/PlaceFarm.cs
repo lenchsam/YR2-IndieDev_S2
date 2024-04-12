@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
@@ -8,6 +9,20 @@ public class PlaceFarm : MonoBehaviour
     [Header("Basic Settings")]
     [SerializeField] private GameObject FarmPrefab;
     [SerializeField] private Points pointScript;
+
+
+    private FarmingManager _farmingManager;
+
+    private void Start()
+    {
+        temp = GameObject.Find("----FarmingManager----");
+        _farmingManager = temp.GetComponent<FarmingManager>();
+
+        //Debug.Log(_farmingManager.ToString());
+        //UpdatePointsText();
+
+        temp = null;
+    }
 
     private GameObject temp;
 

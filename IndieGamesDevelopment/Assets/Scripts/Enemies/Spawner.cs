@@ -38,7 +38,6 @@ public class Spawner : MonoBehaviour
         for(int i = 0; i < EnemyTypes.Length; i++)
         {
             _waveManager._currentWave += 1;
-            _points.nextRound = true;
             for (int j = 0; j < EnemyTypes[i].Enemies.Count; j++)
             {
                 //spawns the enemeis in the scriptable objects
@@ -48,6 +47,7 @@ public class Spawner : MonoBehaviour
                 yield return new WaitForSeconds(TimeBetweenSpawns);
                 isWaiting = false;
             }
+            _points.nextRound = true;
         }
         //Debug.Log("end of waves");
     }

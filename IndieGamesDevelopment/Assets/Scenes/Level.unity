@@ -585,8 +585,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a33dae02a642f4aa72a193e0dd9a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _farmNumber: 0
   PointsPerFarm: 10
-  pointScript: {fileID: 828282954}
 --- !u!1 &520831788
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,8 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalPoints: 0
-  NumberOfFarms: 0
-  nextRound: 1
+  nextRound: 0
 --- !u!4 &828282955
 Transform:
   m_ObjectHideFlags: 0

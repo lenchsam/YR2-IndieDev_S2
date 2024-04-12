@@ -9,14 +9,13 @@ public class Points : MonoBehaviour
     [Header("Basic Settings")]
     public int totalPoints = 0;
 
-    [HideInInspector] public int NumberOfFarms;
     private TMP_Text _pointsText;
     private TMP_Text _PointsPerRoundText;
     private GameObject temp;
     private FarmingManager _farmingManager;
     //making the gameobject stay between scenes
 
-    public bool nextRound = true;
+    public bool nextRound = false;
 
     private void Start()
     {
@@ -53,8 +52,7 @@ public class Points : MonoBehaviour
         if (nextRound)
         {
         
-            UpdateTotalPoints(NumberOfFarms * _farmingManager.PointsPerFarm);
-            UpdatePointsText();
+            UpdateTotalPoints(_farmingManager._farmNumber * _farmingManager.PointsPerFarm);
             nextRound = false;
         }
     }
@@ -64,9 +62,9 @@ public class Points : MonoBehaviour
     {
         //Debug.Log("changed points text");
         _pointsText.text = totalPoints.ToString();
-        _PointsPerRoundText.text = (NumberOfFarms* _farmingManager.PointsPerFarm).ToString();
+        _PointsPerRoundText.text = (_farmingManager._farmNumber * _farmingManager.PointsPerFarm).ToString();
         //Debug.Log(("points Per Round: "NumberOfFarms * _farmingManager.PointsPerFarm).ToString());
-        Debug.Log(NumberOfFarms + " " + _farmingManager.PointsPerFarm);
+        Debug.Log(_farmingManager._farmNumber + " " + _farmingManager.PointsPerFarm);
     }
     public void UpdateTotalPoints(int PointsToGive)
     {

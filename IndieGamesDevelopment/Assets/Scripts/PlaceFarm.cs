@@ -37,7 +37,7 @@ public class PlaceFarm : MonoBehaviour
     public void BuildFarm()
     {
         Instantiate(FarmPrefab, Vector3.zero, transform.rotation);
-        pointScript.NumberOfFarms += 1;
+        _farmingManager._farmNumber += 1;
         pointScript.UpdatePointsText();
         //Debug.Log(pointScript.NumberOfFarms);
     }

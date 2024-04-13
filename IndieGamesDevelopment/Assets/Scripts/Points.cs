@@ -11,7 +11,6 @@ public class Points : MonoBehaviour
 
     private TMP_Text _pointsText;
     private TMP_Text _PointsPerRoundText;
-    private GameObject temp;
     private FarmingManager _farmingManager;
     //making the gameobject stay between scenes
 
@@ -19,33 +18,23 @@ public class Points : MonoBehaviour
 
     private void Start()
     {
-        temp = GameObject.Find("AmmountOfPoints");
-        _pointsText = temp.GetComponent<TMP_Text>();
+        _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
 
-        temp = GameObject.Find("PointsPerRound");
-        _PointsPerRoundText = temp.GetComponent<TMP_Text>();
+        _PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
 
-        temp = GameObject.Find("----FarmingManager----");
-        _farmingManager = temp.GetComponent<FarmingManager>();
+        _farmingManager = GameObject.Find("----FarmingManager----").GetComponent<FarmingManager>();
 
         UpdatePointsText();
-
-        temp = null;
     }
     private void OnLevelWasLoaded(int level)
     {
-        temp = GameObject.Find("AmmountOfPoints");
-        _pointsText = temp.GetComponent<TMP_Text>();
+        _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
 
-        temp = GameObject.Find("PointsPerRound");
-        _PointsPerRoundText = temp.GetComponent<TMP_Text>();
+        _PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
 
-        temp = GameObject.Find("----FarmingManager----");
-        _farmingManager = temp.GetComponent<FarmingManager>();
+        _farmingManager = GameObject.Find("----FarmingManager----").GetComponent<FarmingManager>();
 
         UpdatePointsText();
-
-        temp = null;
     }
     private void Update()
     {

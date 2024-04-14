@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Defence : MonoBehaviour
@@ -14,6 +15,9 @@ public class Defence : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(primaryTarget);
+        if (primaryTarget == null)
+            nextTarget();
         //if the defence has a target
         if (primaryTarget != null && primaryTarget.tag == "Enemy")
         {
@@ -29,12 +33,15 @@ public class Defence : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
+        if (collider.tag != "Enemy")
+            return;
         //this adds a new target to the list every time something enters the collider
         
         //Debug.Log("enemy entered collider");
 
         //primary target is always the next thing to enter the collider
         primaryTarget = collider.gameObject.transform;
+
         //Debug.Log(collision.gameObject.transform);
         targets.Add(collider.transform);
     }
@@ -62,5 +69,10 @@ public class Defence : MonoBehaviour
         isWaiting = true;
         yield return new WaitForSeconds(TimeBetweenAttacks);
         isWaiting = false;
+    }
+    private void nextTarget()
+    {
+        if(targets.Count != 0)
+            primaryTarget = targets[0];
     }
 }

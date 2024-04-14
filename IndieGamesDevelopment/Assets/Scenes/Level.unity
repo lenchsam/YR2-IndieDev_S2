@@ -1497,7 +1497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4332729ca46bbdc4d8a25d42a2afec57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalPoints: 0
+  totalPoints: 20
   nextRound: 0
 --- !u!4 &828282955
 Transform:

@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [Header("Scenes")]
     public GameState state;
 
+    public int currentWave;
+
     public static event Action<GameState> OnStateChange;
     private void Start()
     {

@@ -16,28 +16,28 @@ public class Spawner : MonoBehaviour
     private bool isWaiting = false;
     private bool _waitForWave = false;
     private int numWave = 0;
+    private GameManager _gameManager;
 
     [SerializeField] private Button continueToNext;
-    [SerializeField] private WaveManager _waveManager;
+    [SerializeField] private Button farmingButton;
     [SerializeField] private Points _points;
 
     private void Start()
     {
-        _waveManager = GameObject.Find("----WaveManager----").GetComponent<WaveManager>();
-        //waveManager =
+        _gameManager = GameObject.Find("----GameManager----").GetComponent<GameManager>();
     }
     private void Update()
     {
         //starts the coroutine everytime the coroutine ends, also decides if to spawn a wave or single enemy type
-        if (isWaiting == false && !_waitForWave && numWave < EnemyTypes.Length)
+        if (isWaiting == false && !_waitForWave && numWave < EnemyTypes.Length && !continueToNext.IsActive())
         {
-            StartCoroutine(_Spawner(_waveManager.CurrentWave));
+            StartCoroutine(_Spawner(_gameManager.currentWave));
         }
     }
 
     IEnumerator _Spawner(int currentWave)
     {
-        _waveManager.CurrentWave += 1;
+        _gameManager.currentWave += 1;
             for (int j = 0; j < EnemyTypes[currentWave].Enemies.Count; j++)
             {
                 //spawns the enemeis in the scriptable objects
@@ -50,6 +50,7 @@ public class Spawner : MonoBehaviour
         _points.nextRound = true;
         _waitForWave = true;
         continueToNext.gameObject.SetActive(true); 
+        farmingButton.gameObject.SetActive(true);
         numWave++;
     }
     public void ContinueNextWave()

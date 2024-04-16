@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,6 +9,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string SceneName;
     [SerializeField] private GameObject thingToToggle;
+    [SerializeField] private GameObject thingToMakeInactive;
 
     private Spawner spawnerScript;
 
@@ -46,5 +48,9 @@ public class MainMenu : MonoBehaviour
     {
         spawnerScript.ContinueNextWave();
         this.gameObject.SetActive(false);
+    }
+    public void setInactive(GameObject thingToMakeInactive)
+    {
+        thingToMakeInactive.gameObject.SetActive(false);
     }
 }

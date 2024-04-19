@@ -9,7 +9,7 @@ public class Finish : MonoBehaviour
     [SerializeField] private float Health;
     [SerializeField] private string SceneName;
 
-    private Enemy enemyScript = null;
+    private DefaultEnemy enemyScript = null;
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
@@ -17,7 +17,7 @@ public class Finish : MonoBehaviour
         {
             //adds the enemy script on the collided object to the variable enemyScript
             //Debug.Log("triggered collider");
-            enemyScript = collider.gameObject.GetComponent<Enemy>();
+            enemyScript = collider.gameObject.GetComponent<DefaultEnemy>();
 
 
             //use the variable in enemyscript called damage to know the amount of damage to do to the finish

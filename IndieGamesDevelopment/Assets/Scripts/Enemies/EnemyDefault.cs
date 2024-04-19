@@ -1,31 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class Enemy : MonoBehaviour
+public class EnemyDefault : MonoBehaviour
 {
-    [SerializeField] private List<Transform> targets = new List<Transform>();
-    private float health = 100;
-    public float damage = 20;
-    private SpriteRenderer sr;
-    //[SerializeField] private Transform startPosition;
-
-    private bool done = true;
-    private int counter = 1;
-
-    private void Start()
-    {
-        sr = GetComponent<SpriteRenderer>();
-    }
-    void Update()
-    {
-        // check if the enemy has got to the position, if it has, start the coroutine again.
-        if (done)
-        {
-            StartCoroutine(LerpPosition(targets[counter].position, 5));
-        }
-    }
-    IEnumerator LerpPosition(Vector3 targetPosition, float duration)
+    [Header("Base Settings")]
+    [SerializeField] protected float movementSpeed;
+    [SerializeField] protected float Health;
+    public float damage;
+    [SerializeField] protected SpriteRenderer sr;
+    [SerializeField] protected List<Transform> points = new List<Transform>();
+    
+    protected int counter;
+    protected bool done;
+    protected IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {
         //done to setup everything needed for the lerp
         done = false;
@@ -46,36 +35,45 @@ public class Enemy : MonoBehaviour
         //counter incremented so the enemy lerps to the next position in the list
         counter++;
         //if the counter is equal to the list size
-        if (counter == targets.Count)
+        if (counter == points.Count)
         {
             //stops all the coroutines and sets done to false so no more coroutines are called.
             done = false;
             StopAllCoroutines();
         }
     }
+    protected void AddDescendants(Transform parent, ref List<Transform> list)
+    {
+        foreach (Transform child in parent)
+        {
+            list.Add(child);
+            AddDescendants(child, ref list);
+        }
+    }
     public void Damage(float damage)
     {
-        health -= damage;
+        Health -= damage;
 
         //changes the colour of the enemy depending on the enemies health
         ChangeColour();
 
         //is health is less than or equal to 0 destroy the enemy
-        if (health <= 0)
+        if (Health <= 0)
         {
             Destroy(gameObject.transform.parent.gameObject);
         }
     }
     private void ChangeColour()
     {
-        if (health < 25)
+        if (Health < 25)
         {
             sr.color = new Color(1f, 0f, 0f);
-        }else if (health <= 50)
+        }
+        else if (Health <= 50)
         {
             sr.color = new Color(1f, 0.8f, 0f);
         }
-        else if (health < 75)
+        else if (Health < 75)
         {
             sr.color = new Color(1f, 1f, 0f);
         }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlaceDefence : MonoBehaviour
@@ -7,6 +8,7 @@ public class PlaceDefence : MonoBehaviour
     [SerializeField] private GameObject DefencePrefab;
     [SerializeField] private Points pointScript;
     [SerializeField] private int DefenceCost = 10;
+    [SerializeField] private DefenceManager DM;
 
     private GameManager gameManager;
 
@@ -31,9 +33,10 @@ public class PlaceDefence : MonoBehaviour
             if (hit.collider != null)
             {
                 //instantiate defence and update total points
-
+                GameObject instantiatedObject = Instantiate(DefencePrefab, hit.point, transform.rotation);
                 //Debug.Log("Target Position: " + hit.collider.gameObject.transform.position);
-                Instantiate(DefencePrefab, hit.point, transform.rotation);
+                //Instantiate(DefencePrefab, hit.point, transform.rotation);
+                DM.addDefence(instantiatedObject);
                 pointScript.totalPoints -= DefenceCost;
                 pointScript.UpdatePointsText();
             }

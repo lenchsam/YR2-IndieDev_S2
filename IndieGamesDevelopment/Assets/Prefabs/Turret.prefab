@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 66270661313012055}
   - component: {fileID: 66270661313012072}
-  - component: {fileID: 66270661313012074}
   - component: {fileID: 66270661313012073}
+  - component: {fileID: 5631852656985245742}
   m_Layer: 0
-  m_Name: Defence
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &66270661313012074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66270661313012054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9b45a472a06bc240915c7300e453b2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TimeBetweenAttacks: 2
 --- !u!58 &66270661313012073
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -116,6 +103,21 @@ CircleCollider2D:
   m_Offset: {x: -0.022143364, y: 0}
   serializedVersion: 2
   m_Radius: 7
+--- !u!114 &5631852656985245742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66270661313012054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c995ee5300b1214a9054b7353b19df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireRate: 0.3
+  typeOfDamage: 0
+  damage: 15
 --- !u!1 &66270661883499788
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class DefaultEnemy : EnemyDefault
@@ -24,7 +22,7 @@ public class DefaultEnemy : EnemyDefault
         //lerp position of enemy
         if (done)
         {
-            Debug.Log("lerp");
+            //Debug.Log("lerp");
             StartCoroutine(LerpPosition(points[counter].position, movementSpeed));
         }
     }

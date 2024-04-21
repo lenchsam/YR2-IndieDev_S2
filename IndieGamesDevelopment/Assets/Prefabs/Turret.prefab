@@ -118,6 +118,7 @@ MonoBehaviour:
   fireRate: 0.3
   typeOfDamage: 0
   damage: 15
+  bullet: {fileID: 5555207004385833853, guid: ec76dd784e6db2b419804cf0fef97b1d, type: 3}
 --- !u!1 &66270661883499788
 GameObject:
   m_ObjectHideFlags: 0

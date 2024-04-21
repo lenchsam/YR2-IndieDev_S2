@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Turret : DefenceDefault
 {
+    [SerializeField] private GameObject bullet;
     private List<Transform> targets = new List<Transform>();
     private Transform primaryTarget;
     private float time;
@@ -46,8 +47,13 @@ public class Turret : DefenceDefault
             //if a set amount of time has gone, it attacks the primary target
             if (time >= fireRate)
             {
+                GameObject Bullet = Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
+                BulletSettings bulletScript = Bullet.GetComponent<BulletSettings>();
+                bulletScript.direction = primaryTarget.position;
+                bulletScript.FireBullet();
                 Debug.Log("done damage");
                 damageSingular(primaryTarget.gameObject, damage);
+                
                 time = 0;
             }
         }

@@ -933,8 +933,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdcb0f6f3defe341b1d6ef405afd566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Level
   thingToToggle: {fileID: 0}
+  thingToMakeInactive: {fileID: 0}
+  a_MenuAudioClips: []
+  a_GoIntoGame: {fileID: 0}
 --- !u!114 &1665991963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -982,13 +984,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1665991962}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 1
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1665991964

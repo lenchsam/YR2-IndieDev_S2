@@ -4,6 +4,7 @@ using UnityEngine;
 public class SingularDefence : DefenceDefault
 {
     [SerializeField] protected DamageEffects Effects;
+
     [SerializeField] protected GameObject bullet;
     protected List<Transform> targets = new List<Transform>();
 
@@ -30,7 +31,7 @@ public class SingularDefence : DefenceDefault
             //float _time;
             //AS.PlayOneShot(turretFireAudio);
             AS.PlayOneShot(fireTrailAudio);
-            Debug.Log(fireTrailAudio);
+            //Debug.Log(fireTrailAudio);
             //AS.PlayOneShot
         }
         else if (typeOfEffect == effectType.Fire)

@@ -28,9 +28,13 @@ public class Points : MonoBehaviour
     }
     private void OnLevelWasLoaded(int level)
     {
-        _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
-
-        _PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
+        //if scene isnt main menu then find ammount of points text
+        Scene scene = SceneManager.GetActiveScene();
+        if (scene.name != "Main Menu")
+        {
+            _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
+            _PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
+        }
 
         _farmingManager = GameObject.Find("----FarmingManager----").GetComponent<FarmingManager>();
 

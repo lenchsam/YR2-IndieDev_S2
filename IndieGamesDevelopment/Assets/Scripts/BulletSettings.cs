@@ -10,11 +10,16 @@ public class BulletSettings : MonoBehaviour
     [SerializeField] private float Speed;
     [SerializeField] private Rigidbody2D rb;
     public Vector3 direction;
-    // Start is called before the first frame update
+    //destroy bullet when it hits an enemy
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Enemy")
             Destroy(gameObject);
+    }
+    //destroy bullet when it goes off the screen
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
     void Start()
     {
@@ -23,7 +28,6 @@ public class BulletSettings : MonoBehaviour
 
     public void FireBullet()
     {
-        Debug.Log("FIRE");
         rb.velocity = (direction - transform.position) * Speed;
     }
 }

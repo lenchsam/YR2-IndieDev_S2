@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyDefault : MonoBehaviour
 {
     [Header("Base Settings")]
-    [SerializeField] protected float movementSpeed;
+    public float movementSpeed;
     [SerializeField] protected float Health;
     public float damage;
     [SerializeField] protected SpriteRenderer sr;
@@ -42,6 +41,7 @@ public class EnemyDefault : MonoBehaviour
             StopAllCoroutines();
         }
     }
+    //get all path points
     protected void AddDescendants(Transform parent, ref List<Transform> list)
     {
         foreach (Transform child in parent)
@@ -77,5 +77,9 @@ public class EnemyDefault : MonoBehaviour
         {
             sr.color = new Color(1f, 1f, 0f);
         }
+    }
+    public float returnHealth()
+    {
+        return Health;
     }
 }

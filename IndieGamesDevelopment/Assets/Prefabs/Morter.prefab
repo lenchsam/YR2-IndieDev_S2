@@ -32,7 +32,7 @@ Transform:
   m_Children:
   - {fileID: 1367965635198876813}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1367965634312568802
 SpriteRenderer:
@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireRate: 3
   typeOfDamage: 0
+  typeOfEffect: 1
   damage: 50
   firePosition: {fileID: 1367965635198876813}
   damageRadius: 5

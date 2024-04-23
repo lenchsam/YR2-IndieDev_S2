@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Turret : DefenceDefault
+public class Turret : SingularDefence
 {
-    [SerializeField] private GameObject bullet;
-    private List<Transform> targets = new List<Transform>();
     private Transform primaryTarget;
     private float time;
     private void OnTriggerEnter2D(Collider2D collider)
@@ -21,6 +19,7 @@ public class Turret : DefenceDefault
 
         //Debug.Log(collision.gameObject.transform);
         targets.Add(collider.transform);
+        
     }
     private void OnTriggerExit2D(Collider2D collider)
     {
@@ -33,7 +32,12 @@ public class Turret : DefenceDefault
         //removes whatever left the collider from the list
         targets.Remove(collider.transform);
     }
-
+    private void Start()
+    {
+        Effects = GameObject.Find("----DamageEffects----").GetComponent<DamageEffects>();
+        AM = GameObject.Find("----AudioManager----").GetComponent<AudioManager>();
+        AS = gameObject.GetComponent<AudioSource>();
+    }
     private void Update()
     {
         time += Time.deltaTime;
@@ -47,11 +51,13 @@ public class Turret : DefenceDefault
             //if a set amount of time has gone, it attacks the primary target
             if (time >= fireRate)
             {
+                //fire bullet
                 GameObject Bullet = Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
                 BulletSettings bulletScript = Bullet.GetComponent<BulletSettings>();
                 bulletScript.direction = primaryTarget.position;
                 bulletScript.FireBullet();
-                Debug.Log("done damage");
+                
+                //damage the enemy
                 damageSingular(primaryTarget.gameObject, damage);
                 
                 time = 0;

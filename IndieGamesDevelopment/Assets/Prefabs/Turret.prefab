@@ -116,9 +116,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.3
-  typeOfDamage: 0
+  typeOfEffect: 0
   damage: 15
+  auras:
+  - {fileID: 1679348057962266, guid: feb4d09285788714e8498144ecedc2a4, type: 3}
+  - {fileID: 1594160248338174, guid: 23981215f5bbd55418039f95730dde55, type: 3}
+  Effects: {fileID: 0}
   bullet: {fileID: 5555207004385833853, guid: ec76dd784e6db2b419804cf0fef97b1d, type: 3}
+  turretFire:
+  - {fileID: 8300000, guid: 07def21cfc9a31e4c8112bc184f4bbfa, type: 3}
+  - {fileID: 8300000, guid: d080664b90017d54090ab24426f07fe2, type: 3}
+  - {fileID: 8300000, guid: b38001b244c4b7449983c3322ecf1fdd, type: 3}
+  - {fileID: 8300000, guid: 27cebfeda196d9b46b314e8537ff80d3, type: 3}
+  - {fileID: 8300000, guid: ca7172e296776b4458d58e5439727771, type: 3}
+  - {fileID: 8300000, guid: 2b483b07b3a4dbc409bef45257f8779f, type: 3}
+  - {fileID: 8300000, guid: ba671b8f038c9e94894a74798a8daf9d, type: 3}
+  - {fileID: 8300000, guid: 453adf02f3629ee4293d675bca1d0938, type: 3}
+  fireTrail:
+  - {fileID: 8300000, guid: fb308f81297b57e429b96c5967785e3f, type: 3}
+  - {fileID: 8300000, guid: 34aca33a4fa78a74a9072d6aff6dd682, type: 3}
+  - {fileID: 8300000, guid: 29afc7d7d24358b4e815a08171df1aee, type: 3}
+  - {fileID: 8300000, guid: 40a6af4a88357b841b7e9acb04ae571a, type: 3}
 --- !u!1 &66270661883499788
 GameObject:
   m_ObjectHideFlags: 0

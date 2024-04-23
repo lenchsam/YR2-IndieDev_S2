@@ -11,6 +11,7 @@ public class DefaultEnemy : EnemyDefault
         counter = 1;
 
         GameObject pathParent = GameObject.Find("PathToTake");
+        //get all path points
         AddDescendants(pathParent.transform, ref points);
 
         sr = GetComponent<SpriteRenderer>();

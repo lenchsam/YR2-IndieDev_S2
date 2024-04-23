@@ -14,24 +14,20 @@ public class PlaceFarm : MonoBehaviour
 
     private void Start()
     {
-        temp = GameObject.Find("----FarmingManager----");
-        _farmingManager = temp.GetComponent<FarmingManager>();
+        _farmingManager = GameObject.Find("----FarmingManager----").GetComponent<FarmingManager>();
 
         //Debug.Log(_farmingManager.ToString());
         //UpdatePointsText();
 
-        temp = null;
-    }
 
-    private GameObject temp;
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (pointScript == null)
         {
-            temp = GameObject.Find("----PointsUpdator----");
-            pointScript = temp.GetComponent<Points>();
+            pointScript = GameObject.Find("----PointsUpdator----").GetComponent<Points>();
         }
     }
     public void BuildFarm()

@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 350486688}
   - component: {fileID: 350486690}
   - component: {fileID: 350486689}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Tilemap
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -5308,6 +5308,9 @@ MonoBehaviour:
   pointScript: {fileID: 1899752580}
   DefenceCost: 10
   DM: {fileID: 1070556042}
+  LM:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!4 &866218733
 Transform:
   m_ObjectHideFlags: 0
@@ -7524,6 +7527,9 @@ MonoBehaviour:
   pointScript: {fileID: 1899752580}
   DefenceCost: 10
   DM: {fileID: 1070556042}
+  LM:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!4 &1805372052
 Transform:
   m_ObjectHideFlags: 0
@@ -9018,6 +9024,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1037046274784538148, guid: 0b9605eebbc50c0449c9452d0a48c8bd, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1037046275421477502, guid: 0b9605eebbc50c0449c9452d0a48c8bd, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1049097677181124745, guid: 0b9605eebbc50c0449c9452d0a48c8bd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9065,6 +9079,10 @@ PrefabInstance:
     - target: {fileID: 1049097677181124746, guid: 0b9605eebbc50c0449c9452d0a48c8bd, type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049097677181124746, guid: 0b9605eebbc50c0449c9452d0a48c8bd, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4658825243077969756, guid: 0b9605eebbc50c0449c9452d0a48c8bd, type: 3}
       propertyPath: Effects

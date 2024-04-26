@@ -8,6 +8,7 @@ public class PlaceDefence : MonoBehaviour
     [SerializeField] private Points pointScript;
     [SerializeField] private int DefenceCost = 10;
     [SerializeField] private DefenceManager DM;
+    [SerializeField] private LayerMask LM;
 
     private GameManager gameManager;
 
@@ -26,9 +27,9 @@ public class PlaceDefence : MonoBehaviour
             Touch touch = Input.GetTouch(0);
 
             //fire raycast to world position of player touch
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero, Mathf.Infinity, LM);
 
-            Debug.Log(hit.collider.tag);
+            Debug.Log(hit.collider.tag + " " + hit.collider.gameObject.name);
             //if hit something
             if (hit.collider != null && hit.collider.tag == "Ground")
             {

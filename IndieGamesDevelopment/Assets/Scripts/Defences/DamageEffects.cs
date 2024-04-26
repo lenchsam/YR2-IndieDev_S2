@@ -20,7 +20,7 @@ public class DamageEffects : MonoBehaviour
     }
     public void DEFire(DefaultEnemy enemy)
     {
-        //Debug.Log("FIRE BEING CALLED");
+        Debug.Log("FIRE BEING CALLED");
         if (enemy == null)
             return;
         //Debug.Log("DOING FIRE DAMAGE");

@@ -7,13 +7,13 @@ public class DefenceDefault : MonoBehaviour
 {
     [Header("Basic Settings")]
     [SerializeField] protected float fireRate;
-    [SerializeField] protected effectType typeOfEffect = new effectType();
+    public effectType typeOfEffect = new effectType();
     [SerializeField] protected int damage;
 
     [Header("VFX Settings")]
     [SerializeField] protected GameObject[] auras;
 
-    protected enum effectType
+    public enum effectType
     {
         None,
         Fire,

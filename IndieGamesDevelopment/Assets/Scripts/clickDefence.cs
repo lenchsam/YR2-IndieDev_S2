@@ -36,7 +36,7 @@ public class clickDefence : MonoBehaviour
             //if hit something
             if (hit.collider != null && hit.collider.gameObject.tag == "Defence")
             {
-                turretScript = hit.collider.gameObject.GetComponent<Turret>();
+                turretScript = hit.collider.gameObject.GetComponentInChildren<Turret>();
                 Debug.Log("Clicked Defence");
                 menuScript.ToggleUI(); // enable ui for the defence
 
@@ -87,7 +87,7 @@ public class clickDefence : MonoBehaviour
     //called every time the user changes the dropdown menu value
     private void DropdownValueChanged(TMP_Dropdown change, Collider2D defence)
     {
-        Turret turretScript = defence.gameObject.GetComponent<Turret>();
+        Turret turretScript = defence.gameObject.GetComponentInChildren<Turret>();
         string currentlySelected;
 
         currentlySelected = effectsDropdown.options[effectsDropdown.value].text;

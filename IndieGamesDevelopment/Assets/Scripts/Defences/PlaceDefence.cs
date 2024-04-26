@@ -28,8 +28,9 @@ public class PlaceDefence : MonoBehaviour
             //fire raycast to world position of player touch
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero);
 
+            Debug.Log(hit.collider.tag);
             //if hit something
-            if (hit.collider != null)
+            if (hit.collider != null && hit.collider.tag == "Ground")
             {
                 //instantiate defence and update total points
                 GameObject instantiatedObject = Instantiate(DefencePrefab, hit.point, transform.rotation);

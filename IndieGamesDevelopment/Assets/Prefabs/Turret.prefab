@@ -328,7 +328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1049097677181124745}
   - component: {fileID: 1049097677181124744}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turret
   m_TagString: Defence
   m_Icon: {fileID: 0}

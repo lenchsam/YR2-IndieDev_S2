@@ -70,9 +70,9 @@ public class Turret : SingularDefence
         if (targets.Count != 0)
             primaryTarget = targets[0];
     }
-    public void instantiateAura()
+    public void instantiateAura(Collider2D defence)
     {
-        Debug.Log("instantiating");
+        //Debug.Log(gameObject.transform.parent.gameObject);
         if (typeOfEffect == effectType.Fire)
         {
             currentAura = Instantiate(auras[0], transform.position, transform.rotation);

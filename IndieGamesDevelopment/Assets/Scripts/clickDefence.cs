@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
-using Unity.VisualScripting;
 using System;
-using static GameManager;
 using static DefenceDefault;
 
 public class clickDefence : MonoBehaviour
@@ -14,6 +11,13 @@ public class clickDefence : MonoBehaviour
     [SerializeField] private GameObject turretPrefab;
     [SerializeField] private TMP_Text defenceText;
     [SerializeField] private TMP_Dropdown effectsDropdown;
+    [SerializeField] private GameObject clickedDefence;
+    [SerializeField] private LayerMask LM;
+
+    private string oldValue = "None";
+    string selectedOption;
+    Collider2D theHitObject;
+
     private Turret turretScript;
     // Start is called before the first frame update
     void Start()
@@ -31,26 +35,28 @@ public class clickDefence : MonoBehaviour
             Touch touch = Input.GetTouch(0);
 
             //fire raycast to world position of player touch
-            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero);
-
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero, Mathf.Infinity, LM);
+            
             //if hit something
             if (hit.collider != null && hit.collider.gameObject.tag == "Defence")
             {
+                theHitObject = hit.collider;
                 turretScript = hit.collider.gameObject.GetComponentInChildren<Turret>();
-                Debug.Log("Clicked Defence");
+                //Debug.Log("Clicked Defence");
+                //if (clickedDefence.activeSelf == false)
+                //{
                 menuScript.ToggleUI(); // enable ui for the defence
+                //}
+                //else
+                //{
+                //    Debug.Log("defence already selected");
+                //}
+                 int val = effectsDropdown.value;
+                oldValue = selectedOption;
+                selectedOption = effectsDropdown.options[val].text;
 
                 //change all variables in the defence to suit the current defence
                 defenceText.text = displayName(hit.collider.gameObject.name);//change name
-                //add the effects to the dropdown menu
-                //addOptionsToDropdown();
-
-                //listens to whenever the value of the dropdown menu is changed
-                effectsDropdown.onValueChanged.AddListener(delegate {
-                    turretScript.deleteAura();
-                    DropdownValueChanged(effectsDropdown, hit.collider);
-                    
-                }); //https://docs.unity3d.com/2018.4/Documentation/ScriptReference/UI.Dropdown-onValueChanged.html
             }
         }
     }
@@ -102,7 +108,18 @@ public class clickDefence : MonoBehaviour
         {
             turretScript.typeOfEffect = effectType.Freeze;
         }
-        turretScript.instantiateAura();
+        Debug.Log(defence.gameObject);
+        turretScript.instantiateAura(defence);
         //change the effect type here
+        defence = null;
+        turretScript = null;
+    }
+    public void ValueChanged()
+    {
+        DropdownValueChanged(effectsDropdown, theHitObject);
+    }
+    public void deleteAura()
+    {
+        turretScript.deleteAura();
     }
 }

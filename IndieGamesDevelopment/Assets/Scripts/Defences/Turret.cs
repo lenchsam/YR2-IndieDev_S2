@@ -6,7 +6,6 @@ public class Turret : SingularDefence
 {
     private Transform primaryTarget;
     private float time;
-    private GameObject currentAura;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag != "Enemy")
@@ -69,21 +68,5 @@ public class Turret : SingularDefence
     {
         if (targets.Count != 0)
             primaryTarget = targets[0];
-    }
-    public void instantiateAura(Collider2D defence)
-    {
-        //Debug.Log(gameObject.transform.parent.gameObject);
-        if (typeOfEffect == effectType.Fire)
-        {
-            currentAura = Instantiate(auras[0], transform.position, transform.rotation);
-        }else if (typeOfEffect == effectType.Freeze)
-        {
-            currentAura = Instantiate(auras[1], transform.position, transform.rotation);
-        }
-    }
-    public void deleteAura()
-    {
-        if(currentAura!=null)
-            Destroy(currentAura);
     }
 }

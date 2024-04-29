@@ -8,17 +8,19 @@ using static DefenceDefault;
 public class clickDefence : MonoBehaviour
 {
     private MainMenu menuScript;
-    [SerializeField] private GameObject turretPrefab;
+    //[SerializeField] private GameObject turretPrefab;
     [SerializeField] private TMP_Text defenceText;
     [SerializeField] private TMP_Dropdown effectsDropdown;
     [SerializeField] private GameObject clickedDefence;
     [SerializeField] private LayerMask LM;
+    [SerializeField] private GameObject ChooseFirePosition;
 
-    private string oldValue = "None";
     string selectedOption;
     Collider2D theHitObject;
 
     private Turret turretScript;
+    private Morter MorterScript;
+    private ChangeFirePoint ChangeFirePointScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,19 +42,22 @@ public class clickDefence : MonoBehaviour
             //if hit something
             if (hit.collider != null && hit.collider.gameObject.tag == "Defence")
             {
-                theHitObject = hit.collider;
-                turretScript = hit.collider.gameObject.GetComponentInChildren<Turret>();
-                //Debug.Log("Clicked Defence");
-                //if (clickedDefence.activeSelf == false)
-                //{
+                //detect what enemy has been clicked
+                if (hit.collider.gameObject.name == "Turret(Clone)")
+                {
+                    theHitObject = hit.collider;
+                    turretScript = hit.collider.gameObject.GetComponentInChildren<Turret>();
+                    ChooseFirePosition.SetActive(false);
+                }
+                else if (hit.collider.gameObject.name == "Morter(Clone)")
+                {
+                    theHitObject = hit.collider;
+                    MorterScript = hit.collider.gameObject.GetComponentInChildren<Morter>();
+                    ChooseFirePosition.SetActive(true);
+                }
                 menuScript.ToggleUI(); // enable ui for the defence
-                //}
-                //else
-                //{
-                //    Debug.Log("defence already selected");
-                //}
-                 int val = effectsDropdown.value;
-                oldValue = selectedOption;
+
+                int val = effectsDropdown.value;
                 selectedOption = effectsDropdown.options[val].text;
 
                 //change all variables in the defence to suit the current defence
@@ -93,33 +98,49 @@ public class clickDefence : MonoBehaviour
     //called every time the user changes the dropdown menu value
     private void DropdownValueChanged(TMP_Dropdown change, Collider2D defence)
     {
-        Turret turretScript = defence.gameObject.GetComponentInChildren<Turret>();
+        Turret turretScript;
+        Morter morterScript;
         string currentlySelected;
+        if (defence.gameObject.name == "Turret(Clone)")
+        {
+            turretScript = defence.gameObject.GetComponentInChildren<Turret>();
 
-        currentlySelected = effectsDropdown.options[effectsDropdown.value].text;
-        if (currentlySelected == "None")
+            currentlySelected = effectsDropdown.options[effectsDropdown.value].text;
+            if (currentlySelected == "None")
+            {
+                turretScript.typeOfEffect = effectType.None;
+            }
+            else if (currentlySelected == "Fire")
+            {
+                turretScript.typeOfEffect = effectType.Fire;
+            }
+            else if (currentlySelected == "Freeze")
+            {
+                turretScript.typeOfEffect = effectType.Freeze;
+            }
+            turretScript.instantiateAura(defence);
+        }else if (defence.gameObject.name == "Morter(Clone)")
         {
-            turretScript.typeOfEffect = effectType.None;
-        }else if (currentlySelected == "Fire")
-        {
-            turretScript.typeOfEffect = effectType.Fire;
+            morterScript = defence.gameObject.GetComponentInChildren<Morter>();
+
+            currentlySelected = effectsDropdown.options[effectsDropdown.value].text;
+            if (currentlySelected == "None")
+            {
+                morterScript.typeOfEffect = effectType.None;
+            }
+            else if (currentlySelected == "Fire")
+            {
+                morterScript.typeOfEffect = effectType.Fire;
+            }
+            else if (currentlySelected == "Freeze")
+            {
+                morterScript.typeOfEffect = effectType.Freeze;
+            }
+            morterScript.instantiateAura(defence);
         }
-        else if (currentlySelected == "Freeze")
-        {
-            turretScript.typeOfEffect = effectType.Freeze;
-        }
-        Debug.Log(defence.gameObject);
-        turretScript.instantiateAura(defence);
-        //change the effect type here
-        defence = null;
-        turretScript = null;
     }
     public void ValueChanged()
     {
         DropdownValueChanged(effectsDropdown, theHitObject);
-    }
-    public void deleteAura()
-    {
-        turretScript.deleteAura();
     }
 }

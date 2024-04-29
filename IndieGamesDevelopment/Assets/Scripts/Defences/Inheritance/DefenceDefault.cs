@@ -13,6 +13,8 @@ public class DefenceDefault : MonoBehaviour
     [Header("VFX Settings")]
     [SerializeField] protected GameObject[] auras;
 
+    protected GameObject currentAura;
+
     public enum effectType
     {
         None,
@@ -29,12 +31,27 @@ public class DefenceDefault : MonoBehaviour
             transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
         }
     }
-    void GetEnemy()
+    public void deleteAura()
     {
-
+        if (currentAura != null)
+            Destroy(currentAura);
     }
-    protected void changeAura(GameObject aura, Vector3 position)
+    public void instantiateAura(Collider2D defence)
     {
-        Instantiate(aura, position, Quaternion.identity);
+        if (typeOfEffect == effectType.None)
+        {
+            deleteAura();
+        }
+        //Debug.Log(gameObject.transform.parent.gameObject);
+        if (typeOfEffect == effectType.Fire)
+        {
+            deleteAura();
+            currentAura = Instantiate(auras[0], transform.position, transform.rotation);
+        }
+        else if (typeOfEffect == effectType.Freeze)
+        {
+            deleteAura();
+            currentAura = Instantiate(auras[1], transform.position, transform.rotation);
+        }
     }
 }

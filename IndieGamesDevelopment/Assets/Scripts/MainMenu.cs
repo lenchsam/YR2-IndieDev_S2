@@ -59,7 +59,7 @@ public class MainMenu : MonoBehaviour
     }
     public void setInactive(GameObject thingToMakeInactive)
     {
-        thingToMakeInactive.gameObject.SetActive(false);
+        thingToMakeInactive.SetActive(false);
     }
     public void backToMainMenu(string SceneName)
     {

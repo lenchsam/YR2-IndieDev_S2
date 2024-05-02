@@ -109,7 +109,7 @@ MonoBehaviour:
   damageRadius: 5
   contactFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
@@ -122,6 +122,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   chooseFirePosition: {fileID: 0}
+  results: []
 --- !u!61 &8597056728905308046
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class Spawner : MonoBehaviour
     [Header("Settings")]
     [SerializeField] int TimeBetweenSpawns;
     [SerializeField] Transform spawnPosition;
-    [SerializeField] private WaveScriptableObject[] EnemyTypes;
+    [SerializeField] private WaveScriptableObject[] EnemyWaves;
 
     //variables that don't need to be shown in the inspector
     private bool isWaiting = false;
@@ -29,7 +29,7 @@ public class Spawner : MonoBehaviour
     private void Update()
     {
         //starts the coroutine everytime the coroutine ends, also decides if to spawn a wave or single enemy type
-        if (isWaiting == false && !_waitForWave && numWave < EnemyTypes.Length && !continueToNext.IsActive())
+        if (isWaiting == false && !_waitForWave && numWave < EnemyWaves.Length && !continueToNext.IsActive())
         {
             StartCoroutine(_Spawner(_gameManager.currentWave));
         }
@@ -38,10 +38,10 @@ public class Spawner : MonoBehaviour
     IEnumerator _Spawner(int currentWave)
     {
         _gameManager.currentWave += 1;
-            for (int j = 0; j < EnemyTypes[currentWave].Enemies.Count; j++)
+            for (int j = 0; j < EnemyWaves[currentWave].Enemies.Count; j++)
             {
                 //spawns the enemeis in the scriptable objects
-                Instantiate(EnemyTypes[currentWave].Enemies[j], spawnPosition.position, transform.rotation);
+                Instantiate(EnemyWaves[currentWave].Enemies[j], spawnPosition.position, transform.rotation);
                 //wait for set amount of seconds before spawning next enemy
                 isWaiting = true;
                 yield return new WaitForSeconds(TimeBetweenSpawns);
@@ -55,7 +55,7 @@ public class Spawner : MonoBehaviour
     }
     public void ContinueNextWave()
     {
-        if(numWave < EnemyTypes.Length)
+        if(numWave < EnemyWaves.Length)
             _waitForWave = false;
     }
 }

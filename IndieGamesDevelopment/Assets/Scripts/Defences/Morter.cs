@@ -18,7 +18,7 @@ public class Morter : ExplosiveDefence
     private void Start()
     {
         Effects = GameObject.Find("----DamageEffects----").GetComponent<DamageEffects>();
-        chooseFirePosition = GameObject.Find("ChangeFirePoint");
+        chooseFirePosition = GameObject.Find("----ChangeFirePosition----");
         chooseFirePosition.SetActive(true);
     }
     public void Update()

@@ -8,7 +8,9 @@ public class ExplosiveDefence : DefenceDefault
     protected List<Collider2D> DTExplosive(float radius, Vector2 damagePosition, ContactFilter2D contactFilter, ref List<Collider2D> results)
     {
         int detected = Physics2D.OverlapCircle(damagePosition, radius, contactFilter, results);
+        Debug.Log(detected);
         if (detected > 0)
+            Debug.Log(results[1].gameObject.name + " results are");
             damageAOE(results);
         return results;
     }

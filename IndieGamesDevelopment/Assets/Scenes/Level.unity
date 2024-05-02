@@ -3425,12 +3425,12 @@ GameObject:
   - component: {fileID: 456595038}
   - component: {fileID: 456595039}
   m_Layer: 0
-  m_Name: ----ChangeFirePosition
+  m_Name: ----ChangeFirePosition----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &456595038
 Transform:
   m_ObjectHideFlags: 0
@@ -8152,8 +8152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeBetweenSpawns: 2
   spawnPosition: {fileID: 1188758108}
-  EnemyTypes:
+  EnemyWaves:
   - {fileID: 11400000, guid: d1c2b26d2e2f02c418793f657d590aa9, type: 2}
+  - {fileID: 11400000, guid: 405fcbf7d4d883a4e99eb871d6fb8509, type: 2}
   continueToNext: {fileID: 589646147}
   farmingButton: {fileID: 520831791}
   _points: {fileID: 1899752580}

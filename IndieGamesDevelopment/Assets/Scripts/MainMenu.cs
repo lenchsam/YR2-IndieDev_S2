@@ -54,7 +54,6 @@ public class MainMenu : MonoBehaviour
     }
     public void NextWave()
     {
-        spawnerScript.ContinueNextWave();
         this.gameObject.SetActive(false);
     }
     public void setInactive(GameObject thingToMakeInactive)

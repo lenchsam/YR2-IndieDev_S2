@@ -29,7 +29,6 @@ public class PlaceDefence : MonoBehaviour
             //fire raycast to world position of player touch
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero, Mathf.Infinity, LM);
 
-            Debug.Log(hit.collider.tag + " " + hit.collider.gameObject.name);
             //if hit something
             if (hit.collider != null && hit.collider.tag == "Ground")
             {

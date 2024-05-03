@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeFirePoint : MonoBehaviour
 {
-    [SerializeField] private GameObject firePoint;
+    public GameObject firePoint;
+    [SerializeField] private Button escapeButton;
 
     // Update is called once per frame
     void Update()
     {
-        ChangeFirePosition();
+        if ( firePoint != null )
+            ChangeFirePosition();
     }
     public void ChangeFirePosition()
     {
@@ -22,11 +25,15 @@ public class ChangeFirePoint : MonoBehaviour
             //fire raycast to world position of player touch
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero, Mathf.Infinity);
 
+            Debug.Log(hit.collider.name);
             //if hit something
             if (hit.collider != null)
             {
-                firePoint.transform.position = hit.collider.transform.position;
+                firePoint.transform.position = Camera.main.ScreenToWorldPoint(touch.position);
                 Debug.Log("changed fire position");
+                escapeButton.gameObject.SetActive(true);
+                gameObject.SetActive(false);
+                
             }
         }
     }

@@ -15,13 +15,13 @@ public class clickDefence : MonoBehaviour
     [SerializeField] private LayerMask LM;
     [SerializeField] private GameObject ChooseFirePosition;
 
-    string selectedOption;
+    string selectedOption; //will use to set the dropdown to a certain value
     Collider2D theHitObject;
 
     private Turret turretScript;
     private Morter MorterScript;
-    private ChangeFirePoint ChangeFirePointScript;
-    // Start is called before the first frame update
+    [SerializeField] private ChangeFirePoint ChangeFirePointScript;
+    //Start is called before the first frame update
     void Start()
     {
         menuScript = GetComponent<MainMenu>();
@@ -54,6 +54,8 @@ public class clickDefence : MonoBehaviour
                     theHitObject = hit.collider;
                     MorterScript = hit.collider.gameObject.GetComponentInChildren<Morter>();
                     ChooseFirePosition.SetActive(true);
+                    //ChangeFirePointScript = GameObject.Find("----ChangeFirePosition----").GetComponent<ChangeFirePoint>();
+                    ChangeFirePointScript.firePoint = theHitObject.transform.GetChild(0).gameObject;
                 }
                 menuScript.ToggleUI(); // enable ui for the defence
 

@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: 1679348057962266, guid: feb4d09285788714e8498144ecedc2a4, type: 3}
   - {fileID: 1594160248338174, guid: 23981215f5bbd55418039f95730dde55, type: 3}
   firePosition: {fileID: 1367965635198876813}
-  damageRadius: 5
+  damageRadius: 1
   contactFilter:
     useTriggers: 0
     useLayerMask: 1
@@ -121,7 +121,6 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  chooseFirePosition: {fileID: 0}
 --- !u!61 &8597056728905308046
 BoxCollider2D:
   m_ObjectHideFlags: 0

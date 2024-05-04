@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class EnemyDefault : MonoBehaviour
@@ -14,6 +13,11 @@ public class EnemyDefault : MonoBehaviour
     
     protected int counter;
     protected bool done;
+
+    [HideInInspector] public bool frozen = false;
+    [SerializeField] protected int freezeTimer;
+
+    private float t;
     protected IEnumerator LerpPosition(Vector3 targetPosition, float duration)
     {
         //done to setup everything needed for the lerp
@@ -29,6 +33,11 @@ public class EnemyDefault : MonoBehaviour
             //add to the time
             time += Time.deltaTime;
             yield return null;
+            if (frozen)
+            {
+                yield return new WaitForSeconds(freezeTimer);
+                frozen = false;
+            }
         }
         //lerp is finished
         done = true;

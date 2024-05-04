@@ -15,5 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Farming.unity
     guid: 74d3eeb1baf819742bfac5e1b0674549
   m_configObjects:
-    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: c5c95da4ab1b5ce488d8c8d04b481593, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 730b47fc3b5656a4ba2cb851f524af48, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 129e9fd622ad3e14cb870f22bab72c89, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 9893a64280d712b4aad70a00eb1504a0, type: 2}

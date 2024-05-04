@@ -8,7 +8,7 @@ public class DamageEffects : MonoBehaviour
     [SerializeField] private int FireDamage;
     [SerializeField] private int TimeBetweenDamage;
     [Header("Freeze Effect")]
-    [Range(0.0f, 1.0f)]
+    [Range(1f, 3.0f)]
     [SerializeField] private float AmountOfSlow;
 
     private bool isWaiting = false;
@@ -16,11 +16,11 @@ public class DamageEffects : MonoBehaviour
     {
         //SpriteRenderer sr = enemy.gameObject.GetComponent<SpriteRenderer>();
         //sr.color = new Color(0.3f, 0.5f, 0.8f);
-        enemy.movementSpeed /= AmountOfSlow;
+        enemy.movementSpeed *= AmountOfSlow;
     }
     public void DEFire(DefaultEnemy enemy)
     {
-        Debug.Log("FIRE BEING CALLED");
+        //Debug.Log("FIRE BEING CALLED");
         if (enemy == null)
             return;
         //Debug.Log("DOING FIRE DAMAGE");

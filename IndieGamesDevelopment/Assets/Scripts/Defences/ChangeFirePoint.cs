@@ -25,12 +25,12 @@ public class ChangeFirePoint : MonoBehaviour
             //fire raycast to world position of player touch
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero, Mathf.Infinity);
 
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             //if hit something
             if (hit.collider != null)
             {
                 firePoint.transform.position = Camera.main.ScreenToWorldPoint(touch.position);
-                Debug.Log("changed fire position");
+                //Gizmos.DrawWireSphere(firePoint.transform.position, 1);
                 escapeButton.gameObject.SetActive(true);
                 gameObject.SetActive(false);
                 

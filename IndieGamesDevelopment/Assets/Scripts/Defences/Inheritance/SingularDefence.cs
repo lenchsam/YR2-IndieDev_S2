@@ -39,6 +39,8 @@ public class SingularDefence : DefenceDefault
             Effects.DEFire(enemyscript);
         }else if (typeOfEffect == effectType.Freeze)
         {
+            ThingToDamage.GetComponent<EnemyDefault>().frozen = true;
+            Debug.Log("freeze Damage");
             Effects.DEFreeze(enemyscript);
         }
     }

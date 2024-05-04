@@ -9,7 +9,7 @@ public class Morter : ExplosiveDefence
     [SerializeField] private Transform firePosition;
     [SerializeField] private float damageRadius;
     [SerializeField] private ContactFilter2D contactFilter = new ContactFilter2D();
-    [SerializeField] private GameObject chooseFirePosition;
+    //[SerializeField] private GameObject chooseFirePosition;
     
     List<Collider2D> results = new List<Collider2D>();
 
@@ -18,7 +18,7 @@ public class Morter : ExplosiveDefence
     private void Start()
     {
         Effects = GameObject.Find("----DamageEffects----").GetComponent<DamageEffects>();
-        chooseFirePosition = GameObject.Find("----ChangeFirePosition----");
+        //chooseFirePosition = GameObject.Find("----ChangeFirePosition----");
         //chooseFirePosition.SetActive(true);
     }
     public void Update()

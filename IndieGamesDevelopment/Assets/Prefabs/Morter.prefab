@@ -105,6 +105,7 @@ MonoBehaviour:
   auras:
   - {fileID: 1679348057962266, guid: feb4d09285788714e8498144ecedc2a4, type: 3}
   - {fileID: 1594160248338174, guid: 23981215f5bbd55418039f95730dde55, type: 3}
+  explosionEffect: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
   firePosition: {fileID: 1367965635198876813}
   damageRadius: 1
   contactFilter:
@@ -221,7 +222,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b325a13e94f3bac4199e75b91fa98449, type: 3}
-  m_Color: {r: 1, g: 0, b: 0.8741455, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.8741455, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

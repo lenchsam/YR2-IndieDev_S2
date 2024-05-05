@@ -74,4 +74,8 @@ public class MainMenu : MonoBehaviour
     {
         AM.playSound(AM.getRandAudio(a_MenuAudioClips));
     }
+    public void volumeChange()
+    {
+
+    }
 }

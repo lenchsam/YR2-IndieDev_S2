@@ -10,9 +10,10 @@ public class AudioManager : MonoBehaviour
         AS = gameObject.GetComponent<AudioSource>();
     }
 
-    public void SetVolume()
+    public void SetVolume(float value)
     {
-        Debug.Log("set volume");
+        //Debug.Log(value);
+        AS.volume = value;
     }
     public AudioClip getRandAudio(AudioClip[] audioSounds)
     {
@@ -22,5 +23,9 @@ public class AudioManager : MonoBehaviour
     public void playSound(AudioClip audioToPlay)
     {
         AS.PlayOneShot(audioToPlay);
+    }
+    public void ChangeBackgroundMusicVolume(float value)
+    {
+        gameObject.transform.GetChild(0).GetComponent<AudioSource>().volume = value;
     }
 }

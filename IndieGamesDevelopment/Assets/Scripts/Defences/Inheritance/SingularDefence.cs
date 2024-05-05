@@ -30,7 +30,7 @@ public class SingularDefence : DefenceDefault
         {
             //float _time;
             //AS.PlayOneShot(turretFireAudio);
-            AS.PlayOneShot(fireTrailAudio);
+            AS.volume = AM.GetComponent<AudioSource>().volume;
             //Debug.Log(fireTrailAudio);
             //AS.PlayOneShot
         }

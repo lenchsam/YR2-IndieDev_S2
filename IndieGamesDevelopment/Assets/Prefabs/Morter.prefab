@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 100
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   auras:
   - {fileID: 1679348057962266, guid: feb4d09285788714e8498144ecedc2a4, type: 3}
   - {fileID: 1594160248338174, guid: 23981215f5bbd55418039f95730dde55, type: 3}
-  explosionEffect: {fileID: 2433282508537954060, guid: 3ef3ae421f71c5c4e97fe12dc2fc6312, type: 3}
+  explosionEffect: {fileID: 8454031576849100166, guid: d3afbaf0442d8d34184df28c523a0dec, type: 3}
   firePosition: {fileID: 1367965635198876813}
   damageRadius: 1
   contactFilter:

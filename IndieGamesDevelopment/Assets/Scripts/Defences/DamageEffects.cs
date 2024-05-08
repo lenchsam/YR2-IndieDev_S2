@@ -14,8 +14,8 @@ public class DamageEffects : MonoBehaviour
     private bool isWaiting = false;
     public void DEFreeze(DefaultEnemy enemy)
     {
-        //SpriteRenderer sr = enemy.gameObject.GetComponent<SpriteRenderer>();
-        //sr.color = new Color(0.3f, 0.5f, 0.8f);
+        SpriteRenderer sr = enemy.gameObject.GetComponent<SpriteRenderer>();
+        sr.color = new Color(0.3f, 0.5f, 0.8f);
         enemy.movementSpeed *= AmountOfSlow;
     }
     public void DEFire(DefaultEnemy enemy)

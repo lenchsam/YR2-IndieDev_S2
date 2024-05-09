@@ -13,6 +13,9 @@ public class DefenceDefault : MonoBehaviour
     [Header("VFX Settings")]
     [SerializeField] protected GameObject[] auras;
 
+    [Header("Animations")]
+    [SerializeField] protected Animator anim;
+
     protected GameObject currentAura;
 
     public enum effectType
@@ -21,16 +24,6 @@ public class DefenceDefault : MonoBehaviour
         Fire,
         Freeze
     };
-    protected void rotateDefenceToTarget(string Tag, Transform target)
-    {
-        //if the defence has a target
-        if (target.tag == Tag)
-        {
-            //keep rotating the defence in the direction of the target (the enemy)
-            Quaternion rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.TransformDirection(Vector3.forward));
-            transform.rotation = new Quaternion(0, 0, rotation.z, rotation.w);
-        }
-    }
     public void deleteAura()
     {
         if (currentAura != null)

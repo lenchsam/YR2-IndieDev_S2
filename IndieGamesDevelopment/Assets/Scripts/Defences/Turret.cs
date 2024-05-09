@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Turret : SingularDefence
 {
     private Transform primaryTarget;
     private float time;
+    
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag != "Enemy")
@@ -37,6 +40,7 @@ public class Turret : SingularDefence
         Effects = GameObject.Find("----DamageEffects----").GetComponent<DamageEffects>();
         AM = GameObject.Find("----AudioManager----").GetComponent<AudioManager>();
         AS = gameObject.GetComponent<AudioSource>();
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -47,12 +51,20 @@ public class Turret : SingularDefence
         //rotates the defence to the target
         if (primaryTarget != null)
         {
-            rotateDefenceToTarget("Enemy", primaryTarget);
+            //Vector3 targetDir = primaryTarget.position - transform.position;
+            //float angle = Vector2.Angle(targetDir, transform.position);
+            float angle = Mathf.Rad2Deg * (Mathf.Atan2(primaryTarget.position.y - transform.position.y, primaryTarget.position.x - transform.position.x));
+            Debug.Log(angle);
+            anim.SetFloat("Angle", angle);
+            //rotateDefenceToTarget("Enemy", primaryTarget);
             //if a set amount of time has gone, it attacks the primary target
             if (time >= fireRate)
             {
                 //fire bullet
+
                 GameObject Bullet = Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
+                Bullet.GetComponent<BulletSettings>().target = primaryTarget;
+                
                 BulletSettings bulletScript = Bullet.GetComponent<BulletSettings>();
                 bulletScript.direction = primaryTarget.position;
                 bulletScript.FireBullet();
@@ -68,5 +80,9 @@ public class Turret : SingularDefence
     {
         if (targets.Count != 0)
             primaryTarget = targets[0];
+    }
+    private void checkDirection()
+    {
+
     }
 }

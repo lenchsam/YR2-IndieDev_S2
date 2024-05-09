@@ -9,12 +9,14 @@ public class PlaceDefence : MonoBehaviour
     [SerializeField] private int DefenceCost = 10;
     [SerializeField] private DefenceManager DM;
     [SerializeField] private LayerMask LM;
+    [SerializeField] private AudioManager AM;
+    [SerializeField] private AudioClip rejectAudio;
 
     private GameManager gameManager;
 
     private void Start()
     {
-        //gameManager = 
+        AM = GameObject.Find("----AudioManager----").GetComponent<AudioManager>();
         //pointScript = GameObject.Find("PointsUpdator").GetComponent<Points>();
     }
 
@@ -39,6 +41,10 @@ public class PlaceDefence : MonoBehaviour
                 DM.addDefence(instantiatedObject);
                 pointScript.totalPoints -= DefenceCost;
                 pointScript.UpdatePointsText();
+            }
+            else if (hit.collider != null)
+            {
+                AM.playSound(rejectAudio);
             }
         }
 

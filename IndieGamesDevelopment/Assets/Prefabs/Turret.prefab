@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1037046274784538149}
   - component: {fileID: 1037046274784538138}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Defence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,6 +159,14 @@ PrefabInstance:
     - target: {fileID: 3145930339509849797, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}
       propertyPath: m_Name
       value: Archer_Blue_0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145930339509849797, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145930339509849797, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3145930339509849799, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}
       propertyPath: m_RootOrder

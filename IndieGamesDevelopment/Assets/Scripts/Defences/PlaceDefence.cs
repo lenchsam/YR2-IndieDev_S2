@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlaceDefence : MonoBehaviour
@@ -42,8 +43,9 @@ public class PlaceDefence : MonoBehaviour
                 pointScript.totalPoints -= DefenceCost;
                 pointScript.UpdatePointsText();
             }
-            else if (hit.collider != null)
+            else if (hit.collider != null && hit.collider.tag != "Ground")
             {
+                Debug.Log("playing sounds");
                 AM.playSound(rejectAudio);
             }
         }

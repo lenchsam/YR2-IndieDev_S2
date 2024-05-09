@@ -5402,13 +5402,13 @@ GameObject:
   - component: {fileID: 356367110}
   - component: {fileID: 356367109}
   - component: {fileID: 356367108}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trail (1)
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &356367107
 Transform:
   m_ObjectHideFlags: 0
@@ -12155,9 +12155,9 @@ GameObject:
   - component: {fileID: 1108933661}
   - component: {fileID: 1108933660}
   - component: {fileID: 1108933659}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

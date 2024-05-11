@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class DefaultEnemy : EnemyDefault
 {
@@ -23,8 +25,9 @@ public class DefaultEnemy : EnemyDefault
         //lerp position of enemy
         if (done)
         {
-            //Debug.Log("lerp");
-            StartCoroutine(LerpPosition(points[counter].position, movementSpeed));
+            moveTowardsPosition(points[counter].position);
+            //var step = movementSpeed * Time.deltaTime; // calculate distance to move
+            //transform.position = Vector3.MoveTowards(transform.position, points[counter].position, step);
         }
     }
 }

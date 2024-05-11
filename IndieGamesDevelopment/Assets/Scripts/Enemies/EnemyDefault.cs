@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class EnemyDefault : MonoBehaviour
 {
@@ -17,38 +19,32 @@ public class EnemyDefault : MonoBehaviour
     [HideInInspector] public bool frozen = false;
     [SerializeField] protected int freezeTimer;
 
-    private float t;
-    protected IEnumerator LerpPosition(Vector3 targetPosition, float duration)
+    protected void moveTowardsPosition(Vector3 targetPosition)
     {
-        //done to setup everything needed for the lerp
-        done = false;
-        float time = 0;
-        Vector3 startPosition = transform.position;
-        //while the time done is less than the duration wanted
-        while (time < duration)
+        float time;
+
+        var step = movementSpeed * Time.deltaTime; // calculate distance to move
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
+
+        //if the enemy hsa been frozen by a defence
+        //if (frozen)
+        //{
+        //    time += Time.deltaTime;
+        //    if (time >= freezeTimer)
+        //    {
+        //        //frozen = false;
+        //    }
+        //}
+
+        if (Vector3.Distance(transform.position, targetPosition) < 0.001f)
         {
-            //lerp the enemy
-            transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
-            //Debug.Log("lerping" + transform.position);
-            //add to the time
-            time += Time.deltaTime;
-            yield return null;
-            if (frozen)
-            {
-                yield return new WaitForSeconds(freezeTimer);
-                frozen = false;
-            }
+            counter++;
         }
-        //lerp is finished
-        done = true;
-        //counter incremented so the enemy lerps to the next position in the list
-        counter++;
         //if the counter is equal to the list size
         if (counter == points.Count)
         {
             //stops all the coroutines and sets done to false so no more coroutines are called.
             done = false;
-            StopAllCoroutines();
         }
     }
     //get all path points

@@ -38,15 +38,15 @@ public class Spawner : MonoBehaviour
     IEnumerator _Spawner(int currentWave)
     {
         _gameManager.currentWave += 1;
-            for (int j = 0; j < EnemyWaves[currentWave].Enemies.Count; j++)
-            {
-                //spawns the enemeis in the scriptable objects
-                Instantiate(EnemyWaves[currentWave].Enemies[j], spawnPosition.position, transform.rotation);
-                //wait for set amount of seconds before spawning next enemy
-                isWaiting = true;
-                yield return new WaitForSeconds(TimeBetweenSpawns);
-                isWaiting = false;
-            }
+        for (int j = 0; j < EnemyWaves[currentWave].Enemies.Count; j++)
+        {
+            //spawns the enemeis in the scriptable objects
+            Instantiate(EnemyWaves[currentWave].Enemies[j], spawnPosition.position, transform.rotation);
+            //wait for set amount of seconds before spawning next enemy
+            isWaiting = true;
+            yield return new WaitForSeconds(TimeBetweenSpawns);
+            isWaiting = false;
+        }
         _points.nextRound = true;
         _waitForWave = true;
         continueToNext.gameObject.SetActive(true); 
@@ -55,7 +55,11 @@ public class Spawner : MonoBehaviour
     }
     public void ContinueNextWave()
     {
-        if(numWave < EnemyWaves.Length)
+        Debug.Log("running");
+        if (numWave < EnemyWaves.Length)
+        {
             _waitForWave = false;
+            Debug.Log("continue to next wave");
+        }
     }
 }

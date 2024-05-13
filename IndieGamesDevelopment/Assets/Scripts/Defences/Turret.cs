@@ -54,7 +54,6 @@ public class Turret : SingularDefence
             //Vector3 targetDir = primaryTarget.position - transform.position;
             //float angle = Vector2.Angle(targetDir, transform.position);
             float angle = Mathf.Rad2Deg * (Mathf.Atan2(primaryTarget.position.y - transform.position.y, primaryTarget.position.x - transform.position.x));
-            Debug.Log(angle);
             anim.SetFloat("Angle", angle);
             //rotateDefenceToTarget("Enemy", primaryTarget);
             //if a set amount of time has gone, it attacks the primary target

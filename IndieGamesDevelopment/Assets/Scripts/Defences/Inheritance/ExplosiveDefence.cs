@@ -33,7 +33,7 @@ public class ExplosiveDefence : DefenceDefault
                     Effects.DEFire(enemyscript);
                     break;
                 case effectType.Shadow:
-                    Effects.DEFreeze(enemyscript);
+                    //Effects.DEFreeze(enemyscript);
                     break;
             }
         }

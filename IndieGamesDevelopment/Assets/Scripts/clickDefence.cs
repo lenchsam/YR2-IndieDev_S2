@@ -65,8 +65,7 @@ public class clickDefence : MonoBehaviour
                 int val = effectsDropdown.value;
                 selectedOption = effectsDropdown.options[val].text;
 
-                //set the correct dropdown value for the selected defence
-
+                //set the correct dropdown value to the currently selected damage type
                 effectsDropdown.value = getCurrentEffect();
 
                 //change all variables in the defence to suit the current defence

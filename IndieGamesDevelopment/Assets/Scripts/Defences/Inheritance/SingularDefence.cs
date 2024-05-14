@@ -40,8 +40,7 @@ public class SingularDefence : DefenceDefault
         }else if (typeOfEffect == effectType.Shadow)
         {
             ThingToDamage.GetComponent<EnemyDefault>().frozen = true;
-            Debug.Log("freeze Damage");
-            Effects.DEFreeze(enemyscript);
+            //Effects.DEFreeze(enemyscript);
         }
     }
 }

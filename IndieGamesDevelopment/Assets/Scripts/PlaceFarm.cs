@@ -27,7 +27,7 @@ public class PlaceFarm : MonoBehaviour
     {
         if (pointScript == null)
         {
-            pointScript = GameObject.Find("----PointsUpdator----").GetComponent<Points>();
+            pointScript = GameObject.Find("----PointsManager----").GetComponent<Points>();
         }
     }
     public void BuildFarm()

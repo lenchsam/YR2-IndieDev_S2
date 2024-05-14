@@ -12932,7 +12932,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Defences: []
   DefencePositions: []
-  Turret: {fileID: 66270661313012054, guid: 0b9605eebbc50c0449c9452d0a48c8bd, type: 3}
+  Turret: {fileID: 1049097677181124746, guid: 0b9605eebbc50c0449c9452d0a48c8bd, type: 3}
   Morter: {fileID: 1367965634312568813, guid: 2bbfd65da9d238a48a98a9a88e370822, type: 3}
 --- !u!1 &1082703244
 GameObject:

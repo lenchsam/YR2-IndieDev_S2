@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using System;
 using static DefenceDefault;
+using UnityEditor.Animations;
+using System.IO;
 
 public class clickDefence : MonoBehaviour
 {
@@ -11,13 +13,14 @@ public class clickDefence : MonoBehaviour
     //[SerializeField] private GameObject turretPrefab;
     [SerializeField] private TMP_Text defenceText;
     [SerializeField] private TMP_Dropdown effectsDropdown;
-    [SerializeField] private GameObject clickedDefence;
+    [SerializeField] private GameObject clickedDefenceUI;
     [SerializeField] private LayerMask LM;
     [SerializeField] private GameObject ChooseFirePosition;
 
     string selectedOption; //will use to set the dropdown to a certain value
     Collider2D theHitObject;
 
+    private GameObject selectedDefence;
     private Turret turretScript;
     private Morter MorterScript;
     [SerializeField] private ChangeFirePoint ChangeFirePointScript;
@@ -42,6 +45,7 @@ public class clickDefence : MonoBehaviour
             //if hit something
             if (hit.collider != null && hit.collider.gameObject.tag == "Defence")
             {
+                selectedDefence = hit.collider.gameObject;
                 //detect what enemy has been clicked
                 if (hit.collider.gameObject.name == "Turret(Clone)")
                 {
@@ -54,13 +58,16 @@ public class clickDefence : MonoBehaviour
                     theHitObject = hit.collider;
                     MorterScript = hit.collider.gameObject.GetComponentInChildren<Morter>();
                     ChooseFirePosition.SetActive(true);
-                    //ChangeFirePointScript = GameObject.Find("----ChangeFirePosition----").GetComponent<ChangeFirePoint>();
                     ChangeFirePointScript.firePoint = theHitObject.transform.GetChild(0).gameObject;
                 }
                 menuScript.ToggleUI(); // enable ui for the defence
 
                 int val = effectsDropdown.value;
                 selectedOption = effectsDropdown.options[val].text;
+
+                //set the correct dropdown value for the selected defence
+
+                effectsDropdown.value = getCurrentEffect();
 
                 //change all variables in the defence to suit the current defence
                 defenceText.text = displayName(hit.collider.gameObject.name);//change name
@@ -116,9 +123,9 @@ public class clickDefence : MonoBehaviour
             {
                 turretScript.typeOfEffect = effectType.Fire;
             }
-            else if (currentlySelected == "Freeze")
+            else if (currentlySelected == "Shadow")
             {
-                turretScript.typeOfEffect = effectType.Freeze;
+                turretScript.typeOfEffect = effectType.Shadow;
             }
             turretScript.instantiateAura(defence);
         }else if (defence.gameObject.name == "Morter(Clone)")
@@ -134,9 +141,9 @@ public class clickDefence : MonoBehaviour
             {
                 morterScript.typeOfEffect = effectType.Fire;
             }
-            else if (currentlySelected == "Freeze")
+            else if (currentlySelected == "Shadow")
             {
-                morterScript.typeOfEffect = effectType.Freeze;
+                morterScript.typeOfEffect = effectType.Shadow;
             }
             morterScript.instantiateAura(defence);
         }
@@ -144,5 +151,23 @@ public class clickDefence : MonoBehaviour
     public void ValueChanged()
     {
         DropdownValueChanged(effectsDropdown, theHitObject);
+    }
+    private int getCurrentEffect()
+    {
+        //Debug.Log("DEFENCES NAME = " + selectedDefence.name);
+        GameObject[] children = new GameObject[selectedDefence.transform.childCount];
+
+        //Get list of all children
+        for (int i = 0; i < children.Length; i++)
+        {
+            children[i] = selectedDefence.transform.GetChild(i).gameObject;
+            if (children[i].gameObject.activeSelf && children[i].tag != "Prefab")
+            {
+                //is the currently active 
+                Debug.Log(children[i].name);
+                return i-1;
+            }
+        }
+        return 0;
     }
 }

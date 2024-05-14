@@ -11,7 +11,7 @@ public class DefenceDefault : MonoBehaviour
     [SerializeField] protected int damage;
 
     [Header("VFX Settings")]
-    [SerializeField] protected GameObject[] auras;
+    [SerializeField] protected GameObject[] effectTowers;
 
     [Header("Animations")]
     [SerializeField] protected Animator anim;
@@ -22,29 +22,38 @@ public class DefenceDefault : MonoBehaviour
     {
         None,
         Fire,
-        Freeze
+        Shadow
     };
-    public void deleteAura()
-    {
-        if (currentAura != null)
-            Destroy(currentAura);
-    }
     public void instantiateAura(Collider2D defence)
     {
         if (typeOfEffect == effectType.None)
         {
-            deleteAura();
+            //basic tower active
+            effectTowers[0].SetActive(true);
+
+            //turn all other towers off
+            effectTowers[1].SetActive(false);
+            effectTowers[2].SetActive(false);
         }
         //Debug.Log(gameObject.transform.parent.gameObject);
         if (typeOfEffect == effectType.Fire)
         {
-            deleteAura();
-            currentAura = Instantiate(auras[0], transform.position, transform.rotation);
+            //fire tower active
+            effectTowers[1].SetActive(true);
+
+            //all other towers inactive
+            effectTowers[0].SetActive(false);
+            effectTowers[2].SetActive(false);
         }
-        else if (typeOfEffect == effectType.Freeze)
+        else if (typeOfEffect == effectType.Shadow)
         {
-            deleteAura();
-            currentAura = Instantiate(auras[1], transform.position, transform.rotation);
+            Debug.Log("changing to shadow");
+            //Shadow tower active
+            effectTowers[2].SetActive(true);
+
+            //all other towers inactive
+            effectTowers[0].SetActive(false);
+            effectTowers[1].SetActive(false);
         }
     }
 }

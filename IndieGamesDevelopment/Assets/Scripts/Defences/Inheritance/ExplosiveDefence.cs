@@ -32,7 +32,7 @@ public class ExplosiveDefence : DefenceDefault
                 case effectType.Fire:
                     Effects.DEFire(enemyscript);
                     break;
-                case effectType.Freeze:
+                case effectType.Shadow:
                     Effects.DEFreeze(enemyscript);
                     break;
             }

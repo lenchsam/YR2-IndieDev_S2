@@ -7,16 +7,16 @@ public class DamageEffects : MonoBehaviour
     [Header("Fire Effect")]
     [SerializeField] private int FireDamage;
     [SerializeField] private int TimeBetweenDamage;
-    [Header("Freeze Effect")]
+    [Header("Shadow Effect")]
     [Range(1f, 3.0f)]
     [SerializeField] private float AmountOfSlow;
 
     private bool isWaiting = false;
-    public void DEFreeze(DefaultEnemy enemy)
+    public void DEShadow(DefaultEnemy enemy)
     {
-        SpriteRenderer sr = enemy.gameObject.GetComponent<SpriteRenderer>();
-        sr.color = new Color(0.3f, 0.5f, 0.8f);
-        enemy.movementSpeed *= AmountOfSlow;
+        //SpriteRenderer sr = enemy.gameObject.GetComponent<SpriteRenderer>();
+        //sr.color = new Color(0.3f, 0.5f, 0.8f);
+        //enemy.movementSpeed *= AmountOfSlow;
     }
     public void DEFire(DefaultEnemy enemy)
     {

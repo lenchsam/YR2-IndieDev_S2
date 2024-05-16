@@ -70,6 +70,8 @@ public class clickDefence : MonoBehaviour
 
                 //change all variables in the defence to suit the current defence
                 defenceText.text = displayName(hit.collider.gameObject.name);//change name
+
+                gameObject.SetActive(false);
             }
         }
     }

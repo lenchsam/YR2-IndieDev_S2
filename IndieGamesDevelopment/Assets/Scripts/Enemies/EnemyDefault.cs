@@ -21,8 +21,6 @@ public class EnemyDefault : MonoBehaviour
 
     protected void moveTowardsPosition(Vector3 targetPosition)
     {
-        float time;
-
         var step = movementSpeed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
 

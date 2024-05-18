@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Spawner : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] int TimeBetweenSpawns;
+    [SerializeField] float TimeBetweenSpawns;
     [SerializeField] Transform spawnPosition;
     [SerializeField] private WaveScriptableObject[] EnemyWaves;
 
@@ -38,10 +38,10 @@ public class Spawner : MonoBehaviour
     IEnumerator _Spawner(int currentWave)
     {
         _gameManager.currentWave += 1;
-        for (int j = 0; j < EnemyWaves[currentWave].Enemies.Count; j++)
+        for (int j = 0; j < EnemyWaves[currentWave].gameObjectList.Count; j++)
         {
             //spawns the enemeis in the scriptable objects
-            Instantiate(EnemyWaves[currentWave].Enemies[j], spawnPosition.position, transform.rotation);
+            Instantiate(EnemyWaves[currentWave].gameObjectList[j], spawnPosition.position, transform.rotation);
             //wait for set amount of seconds before spawning next enemy
             isWaiting = true;
             yield return new WaitForSeconds(TimeBetweenSpawns);

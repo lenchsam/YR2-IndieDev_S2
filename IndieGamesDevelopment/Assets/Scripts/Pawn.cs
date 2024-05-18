@@ -4,25 +4,76 @@ using UnityEngine;
 
 public class Pawn : MonoBehaviour
 {
+    [SerializeField] private ScriptableObject pawnLocations;
+
     private Animator anim;
-    [SerializeField] private bool isBuilding = false;
-    // Start is called before the first frame update
+    private bool gotPosition = false;
+    private Transform moveTo;
+    private bool atHouse;
+    private bool isBuilding = false;
+    private List<Transform> houseLocations = new List<Transform>();
+
+    [Header("MovementSettings")]
+    [SerializeField] private float movementSpeed = 3f;
+
     void Start()
     {
         anim = GetComponent<Animator>();
-        StartCoroutine("GoToHouse");
+        AddHouseLocations(GameObject.Find("HouseParent").transform, ref houseLocations);
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        if (!atHouse)
+        {
+            goToHouse();
+        }
+
         if (isBuilding)
             anim.SetBool("isBuilding", true);
         else
+        {
+            goToHouse();
             anim.SetBool("isBuilding", false);
+        }
     }
-    private IEnumerable goToHouse()
+    private void goToHouse()
     {
-        return null;
+        if (!gotPosition)
+        {
+            moveTo = houseLocations[Random.Range(0, houseLocations.Count)];
+            gotPosition = true;
+        }
+        goTo(moveTo);
+    }
+    public void goToBuild(Vector2 buildLocation)
+    {
+        Debug.Log("GOING TO BUILD!!!!!!!!!!!!!");
+        var step = movementSpeed * Time.deltaTime; // calculate distance to move
+        transform.position = Vector3.MoveTowards(transform.position, buildLocation, step);
+
+        if (Vector3.Distance(transform.position, buildLocation) < 0.001f)
+        {
+            isBuilding = true;
+        }
+    }
+    private void goTo(Transform moveTo)
+    {
+        //vectro3 move towards
+        var step = movementSpeed * Time.deltaTime; // calculate distance to move
+        transform.position = Vector3.MoveTowards(transform.position, moveTo.position, step);
+
+        if (Vector3.Distance(transform.position, moveTo.position) < 0.001f)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+    protected void AddHouseLocations(Transform parent, ref List<Transform> list)
+    {
+        foreach (Transform child in parent)
+        {
+            list.Add(child);
+            AddHouseLocations(child, ref list);
+        }
     }
 }

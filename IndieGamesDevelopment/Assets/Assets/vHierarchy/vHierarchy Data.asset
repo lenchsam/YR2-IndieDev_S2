@@ -41,6 +41,7 @@ MonoBehaviour:
         - globalObjectIdString: GlobalObjectId_V1-2-588f3fa3f84604c4e8de5cc0041f7bdd-645759229-0
         - globalObjectIdString: GlobalObjectId_V1-2-588f3fa3f84604c4e8de5cc0041f7bdd-872794952-0
         - globalObjectIdString: GlobalObjectId_V1-2-588f3fa3f84604c4e8de5cc0041f7bdd-846986307-0
+        - globalObjectIdString: GlobalObjectId_V1-2-588f3fa3f84604c4e8de5cc0041f7bdd-375617564-0
         values:
         - colorIndex: 0
           iconNameOrGuid: Settings Icon
@@ -74,3 +75,5 @@ MonoBehaviour:
           iconNameOrGuid: 
         - colorIndex: 0
           iconNameOrGuid: Canvas Icon
+        - colorIndex: 0
+          iconNameOrGuid: cs Script Icon

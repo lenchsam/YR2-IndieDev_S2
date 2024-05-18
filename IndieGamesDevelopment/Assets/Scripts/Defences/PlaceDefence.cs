@@ -10,8 +10,11 @@ public class PlaceDefence : MonoBehaviour
     [SerializeField] private int DefenceCost = 10;
     [SerializeField] private DefenceManager DM;
     [SerializeField] private LayerMask LM;
-    [SerializeField] private AudioManager AM;
+    private AudioManager AM;
     [SerializeField] private AudioClip rejectAudio;
+    [SerializeField] private WaveScriptableObject SO_pawnLocations;
+
+    private Pawn pawnScript;
 
     private GameManager gameManager;
 
@@ -39,16 +42,36 @@ public class PlaceDefence : MonoBehaviour
                 GameObject instantiatedObject = Instantiate(DefencePrefab, hit.point, transform.rotation);
                 //Debug.Log("Target Position: " + hit.collider.gameObject.transform.position);
                 //Instantiate(DefencePrefab, hit.point, transform.rotation);
-                DM.addDefence(instantiatedObject);
+                if (instantiatedObject.name.Substring(0,4) != "Pawn")
+                {
+                    Debug.Log("placing normal defence");
+                    DM.addDefence(instantiatedObject);
+                }
+                else
+                {
+                    Debug.Log("placing pawn");
+                    //deploy pawn to build
+                    savePosition(instantiatedObject);
+                    pawnScript = SO_pawnLocations.gameObjectList[Random.Range(0, SO_pawnLocations.gameObjectList.Count)].GetComponent<Pawn>();
+                    pawnScript.goToBuild(hit.point);
+                }
                 pointScript.totalPoints -= DefenceCost;
                 pointScript.UpdatePointsText();
             }
             else if (hit.collider != null && hit.collider.tag != "Ground")
             {
-                Debug.Log("playing sounds");
+                //Debug.Log("playing sounds");
                 AM.playSound(rejectAudio);
             }
         }
-
+    }
+    private void savePosition(GameObject GOToAdd)
+    {
+        Debug.Log(GOToAdd.name);
+        if (this.name == "----PlacePawn----")
+        {
+            Debug.Log("addding to gameobejct list");
+            SO_pawnLocations.gameObjectList.Add(GOToAdd);
+        }
     }
 }

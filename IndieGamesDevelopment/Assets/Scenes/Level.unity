@@ -337,7 +337,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &42050741
 MonoBehaviour:
@@ -538,7 +538,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  thingToMakeInactive: {fileID: 0}
   a_MenuAudioClips: []
   a_GoIntoGame: {fileID: 0}
 --- !u!1 &132213412
@@ -725,8 +724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdcb0f6f3defe341b1d6ef405afd566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingToToggle: {fileID: 83073600}
-  thingToMakeInactive: {fileID: 0}
+  thingToToggle: {fileID: 0}
   a_MenuAudioClips:
   - {fileID: 8300000, guid: 4fb573d4802ed8f42a732b19a4b9f2e8, type: 3}
   a_GoIntoGame: {fileID: 0}
@@ -1213,7 +1211,7 @@ Transform:
   - {fileID: 1964069673}
   - {fileID: 1520032976}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &178971787
 GameObject:
@@ -1512,7 +1510,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 375617564}
-  thingToMakeInactive: {fileID: 0}
   a_MenuAudioClips:
   - {fileID: 8300000, guid: 4fb573d4802ed8f42a732b19a4b9f2e8, type: 3}
   a_GoIntoGame: {fileID: 0}
@@ -1567,6 +1564,30 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 196165255}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: setInactive
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 866218731}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 196165255}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: setInactive
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1805372050}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1838,7 +1859,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &263185625
 GameObject:
@@ -7827,36 +7848,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -12, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -11, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: -10, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 5
-      m_TileSpriteIndex: 5
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -9, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -11899,7 +11890,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 837
+  - m_RefCount: 834
     m_Data: {fileID: 11400000, guid: e79bed15b4b537247886fa3f5cdf3ae6, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -11914,12 +11905,12 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 837
+  - m_RefCount: 834
     m_Data: {fileID: 1152475541, guid: 2d6b64506578ada4aa9fc79c92cbde7b, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 837
+  - m_RefCount: 834
     m_Data:
       e00: 1
       e01: 0
@@ -11938,7 +11929,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 837
+  - m_RefCount: 834
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -12913,7 +12904,7 @@ Transform:
   - {fileID: 1426160620}
   - {fileID: 1913111502}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &364122714
 GameObject:
@@ -13050,7 +13041,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383600010
 GameObject:
@@ -13708,7 +13699,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &456595039
 MonoBehaviour:
@@ -14044,7 +14035,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &509058968
 GameObject:
@@ -14231,7 +14222,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &520831789
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14267,7 +14258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  thingToMakeInactive: {fileID: 0}
   a_MenuAudioClips: []
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &520831791
@@ -14429,7 +14419,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &541288194
 GameObject:
@@ -14946,7 +14936,7 @@ Transform:
   - {fileID: 922701273}
   - {fileID: 356367107}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &589646145
 GameObject:
@@ -15157,7 +15147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  thingToMakeInactive: {fileID: 520831788}
   a_MenuAudioClips:
   - {fileID: 8300000, guid: 4fb573d4802ed8f42a732b19a4b9f2e8, type: 3}
   a_GoIntoGame: {fileID: 0}
@@ -15506,7 +15495,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &614855743
 SpriteRenderer:
@@ -15615,7 +15604,7 @@ Transform:
   - {fileID: 1070556041}
   - {fileID: 1899752579}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &618029373
 MonoBehaviour:
@@ -15826,7 +15815,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &656403033
 GameObject:
@@ -16210,6 +16199,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 703456135}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: setInactive
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 375617564}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 703456135}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ToggleUI
         m_Mode: 1
         m_Arguments:
@@ -16283,7 +16284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 1805372050}
-  thingToMakeInactive: {fileID: 866218731}
   a_MenuAudioClips:
   - {fileID: 8300000, guid: 4fb573d4802ed8f42a732b19a4b9f2e8, type: 3}
   a_GoIntoGame: {fileID: 0}
@@ -17596,7 +17596,7 @@ RectTransform:
   - {fileID: 888105872}
   - {fileID: 7605808}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -17715,7 +17715,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &867272019
 GameObject:
@@ -17822,7 +17822,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &888105871
 GameObject:
@@ -17915,8 +17915,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdcb0f6f3defe341b1d6ef405afd566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingToToggle: {fileID: 1641494002}
-  thingToMakeInactive: {fileID: 0}
+  thingToToggle: {fileID: 0}
   a_MenuAudioClips: []
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &891376970
@@ -19872,6 +19871,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1101528213}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: setInactive
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 375617564}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1101528213}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ToggleUI
         m_Mode: 1
         m_Arguments:
@@ -19945,7 +19956,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 866218731}
-  thingToMakeInactive: {fileID: 1805372050}
   a_MenuAudioClips:
   - {fileID: 8300000, guid: 4fb573d4802ed8f42a732b19a4b9f2e8, type: 3}
   a_GoIntoGame: {fileID: 0}
@@ -21372,6 +21382,36 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -12, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -11, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
+  - first: {x: -10, y: -4, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 6
+      m_TileSpriteIndex: 6
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741825
   - first: {x: -29, y: -3, z: 0}
     second:
       serializedVersion: 2
@@ -21566,7 +21606,7 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 13
     m_Data: {fileID: 11400000, guid: e2ab2a9b21f6bdd4a87b3e78f03029eb, type: 2}
-  - m_RefCount: 32
+  - m_RefCount: 35
     m_Data: {fileID: 11400000, guid: e79bed15b4b537247886fa3f5cdf3ae6, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 0
@@ -21581,10 +21621,10 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 13
     m_Data: {fileID: 556816665, guid: 2d6b64506578ada4aa9fc79c92cbde7b, type: 3}
-  - m_RefCount: 32
+  - m_RefCount: 35
     m_Data: {fileID: 1152475541, guid: 2d6b64506578ada4aa9fc79c92cbde7b, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 45
+  - m_RefCount: 48
     m_Data:
       e00: 1
       e01: 0
@@ -21603,7 +21643,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 45
+  - m_RefCount: 48
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -22039,7 +22079,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1207780214
 GameObject:
@@ -22230,65 +22270,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1227533448
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -16.70803
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.6643686
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867477, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8059662820617867478, guid: c060d6110b3f047479848fe130177197, type: 3}
-      propertyPath: m_Name
-      value: Pawn
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: c060d6110b3f047479848fe130177197, type: 3}
 --- !u!1 &1240195506
 GameObject:
   m_ObjectHideFlags: 0
@@ -23046,7 +23027,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361439267
 GameObject:
@@ -24673,7 +24654,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1641494005
 MonoBehaviour:
@@ -24687,8 +24668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdcb0f6f3defe341b1d6ef405afd566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingToToggle: {fileID: 7605807}
-  thingToMakeInactive: {fileID: 0}
+  thingToToggle: {fileID: 0}
   a_MenuAudioClips: []
   a_GoIntoGame: {fileID: 0}
 --- !u!1 &1660180951
@@ -25702,7 +25682,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1808793800
 GameObject:
@@ -26199,8 +26179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdcb0f6f3defe341b1d6ef405afd566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingToToggle: {fileID: 888105871}
-  thingToMakeInactive: {fileID: 1831368355}
+  thingToToggle: {fileID: 0}
   a_MenuAudioClips:
   - {fileID: 8300000, guid: 4fb573d4802ed8f42a732b19a4b9f2e8, type: 3}
   a_GoIntoGame: {fileID: 0}
@@ -27844,7 +27823,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1949245342
 MonoBehaviour:
@@ -28387,7 +28366,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2043747642
 GameObject:
@@ -30150,7 +30129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  thingToMakeInactive: {fileID: 0}
   a_MenuAudioClips:
   - {fileID: 8300000, guid: 614d39e619e25114899e6350c9019148, type: 3}
   a_GoIntoGame: {fileID: 0}

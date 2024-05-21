@@ -44,16 +44,25 @@ public class PlaceDefence : MonoBehaviour
                 //Instantiate(DefencePrefab, hit.point, transform.rotation);
                 if (instantiatedObject.name.Substring(0,4) != "Pawn")
                 {
-                    Debug.Log("placing normal defence");
                     DM.addDefence(instantiatedObject);
+                    savePosition(instantiatedObject);
+
+                    if (SO_pawnLocations.gameObjectList.Count > 0)
+                    {
+                        Debug.Log("making pawn go to build");
+                        pawnScript = SO_pawnLocations.gameObjectList[Random.Range(0, SO_pawnLocations.gameObjectList.Count)].GetComponent<Pawn>();
+                        SO_pawnLocations.gameObjectList.Remove(pawnScript.gameObject);
+                        pawnScript.gameObject.SetActive(true);
+                        pawnScript.goingToBuild = true;
+                        pawnScript.buildLocation = hit.point;
+                        //pawnScript.goToBuild(instantiatedObject.transform.position);
+                    }
                 }
                 else
                 {
-                    Debug.Log("placing pawn");
+                    //Debug.Log("building pawn");
                     //deploy pawn to build
-                    savePosition(instantiatedObject);
-                    pawnScript = SO_pawnLocations.gameObjectList[Random.Range(0, SO_pawnLocations.gameObjectList.Count)].GetComponent<Pawn>();
-                    pawnScript.goToBuild(hit.point);
+                    SO_pawnLocations.gameObjectList.Add(instantiatedObject);
                 }
                 pointScript.totalPoints -= DefenceCost;
                 pointScript.UpdatePointsText();
@@ -67,7 +76,7 @@ public class PlaceDefence : MonoBehaviour
     }
     private void savePosition(GameObject GOToAdd)
     {
-        Debug.Log(GOToAdd.name);
+        //Debug.Log(GOToAdd.name);
         if (this.name == "----PlacePawn----")
         {
             Debug.Log("addding to gameobejct list");

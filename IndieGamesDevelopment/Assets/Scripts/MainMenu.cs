@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject thingToToggle;
-    [SerializeField] private GameObject thingToMakeInactive;
+    //[SerializeField] private GameObject thingToMakeInactive;
 
     [SerializeField] private AudioClip[] a_MenuAudioClips;
     [SerializeField] private AudioClip a_GoIntoGame;
@@ -55,6 +55,8 @@ public class MainMenu : MonoBehaviour
     public void NextWave()
     {
         this.gameObject.SetActive(false);
+        //set all buildings as complete
+
     }
     public void setInactive(GameObject thingToMakeInactive)
     {

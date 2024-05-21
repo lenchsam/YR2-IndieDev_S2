@@ -13,6 +13,9 @@ public class Pawn : MonoBehaviour
     private bool isBuilding = false;
     private List<Transform> houseLocations = new List<Transform>();
 
+    public bool goingToBuild = false;
+    public Vector2 buildLocation;
+
     [Header("MovementSettings")]
     [SerializeField] private float movementSpeed = 3f;
 
@@ -29,11 +32,15 @@ public class Pawn : MonoBehaviour
             goToHouse();
         }
 
+        if (goingToBuild)
+        {
+            goToBuild(buildLocation);
+        }
         if (isBuilding)
             anim.SetBool("isBuilding", true);
         else
         {
-            goToHouse();
+            //goToHouse();
             anim.SetBool("isBuilding", false);
         }
     }
@@ -54,6 +61,7 @@ public class Pawn : MonoBehaviour
 
         if (Vector3.Distance(transform.position, buildLocation) < 0.001f)
         {
+            Debug.Log("CURRENTLY BUILDING");
             isBuilding = true;
         }
     }
@@ -65,6 +73,7 @@ public class Pawn : MonoBehaviour
 
         if (Vector3.Distance(transform.position, moveTo.position) < 0.001f)
         {
+            atHouse = true;
             gameObject.SetActive(false);
         }
     }

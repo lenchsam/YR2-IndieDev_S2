@@ -1,28 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Pawn : MonoBehaviour
 {
-    [SerializeField] private ScriptableObject pawnLocations;
-
+    [SerializeField] private WaveScriptableObject pawnLocations;
+    [SerializeField] private Button continueToWaveButton;
     private Animator anim;
     private bool gotPosition = false;
     private Transform moveTo;
     private bool atHouse;
     private bool isBuilding = false;
+    private bool newRound = false;
     private List<Transform> houseLocations = new List<Transform>();
 
-    public bool goingToBuild = false;
-    public Vector2 buildLocation;
+    [HideInInspector] public bool goingToBuild = false;
+    [HideInInspector] public Vector2 buildLocation;
 
-    [Header("MovementSettings")]
     [SerializeField] private float movementSpeed = 3f;
 
     void Start()
     {
+        continueToWaveButton = GameObject.Find("NextWave").GetComponent<Button>();
         anim = GetComponent<Animator>();
         AddHouseLocations(GameObject.Find("HouseParent").transform, ref houseLocations);
+
+        continueToWaveButton.onClick.AddListener(() => stoppedBuilding()); //listen to button click.
     }
     
     void Update()
@@ -38,9 +43,15 @@ public class Pawn : MonoBehaviour
         }
         if (isBuilding)
             anim.SetBool("isBuilding", true);
-        else
+        if(newRound)
         {
-            //goToHouse();
+            goToHouse();
+            //Debug.Log("ADSFLKNASVDBJASDFJ");
+            if (!pawnLocations.gameObjectList.Contains(gameObject))
+            {
+                pawnLocations.gameObjectList.Add(gameObject);
+            }
+            //pawnLocations.gameObjectList.Add(gameObject);
             anim.SetBool("isBuilding", false);
         }
     }
@@ -55,19 +66,20 @@ public class Pawn : MonoBehaviour
     }
     public void goToBuild(Vector2 buildLocation)
     {
-        Debug.Log("GOING TO BUILD!!!!!!!!!!!!!");
+        //Debug.Log("GOING TO BUILD!!!!!!!!!!!!!");
         var step = movementSpeed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, buildLocation, step);
 
         if (Vector3.Distance(transform.position, buildLocation) < 0.001f)
         {
-            Debug.Log("CURRENTLY BUILDING");
+            //Debug.Log("CURRENTLY BUILDING");
             isBuilding = true;
         }
     }
     private void goTo(Transform moveTo)
     {
         //vectro3 move towards
+        Debug.Log("moving towards house");
         var step = movementSpeed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, moveTo.position, step);
 
@@ -75,14 +87,25 @@ public class Pawn : MonoBehaviour
         {
             atHouse = true;
             gameObject.SetActive(false);
+            if (newRound)
+            {
+                newRound = false;
+            }
         }
     }
-    protected void AddHouseLocations(Transform parent, ref List<Transform> list)
+    private void AddHouseLocations(Transform parent, ref List<Transform> list)
     {
         foreach (Transform child in parent)
         {
             list.Add(child);
             AddHouseLocations(child, ref list);
         }
+    }
+    private void stoppedBuilding()
+    {
+        //Debug.Log("EVENT HAS BEEN LISTENED TO");
+        isBuilding = false;
+        goingToBuild = false;
+        newRound = true;
     }
 }

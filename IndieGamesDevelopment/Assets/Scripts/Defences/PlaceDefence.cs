@@ -49,9 +49,10 @@ public class PlaceDefence : MonoBehaviour
 
                     if (SO_pawnLocations.gameObjectList.Count > 0)
                     {
+                        //send pawn to build defence
                         Debug.Log("making pawn go to build");
                         pawnScript = SO_pawnLocations.gameObjectList[Random.Range(0, SO_pawnLocations.gameObjectList.Count)].GetComponent<Pawn>();
-                        SO_pawnLocations.gameObjectList.Remove(pawnScript.gameObject);
+                        SO_pawnLocations.gameObjectList.Remove(pawnScript.gameObject); //remove pawn from list so it isnt picked again to build a defence
                         pawnScript.gameObject.SetActive(true);
                         pawnScript.goingToBuild = true;
                         pawnScript.buildLocation = hit.point;
@@ -60,7 +61,7 @@ public class PlaceDefence : MonoBehaviour
                 }
                 else
                 {
-                    //Debug.Log("building pawn");
+                    Debug.Log("building pawn");
                     //deploy pawn to build
                     SO_pawnLocations.gameObjectList.Add(instantiatedObject);
                 }

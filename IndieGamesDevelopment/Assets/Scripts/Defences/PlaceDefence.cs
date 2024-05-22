@@ -38,12 +38,12 @@ public class PlaceDefence : MonoBehaviour
             //if hit something
             if (hit.collider != null && hit.collider.tag == "Ground")
             {
-                //instantiate defence and update total points
                 GameObject instantiatedObject = Instantiate(DefencePrefab, hit.point, transform.rotation);
                 //Debug.Log("Target Position: " + hit.collider.gameObject.transform.position);
                 //Instantiate(DefencePrefab, hit.point, transform.rotation);
                 if (instantiatedObject.name.Substring(0,4) != "Pawn")
                 {
+
                     DM.addDefence(instantiatedObject);
                     savePosition(instantiatedObject);
 
@@ -57,6 +57,12 @@ public class PlaceDefence : MonoBehaviour
                         pawnScript.goingToBuild = true;
                         pawnScript.buildLocation = hit.point;
                         //pawnScript.goToBuild(instantiatedObject.transform.position);
+                    }
+                    else
+                    {
+                        Destroy(instantiatedObject);
+                        pointScript.totalPoints += DefenceCost;
+                        pointScript.UpdatePointsText();
                     }
                 }
                 else

@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9339c123424f740a850f6b716c16e7, type: 3}
   m_Name: PawnLocations
   m_EditorClassIdentifier: 
-  gameObjectList: []
+  gameObjectList:
+  - {fileID: 0}
+  - {fileID: 0}

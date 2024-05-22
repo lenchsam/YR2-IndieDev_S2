@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlaceDefence : MonoBehaviour
 {
@@ -18,8 +19,10 @@ public class PlaceDefence : MonoBehaviour
 
     private GameManager gameManager;
 
+
     private void Start()
     {
+
         AM = GameObject.Find("----AudioManager----").GetComponent<AudioManager>();
         //pointScript = GameObject.Find("PointsUpdator").GetComponent<Points>();
     }
@@ -43,7 +46,6 @@ public class PlaceDefence : MonoBehaviour
                 //Instantiate(DefencePrefab, hit.point, transform.rotation);
                 if (instantiatedObject.name.Substring(0,4) != "Pawn")
                 {
-
                     DM.addDefence(instantiatedObject);
                     savePosition(instantiatedObject);
 

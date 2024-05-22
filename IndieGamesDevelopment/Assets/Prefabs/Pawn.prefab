@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3646558479311794748}
   m_Layer: 0
   m_Name: Pawn
-  m_TagString: Untagged
+  m_TagString: pawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
+  continueToWaveButton: {fileID: 0}
   goingToBuild: 0
   buildLocation: {x: 0, y: 0}
   movementSpeed: 2

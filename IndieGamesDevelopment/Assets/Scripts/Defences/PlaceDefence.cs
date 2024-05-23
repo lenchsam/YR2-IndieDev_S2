@@ -14,6 +14,8 @@ public class PlaceDefence : MonoBehaviour
     private AudioManager AM;
     [SerializeField] private AudioClip rejectAudio;
     [SerializeField] private WaveScriptableObject SO_pawnLocations;
+    [SerializeField] private AmountOfPawnsScriptableObject SO_PawnAmount;
+    [SerializeField] private DefenceManager S_DefenceManager;
 
     private Pawn pawnScript;
 
@@ -49,16 +51,18 @@ public class PlaceDefence : MonoBehaviour
                     DM.addDefence(instantiatedObject);
                     savePosition(instantiatedObject);
 
-                    if (SO_pawnLocations.gameObjectList.Count > 0)
+                    if (SO_pawnLocations.gameObjectList.Count > 0) //if none of the elements in the list have a sprite renderer active
                     {
                         //send pawn to build defence
                         Debug.Log("making pawn go to build");
                         pawnScript = SO_pawnLocations.gameObjectList[Random.Range(0, SO_pawnLocations.gameObjectList.Count)].GetComponent<Pawn>();
                         SO_pawnLocations.gameObjectList.Remove(pawnScript.gameObject); //remove pawn from list so it isnt picked again to build a defence
-                        pawnScript.gameObject.SetActive(true);
+                        pawnScript.gameObject.GetComponent<SpriteRenderer>().enabled = true;
                         pawnScript.goingToBuild = true;
                         pawnScript.buildLocation = hit.point;
                         //pawnScript.goToBuild(instantiatedObject.transform.position);
+
+                        S_DefenceManager.updateBuilderText();
                     }
                     else
                     {
@@ -69,9 +73,11 @@ public class PlaceDefence : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("building pawn");
+                    //Debug.Log("building pawn");
                     //deploy pawn to build
+                    SO_PawnAmount.amountOfPawns++;
                     SO_pawnLocations.gameObjectList.Add(instantiatedObject);
+                    S_DefenceManager.updateBuilderText();
                 }
                 pointScript.totalPoints -= DefenceCost;
                 pointScript.UpdatePointsText();

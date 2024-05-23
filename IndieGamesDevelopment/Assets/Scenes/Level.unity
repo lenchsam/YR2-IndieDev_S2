@@ -13028,6 +13028,8 @@ MonoBehaviour:
     m_Bits: 1088
   rejectAudio: {fileID: 8300000, guid: 0f577afd6fb21434b96a9f45e5d8f3b5, type: 3}
   SO_pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
+  SO_PawnAmount: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
+  S_DefenceManager: {fileID: 1070556042}
 --- !u!4 &375617566
 Transform:
   m_ObjectHideFlags: 0
@@ -17840,6 +17842,8 @@ MonoBehaviour:
     m_Bits: 1088
   rejectAudio: {fileID: 8300000, guid: 0f577afd6fb21434b96a9f45e5d8f3b5, type: 3}
   SO_pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
+  SO_PawnAmount: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
+  S_DefenceManager: {fileID: 1070556042}
 --- !u!4 &866218733
 Transform:
   m_ObjectHideFlags: 0
@@ -19639,6 +19643,7 @@ MonoBehaviour:
   Morter: {fileID: 1367965634312568813, guid: 2bbfd65da9d238a48a98a9a88e370822, type: 3}
   totalBuilders: {fileID: 779006931}
   pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
+  SO_PawnAmount: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
 --- !u!1 &1082703244
 GameObject:
   m_ObjectHideFlags: 0
@@ -25809,6 +25814,8 @@ MonoBehaviour:
     m_Bits: 1088
   rejectAudio: {fileID: 8300000, guid: 0f577afd6fb21434b96a9f45e5d8f3b5, type: 3}
   SO_pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
+  SO_PawnAmount: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
+  S_DefenceManager: {fileID: 1070556042}
 --- !u!4 &1805372052
 Transform:
   m_ObjectHideFlags: 0

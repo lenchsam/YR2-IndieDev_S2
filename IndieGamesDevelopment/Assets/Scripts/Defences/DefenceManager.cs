@@ -12,7 +12,8 @@ public class DefenceManager : MonoBehaviour
     [SerializeField] private GameObject Morter;
     [SerializeField] private TMP_Text totalBuilders;
     [SerializeField] private WaveScriptableObject pawnLocations;
-    private void Update()
+    [SerializeField] private AmountOfPawnsScriptableObject SO_PawnAmount;
+    private void Start()
     {
         updateBuilderText();
     }
@@ -44,15 +45,9 @@ public class DefenceManager : MonoBehaviour
         if(scene.name == "Level")
             placeAllDefences();
     }
-    private void updateBuilderText()
+    public void updateBuilderText()
     {
         Debug.Log("EVENT CALLLLLLEEEDDDD");
-        totalBuilders.text = pawnLocations.gameObjectList.Count.ToString() + "/" + allPawns();
-    }
-    private string allPawns()//gets the total amount of pawns in the project
-    {
-        GameObject[] GOWT;
-        GOWT = GameObject.FindGameObjectsWithTag("pawn");
-        return GOWT.Length.ToString();
+        totalBuilders.text = pawnLocations.gameObjectList.Count.ToString() + "/" + SO_PawnAmount.amountOfPawns.ToString();
     }
 }

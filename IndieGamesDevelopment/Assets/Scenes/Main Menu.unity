@@ -2439,6 +2439,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707734764}
   m_CullTransparentMesh: 0
+--- !u!1 &709342740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 709342742}
+  - component: {fileID: 709342741}
+  m_Layer: 0
+  m_Name: INITIALISE SO
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &709342741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709342740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8692261b4ecf1ba4a9d92f2554d11412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SO_pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
+  SO_amountOfPawns: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
+--- !u!4 &709342742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 709342740}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1034.2776, y: 733.88525, z: 8.944239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &745095953
 GameObject:
   m_ObjectHideFlags: 0
@@ -3207,7 +3253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 1368159575}
-  thingToMakeInactive: {fileID: 0}
   a_MenuAudioClips: []
   a_GoIntoGame: {fileID: 0}
 --- !u!1 &922696325
@@ -3469,7 +3514,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  thingToMakeInactive: {fileID: 0}
   a_MenuAudioClips: []
   a_GoIntoGame: {fileID: 0}
 --- !u!1 &1035923733
@@ -6855,7 +6899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 1371944853}
-  thingToMakeInactive: {fileID: 0}
   a_MenuAudioClips: []
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1978980402

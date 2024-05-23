@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce9339c123424f740a850f6b716c16e7, type: 3}
-  m_Name: PawnLocations
+  m_Script: {fileID: 11500000, guid: e81d69152af126b439e7d11a1d654800, type: 3}
+  m_Name: AmountOfPawns
   m_EditorClassIdentifier: 
-  gameObjectList: []
+  amountOfPawns: 0

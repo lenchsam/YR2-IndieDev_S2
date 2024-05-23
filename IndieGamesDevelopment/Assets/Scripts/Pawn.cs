@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class Pawn : MonoBehaviour
 {
     [SerializeField] private WaveScriptableObject pawnLocations;
+    //[SerializeField] private AmountOfPawnsScriptableObject SO_PawnAmount;
     [SerializeField] private Button continueToWaveButton;
     private Animator anim;
     private bool gotPosition = false;
@@ -86,7 +87,7 @@ public class Pawn : MonoBehaviour
         if (Vector3.Distance(transform.position, moveTo.position) < 0.001f)
         {
             atHouse = true;
-            gameObject.SetActive(false);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
             if (newRound)
             {
                 newRound = false;

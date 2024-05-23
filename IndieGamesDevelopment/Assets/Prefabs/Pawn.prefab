@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
+  SO_PawnAmount: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
   continueToWaveButton: {fileID: 0}
   goingToBuild: 0
   buildLocation: {x: 0, y: 0}

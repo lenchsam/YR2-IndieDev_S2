@@ -18057,7 +18057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdcb0f6f3defe341b1d6ef405afd566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingToToggle: {fileID: 0}
+  thingToToggle: {fileID: 1641494002}
   a_MenuAudioClips: []
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &891376970
@@ -24813,7 +24813,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bdcb0f6f3defe341b1d6ef405afd566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingToToggle: {fileID: 0}
+  thingToToggle: {fileID: 7605807}
   a_MenuAudioClips: []
   a_GoIntoGame: {fileID: 0}
 --- !u!1 &1660180951

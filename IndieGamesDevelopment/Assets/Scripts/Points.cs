@@ -18,10 +18,9 @@ public class Points : MonoBehaviour
 
     private void Start()
     {
+        //gets all components needed to run the script
         _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
-
         _PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
-
         _farmingManager = GameObject.Find("----FarmingManager----").GetComponent<FarmingManager>();
 
         UpdatePointsText();

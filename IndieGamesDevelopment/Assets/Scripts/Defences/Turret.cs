@@ -2,13 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+using UnityEngine.UI;
 
 public class Turret : SingularDefence
 {
     private Transform primaryTarget;
     private float time;
-    
+    [SerializeField] private SpriteRenderer SRtoActivate;
+    [SerializeField] private GameObject GOtoActivate;
+    [SerializeField] private GameObject setInactive;
+
+    private Button continueToWaveButton; //to get the button click event in code
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag != "Enemy")
@@ -41,6 +46,9 @@ public class Turret : SingularDefence
         AM = GameObject.Find("----AudioManager----").GetComponent<AudioManager>();
         AS = gameObject.GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
+
+        continueToWaveButton = GameObject.Find("NextWave").GetComponent<Button>();
+        continueToWaveButton.onClick.AddListener(() => activateDefence()); //listen to button click.
     }
     private void Update()
     {
@@ -85,8 +93,11 @@ public class Turret : SingularDefence
         if (targets.Count != 0)
             primaryTarget = targets[0];
     }
-    private void checkDirection()
+    private void activateDefence()
     {
-
+        //Debug.Log("LISTENED TO EVENTTTTTTT");
+        setInactive.SetActive(false);
+        SRtoActivate.enabled = true;
+        GOtoActivate.SetActive(true);
     }
 }

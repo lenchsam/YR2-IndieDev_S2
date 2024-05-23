@@ -408,6 +408,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1049097677181124745}
     m_Modifications:
     - target: {fileID: 3145930339509849796, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3145930339509849796, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}
       propertyPath: m_SortingOrder
       value: 10
       objectReference: {fileID: 0}
@@ -421,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3145930339509849797, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3145930339509849797, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}
       propertyPath: m_TagString
@@ -627,6 +631,14 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 34aca33a4fa78a74a9072d6aff6dd682, type: 3}
   - {fileID: 8300000, guid: 29afc7d7d24358b4e815a08171df1aee, type: 3}
   - {fileID: 8300000, guid: 40a6af4a88357b841b7e9acb04ae571a, type: 3}
+  SRtoActivate: {fileID: 1314518843877670593}
+  GOtoActivate: {fileID: 1037046274784538148}
+  setInactive: {fileID: 7116776664148636288}
+--- !u!212 &1314518843877670593 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3145930339509849796, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}
+  m_PrefabInstance: {fileID: 4149659229436342277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1314518843877670594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3145930339509849799, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}

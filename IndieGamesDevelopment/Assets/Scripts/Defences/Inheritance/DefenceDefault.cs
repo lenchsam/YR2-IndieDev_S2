@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static GameManager;
 
 public class DefenceDefault : MonoBehaviour
 {
@@ -15,7 +14,6 @@ public class DefenceDefault : MonoBehaviour
 
     [Header("Animations")]
     [SerializeField] protected Animator anim;
-
     protected GameObject currentAura;
 
     public enum effectType

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DefenceManager : MonoBehaviour
 {
@@ -13,8 +14,12 @@ public class DefenceManager : MonoBehaviour
     [SerializeField] private TMP_Text totalBuilders;
     [SerializeField] private WaveScriptableObject pawnLocations;
     [SerializeField] private AmountOfPawnsScriptableObject SO_PawnAmount;
+
+    private Button continueToWaveButton; //to get the button click event in code
     private void Start()
     {
+        continueToWaveButton = GameObject.Find("NextWave").GetComponent<Button>();
+        continueToWaveButton.onClick.AddListener(() => Invoke("updateBuilderText", 1)); //listen to button click.
         updateBuilderText();
     }
     public void addDefence(GameObject defence)
@@ -35,7 +40,6 @@ public class DefenceManager : MonoBehaviour
             foreach(Vector3 defencePosition in DefencePositions)
             {
                 Instantiate(defence, defencePosition, Quaternion.identity);
-                
             }
         }
     }
@@ -45,9 +49,10 @@ public class DefenceManager : MonoBehaviour
         if(scene.name == "Level")
             placeAllDefences();
     }
-    public void updateBuilderText()
+    public void updateBuilderText()//updates the UI text for the amount of builders the player has left/total
     {
-        Debug.Log("EVENT CALLLLLLEEEDDDD");
+
+        //Debug.Log("EVENT CALLLLLLEEEDDDD");
         totalBuilders.text = pawnLocations.gameObjectList.Count.ToString() + "/" + SO_PawnAmount.amountOfPawns.ToString();
     }
 }

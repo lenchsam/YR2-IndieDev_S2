@@ -7,12 +7,12 @@ using UnityEngine.UI;
 
 public class Pawn : MonoBehaviour
 {
-    [SerializeField] private WaveScriptableObject pawnLocations;
+    [SerializeField] private WaveScriptableObject pawnLocations; //holds list of all pawn positions
     //[SerializeField] private AmountOfPawnsScriptableObject SO_PawnAmount;
-    [SerializeField] private Button continueToWaveButton;
+    private Button continueToWaveButton; //to get the button click event in code
     private Animator anim;
     private bool gotPosition = false;
-    private Transform moveTo;
+    private Transform moveTo; //location of house for the pawn to move to
     private bool atHouse;
     private bool isBuilding = false;
     private bool newRound = false;
@@ -46,13 +46,12 @@ public class Pawn : MonoBehaviour
             anim.SetBool("isBuilding", true);
         if(newRound)
         {
-            goToHouse();
             //Debug.Log("ADSFLKNASVDBJASDFJ");
             if (!pawnLocations.gameObjectList.Contains(gameObject))
             {
                 pawnLocations.gameObjectList.Add(gameObject);
             }
-            //pawnLocations.gameObjectList.Add(gameObject);
+            goToHouse();
             anim.SetBool("isBuilding", false);
         }
     }
@@ -71,6 +70,7 @@ public class Pawn : MonoBehaviour
         var step = movementSpeed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, buildLocation, step);
 
+        //pawnLocations.gameObjectList.Add(gameObject);
         if (Vector3.Distance(transform.position, buildLocation) < 0.001f)
         {
             //Debug.Log("CURRENTLY BUILDING");
@@ -80,7 +80,7 @@ public class Pawn : MonoBehaviour
     private void goTo(Transform moveTo)
     {
         //vectro3 move towards
-        Debug.Log("moving towards house");
+        //Debug.Log("moving towards house");
         var step = movementSpeed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, moveTo.position, step);
 

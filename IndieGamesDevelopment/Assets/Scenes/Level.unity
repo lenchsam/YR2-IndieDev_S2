@@ -15443,7 +15443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &614855740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28027,7 +28027,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1949245341}
   - component: {fileID: 1949245342}
-  - component: {fileID: 1949245343}
   m_Layer: 0
   m_Name: ----Spawner----
   m_TagString: Untagged
@@ -28067,24 +28066,12 @@ MonoBehaviour:
   EnemyWaves:
   - {fileID: 11400000, guid: d1c2b26d2e2f02c418793f657d590aa9, type: 2}
   - {fileID: 11400000, guid: 405fcbf7d4d883a4e99eb871d6fb8509, type: 2}
+  - {fileID: 11400000, guid: 37e03f1515bfccf44aac821ba6499ed4, type: 2}
+  - {fileID: 11400000, guid: f573f929590f13f4da7c1efdefea7e4c, type: 2}
+  - {fileID: 11400000, guid: 6e6d8830682533843b220c4beaa44923, type: 2}
   continueToNext: {fileID: 589646147}
   farmingButton: {fileID: 520831791}
   _points: {fileID: 1899752580}
---- !u!114 &1949245343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1949245339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6916b10dd49cbea468eae7b3c6d3b682, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  difficultyRatingPerEnemy: []
-  NextRoundDifficulty: 0
-  SO_Wave: {fileID: 0}
 --- !u!1 &1962720746
 GameObject:
   m_ObjectHideFlags: 0

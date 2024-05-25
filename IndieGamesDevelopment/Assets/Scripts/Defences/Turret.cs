@@ -8,9 +8,6 @@ public class Turret : SingularDefence
 {
     private Transform primaryTarget;
     private float time;
-    [SerializeField] private SpriteRenderer SRtoActivate;
-    [SerializeField] private GameObject GOtoActivate;
-    [SerializeField] private GameObject setInactive;
 
     private Button continueToWaveButton; //to get the button click event in code
 
@@ -93,11 +90,11 @@ public class Turret : SingularDefence
         if (targets.Count != 0)
             primaryTarget = targets[0];
     }
-    private void activateDefence()
-    {
-        //Debug.Log("LISTENED TO EVENTTTTTTT");
-        setInactive.SetActive(false);
-        SRtoActivate.enabled = true;
-        GOtoActivate.SetActive(true);
-    }
+    //private void activateDefence()
+    //{
+    //    //Debug.Log("LISTENED TO EVENTTTTTTT");
+    //    setInactive.SetActive(false);
+    //    SRtoActivate.enabled = true;
+    //    GOtoActivate.SetActive(true);
+    //}
 }

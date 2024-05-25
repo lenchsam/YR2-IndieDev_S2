@@ -16,6 +16,10 @@ public class DefenceDefault : MonoBehaviour
     [SerializeField] protected Animator anim;
     protected GameObject currentAura;
 
+    [Header("Construction")]
+    [SerializeField] protected SpriteRenderer SRtoActivate;
+    [SerializeField] protected GameObject GOtoActivate;
+    [SerializeField] protected GameObject setInactive;
     public enum effectType
     {
         None,
@@ -53,5 +57,12 @@ public class DefenceDefault : MonoBehaviour
             effectTowers[0].SetActive(false);
             effectTowers[1].SetActive(false);
         }
+    }
+    protected void activateDefence()
+    {
+        //Debug.Log("LISTENED TO EVENTTTTTTT");
+        setInactive.SetActive(false);
+        SRtoActivate.enabled = true;
+        GOtoActivate.SetActive(true);
     }
 }

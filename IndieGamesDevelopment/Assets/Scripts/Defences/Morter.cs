@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static GameManager;
+using UnityEngine.UI;
 
 public class Morter : ExplosiveDefence
 {
@@ -9,9 +9,12 @@ public class Morter : ExplosiveDefence
     [SerializeField] private Transform firePosition;
     [SerializeField] private float damageRadius;
     [SerializeField] private ContactFilter2D contactFilter = new ContactFilter2D();
+    [SerializeField] private GameObject constructionGO;
     //[SerializeField] private GameObject chooseFirePosition;
 
     List<Collider2D> results = new List<Collider2D>();
+
+    private Button continueToWaveButton; //to get the button click event in code
 
     private bool isWaiting = false;
 
@@ -20,10 +23,13 @@ public class Morter : ExplosiveDefence
         Effects = GameObject.Find("----DamageEffects----").GetComponent<DamageEffects>();
         //chooseFirePosition = GameObject.Find("----ChangeFirePosition----");
         //chooseFirePosition.SetActive(true);
+
+        continueToWaveButton = GameObject.Find("NextWave").GetComponent<Button>();
+        continueToWaveButton.onClick.AddListener(() => activateDefence()); //listen to button click.
     }
     public void Update()
     {
-        if (isWaiting == false)
+        if (!isWaiting && constructionGO.activeSelf == false)
         {
             //Debug.Log("FIRE");
             StartCoroutine(fire());

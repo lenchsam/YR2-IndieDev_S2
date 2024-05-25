@@ -24,8 +24,4 @@ public class AudioManager : MonoBehaviour
     {
         AS.PlayOneShot(audioToPlay);
     }
-    public void ChangeBackgroundMusicVolume(float value)
-    {
-        gameObject.transform.GetChild(0).GetComponent<AudioSource>().volume = value;
-    }
 }

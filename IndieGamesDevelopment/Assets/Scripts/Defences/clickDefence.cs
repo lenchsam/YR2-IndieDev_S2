@@ -166,7 +166,7 @@ public class clickDefence : MonoBehaviour
             {
                 //is the currently active 
                 Debug.Log(children[i].name);
-                return i-1;
+                return i - 2;
             }
         }
         return 0;

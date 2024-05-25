@@ -15443,7 +15443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &614855740
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24780,7 +24780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defenceText: {fileID: 802764932}
   effectsDropdown: {fileID: 2115253088}
-  clickedDefenceUI: {fileID: 0}
+  clickedDefenceUI: {fileID: 7605807}
   LM:
     serializedVersion: 2
     m_Bits: 64

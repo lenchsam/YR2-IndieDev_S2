@@ -55,8 +55,6 @@ public class MainMenu : MonoBehaviour
     public void NextWave()
     {
         this.gameObject.SetActive(false);
-        //set all buildings as complete
-
     }
     public void setInactive(GameObject thingToMakeInactive)
     {

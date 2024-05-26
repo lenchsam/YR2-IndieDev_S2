@@ -5,6 +5,4 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
     public int CurrentWave = 0;
-
-    
 }

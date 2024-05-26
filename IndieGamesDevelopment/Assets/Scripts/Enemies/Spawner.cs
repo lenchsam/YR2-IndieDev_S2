@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
     private GameManager _gameManager;
 
     [SerializeField] private Button continueToNext;
-    [SerializeField] private Button farmingButton;
+    [SerializeField] private GameObject DefenceUI;
     [SerializeField] private Points _points;
 
     private void Start()
@@ -49,17 +49,15 @@ public class Spawner : MonoBehaviour
         }
         _points.nextRound = true;
         _waitForWave = true;
-        continueToNext.gameObject.SetActive(true); 
-        farmingButton.gameObject.SetActive(true);
+        continueToNext.gameObject.SetActive(true);
+        DefenceUI.SetActive(true);
         numWave++;
     }
     public void ContinueNextWave()
     {
-        Debug.Log("running");
         if (numWave < EnemyWaves.Length)
         {
             _waitForWave = false;
-            Debug.Log("continue to next wave");
         }
     }
 }

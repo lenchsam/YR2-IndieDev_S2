@@ -4,8 +4,6 @@ using UnityEngine;
 using TMPro;
 using System;
 using static DefenceDefault;
-using UnityEditor.Animations;
-using System.IO;
 
 public class clickDefence : MonoBehaviour
 {
@@ -43,7 +41,7 @@ public class clickDefence : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero, Mathf.Infinity, LM);
             
             //if hit something
-            if (hit.collider != null && hit.collider.gameObject.tag == "Defence")
+            if (hit.collider != null && hit.collider.gameObject.tag == "Defence" && !hit.collider.gameObject.transform.GetChild(0).gameObject.activeSelf)
             {
                 selectedDefence = hit.collider.gameObject;
                 //detect what enemy has been clicked
@@ -55,7 +53,6 @@ public class clickDefence : MonoBehaviour
                 }
                 else if (hit.collider.gameObject.name == "Morter(Clone)")
                 {
-                    Debug.Log("clicked morter");
                     theHitObject = hit.collider;
                     MorterScript = hit.collider.gameObject.GetComponentInChildren<Morter>();
                     ChooseFirePosition.SetActive(true);

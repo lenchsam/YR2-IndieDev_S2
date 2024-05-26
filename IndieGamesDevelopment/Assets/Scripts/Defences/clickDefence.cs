@@ -55,10 +55,11 @@ public class clickDefence : MonoBehaviour
                 }
                 else if (hit.collider.gameObject.name == "Morter(Clone)")
                 {
+                    Debug.Log("clicked morter");
                     theHitObject = hit.collider;
                     MorterScript = hit.collider.gameObject.GetComponentInChildren<Morter>();
                     ChooseFirePosition.SetActive(true);
-                    ChangeFirePointScript.firePoint = theHitObject.transform.GetChild(0).gameObject;
+                    ChangeFirePointScript.firePoint = theHitObject.transform.GetChild(5).gameObject;
                 }
                 menuScript.ToggleUI(); // enable ui for the defence
 

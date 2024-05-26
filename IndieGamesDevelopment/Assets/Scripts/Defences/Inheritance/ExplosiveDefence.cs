@@ -6,7 +6,6 @@ public class ExplosiveDefence : DefenceDefault
 {
     protected DamageEffects Effects;
     [SerializeField] protected GameObject explosionEffect;
-    protected bool isBuilt = false;
     protected List<Collider2D> DTExplosive(float radius, Vector2 damagePosition, ContactFilter2D contactFilter, ref List<Collider2D> results)
     {
         int detected = Physics2D.OverlapCircle(damagePosition, radius, contactFilter, results);

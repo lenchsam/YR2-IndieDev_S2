@@ -11,7 +11,6 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private AudioClip[] a_MenuAudioClips;
     [SerializeField] private AudioClip a_GoIntoGame;
-
     protected AudioManager AM;
 
     private Spawner spawnerScript;

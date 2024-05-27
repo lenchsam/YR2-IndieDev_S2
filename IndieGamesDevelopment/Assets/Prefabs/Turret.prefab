@@ -498,7 +498,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.022143364, y: 0}
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 4
 --- !u!82 &2472129927829259211
 AudioSource:
   m_ObjectHideFlags: 0

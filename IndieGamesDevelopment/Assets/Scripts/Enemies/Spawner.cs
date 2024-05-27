@@ -21,6 +21,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private GameObject DefenceUI;
     [SerializeField] private Points _points;
     [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
+    [SerializeField] private TextOnScreenScriptableObjects SO_Text;
 
     public UnityEvent E_waveFinished;
 
@@ -52,10 +53,9 @@ public class Spawner : MonoBehaviour
         }
         _points.nextRound = true;
         _waitForWave = true;
-        //continueToNext.gameObject.SetActive(true);
-        //DefenceUI.SetActive(true);
         SO_EnemyCounter.finishedSpawning = true;
         numWave++;
+        SO_Text.screenText = "Wave " + (numWave + 1).ToString() + " Starting";
     }
     public void ContinueNextWave()
     {

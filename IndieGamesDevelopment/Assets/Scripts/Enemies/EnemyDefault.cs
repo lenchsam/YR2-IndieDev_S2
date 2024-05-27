@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build.Reporting;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class EnemyDefault : MonoBehaviour
 {
@@ -18,6 +16,8 @@ public class EnemyDefault : MonoBehaviour
 
     [HideInInspector] public bool frozen = false;
     [SerializeField] protected int freezeTimer;
+    [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
+    [SerializeField] private Spawner spawnerScript;
 
     protected void moveTowardsPosition(Vector3 targetPosition)
     {
@@ -64,6 +64,9 @@ public class EnemyDefault : MonoBehaviour
         //is health is less than or equal to 0 destroy the enemy
         if (Health <= 0)
         {
+            SO_EnemyCounter.numberOfEnemies--;
+            if(SO_EnemyCounter.numberOfEnemies == 0)
+                Spawner.E_waveFinished.Invoke();
             Destroy(gameObject.transform.parent.gameObject);
         }
     }

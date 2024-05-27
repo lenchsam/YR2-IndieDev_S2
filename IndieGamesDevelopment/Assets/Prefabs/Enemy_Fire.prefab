@@ -186,6 +186,7 @@ MonoBehaviour:
   points: []
   frozen: 0
   freezeTimer: 1
+  SO_EnemyCounter: {fileID: 11400000, guid: deb447f6d9809ee45a959a80f1bc5150, type: 2}
 --- !u!95 &2254484752497033940
 Animator:
   serializedVersion: 4

@@ -127,6 +127,7 @@ MonoBehaviour:
   points: []
   frozen: 0
   freezeTimer: 1
+  SO_EnemyCounter: {fileID: 11400000, guid: deb447f6d9809ee45a959a80f1bc5150, type: 2}
 --- !u!61 &2657908973763765984
 BoxCollider2D:
   m_ObjectHideFlags: 0

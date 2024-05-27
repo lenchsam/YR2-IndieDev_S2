@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
@@ -21,6 +20,9 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Button continueToNext;
     [SerializeField] private GameObject DefenceUI;
     [SerializeField] private Points _points;
+    [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
+
+    public static UnityEvent E_waveFinished;
 
     private void Start()
     {
@@ -42,6 +44,7 @@ public class Spawner : MonoBehaviour
         {
             //spawns the enemeis in the scriptable objects
             Instantiate(EnemyWaves[currentWave].gameObjectList[j], spawnPosition.position, transform.rotation);
+            SO_EnemyCounter.numberOfEnemies++;
             //wait for set amount of seconds before spawning next enemy
             isWaiting = true;
             yield return new WaitForSeconds(TimeBetweenSpawns);
@@ -49,14 +52,16 @@ public class Spawner : MonoBehaviour
         }
         _points.nextRound = true;
         _waitForWave = true;
-        continueToNext.gameObject.SetActive(true);
-        DefenceUI.SetActive(true);
+        //continueToNext.gameObject.SetActive(true);
+        //DefenceUI.SetActive(true);
+        SO_EnemyCounter.finishedSpawning = true;
         numWave++;
     }
     public void ContinueNextWave()
     {
         if (numWave < EnemyWaves.Length)
         {
+            SO_EnemyCounter.finishedSpawning = false;
             _waitForWave = false;
         }
     }

@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
     [SerializeField] private float Health;
+
+    [Header("DeathScreenSettings")]
+    [SerializeField] private bool differentSceneOnDeath;
     [SerializeField] private string SceneName;
+    [SerializeField] private GameObject UIToActivate;
 
     private DefaultEnemy enemyScript = null;
 
@@ -40,6 +43,9 @@ public class Finish : MonoBehaviour
     private void Dead()
     {
         //just loads the player into the main menu, scene name means that the scene it loads the player into can be changed in the inspector.
-        SceneManager.LoadScene(SceneName);
+        if (differentSceneOnDeath)
+            SceneManager.LoadScene(SceneName);
+        else
+            UIToActivate.SetActive(true);
     }
 }

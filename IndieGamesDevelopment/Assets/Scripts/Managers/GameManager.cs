@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,9 +12,21 @@ public class GameManager : MonoBehaviour
     public int currentWave;
 
     public static event Action<GameState> OnStateChange;
+
+    [SerializeField] private Button continueToNext;
+    [SerializeField] private GameObject DefenceUI;
+    [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
     private void Start()
     {
         UpdateGameState(GameState.MainMenu);
+    }
+    private void Update()
+    {
+        if (SO_EnemyCounter.finishedSpawning && SO_EnemyCounter.numberOfEnemies == 0)
+        {
+            continueToNext.gameObject.SetActive(true);
+            DefenceUI.SetActive(true);
+        }
     }
     public void UpdateGameState(GameState newState)
     {
@@ -45,4 +58,4 @@ public class GameManager : MonoBehaviour
     Farming,
     Lose
     }
-}
+} 

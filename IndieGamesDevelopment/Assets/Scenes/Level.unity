@@ -21372,6 +21372,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   currentWave: 0
+  continueToNext: {fileID: 589646147}
+  DefenceUI: {fileID: 656964231}
+  SO_EnemyCounter: {fileID: 11400000, guid: deb447f6d9809ee45a959a80f1bc5150, type: 2}
 --- !u!1 &1131685036
 GameObject:
   m_ObjectHideFlags: 0

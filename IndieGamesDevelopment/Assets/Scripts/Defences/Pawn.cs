@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -55,6 +56,7 @@ public class Pawn : MonoBehaviour
     }
     private void goToHouse()
     {
+        //goingToBuild = false;
         if (!gotPosition)
         {
             moveTo = houseLocations[Random.Range(0, houseLocations.Count)];
@@ -64,6 +66,7 @@ public class Pawn : MonoBehaviour
     }
     public void goToBuild(Vector2 buildLocation)
     {
+        atHouse = true;
         //Debug.Log("GOING TO BUILD!!!!!!!!!!!!!");
         var step = movementSpeed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, buildLocation, step);

@@ -22,7 +22,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Points _points;
     [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
 
-    public static UnityEvent E_waveFinished;
+    public UnityEvent E_waveFinished;
 
     private void Start()
     {

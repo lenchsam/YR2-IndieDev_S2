@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DefaultEnemy : EnemyDefault
 {
-
     // Start is called before the first frame update
     void Start()
     {
+        spawnerScript = GameObject.Find("----Spawner----").GetComponent<Spawner>();
         done = true;
         counter = 1;
 

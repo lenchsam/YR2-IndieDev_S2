@@ -40,6 +40,7 @@ public class Turret : SingularDefence
     private void Start()
     {
         Effects = GameObject.Find("----DamageEffects----").GetComponent<DamageEffects>();
+        
         AM = GameObject.Find("----AudioManager----").GetComponent<AudioManager>();
         AS = gameObject.GetComponent<AudioSource>();
         anim = GetComponent<Animator>();

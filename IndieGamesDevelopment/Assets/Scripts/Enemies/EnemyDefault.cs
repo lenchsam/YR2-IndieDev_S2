@@ -17,7 +17,8 @@ public class EnemyDefault : MonoBehaviour
     [HideInInspector] public bool frozen = false;
     [SerializeField] protected int freezeTimer;
     [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
-    [SerializeField] private Spawner spawnerScript;
+
+    [SerializeField] protected Spawner spawnerScript;
 
     protected void moveTowardsPosition(Vector3 targetPosition)
     {
@@ -66,7 +67,7 @@ public class EnemyDefault : MonoBehaviour
         {
             SO_EnemyCounter.numberOfEnemies--;
             if(SO_EnemyCounter.numberOfEnemies == 0)
-                Spawner.E_waveFinished.Invoke();
+                spawnerScript.E_waveFinished.Invoke();
             Destroy(gameObject.transform.parent.gameObject);
         }
     }

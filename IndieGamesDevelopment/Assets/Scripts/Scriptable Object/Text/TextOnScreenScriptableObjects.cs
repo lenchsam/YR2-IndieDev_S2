@@ -7,4 +7,5 @@ public class TextOnScreenScriptableObjects : ScriptableObject
 {
     public string screenText;
     public int timeToShowText;
+    public bool isTimeBased;
 }

@@ -16,7 +16,9 @@ public class PlaceDefence : MonoBehaviour
     [SerializeField] private WaveScriptableObject SO_pawnLocations;
     [SerializeField] private AmountOfPawnsScriptableObject SO_PawnAmount;
     [SerializeField] private DefenceManager S_DefenceManager;
-
+    [SerializeField] private TextOnScreenScriptableObjects SO_Text;
+    [SerializeField] private TextOnScreen S_TextOnScreen;
+    [SerializeField] private GameObject GO_ChangeFirePoint;
     private Pawn pawnScript;
 
     private GameManager gameManager;
@@ -63,6 +65,16 @@ public class PlaceDefence : MonoBehaviour
                         //pawnScript.goToBuild(instantiatedObject.transform.position);
 
                         S_DefenceManager.updateBuilderText();
+
+                        //display mortar text
+                        if (instantiatedObject.name.Substring(0, 6) == "Morter")
+                        {
+                            Debug.Log("MAKING TEXT APPEARRRRRRR");
+                            S_TextOnScreen.makeTextAppear(SO_Text);
+                            GO_ChangeFirePoint.SetActive(true);
+                            GO_ChangeFirePoint.GetComponent<ChangeFirePoint>().firePoint = instantiatedObject.transform.GetChild(5).gameObject;
+                            gameObject.SetActive(false);
+                        }
                     }
                     else
                     {

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ChangeFirePoint : MonoBehaviour
 {
     public GameObject firePoint;
     [SerializeField] private Button escapeButton;
+    [SerializeField] private TMP_Text ScreenText;
 
     // Update is called once per frame
     void Update()
@@ -32,8 +34,8 @@ public class ChangeFirePoint : MonoBehaviour
                 firePoint.transform.position = Camera.main.ScreenToWorldPoint(touch.position);
                 //Gizmos.DrawWireSphere(firePoint.transform.position, 1);
                 escapeButton.gameObject.SetActive(true);
+                ScreenText.text = "";
                 gameObject.SetActive(false);
-                
             }
         }
     }

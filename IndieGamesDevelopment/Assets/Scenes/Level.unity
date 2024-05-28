@@ -12861,6 +12861,9 @@ MonoBehaviour:
   SO_pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
   SO_PawnAmount: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
   S_DefenceManager: {fileID: 1070556042}
+  SO_Text: {fileID: 0}
+  S_TextOnScreen: {fileID: 0}
+  GO_ChangeFirePoint: {fileID: 0}
 --- !u!4 &375617566
 Transform:
   m_ObjectHideFlags: 0
@@ -13548,6 +13551,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 0}
   escapeButton: {fileID: 891376970}
+  ScreenText: {fileID: 1885517061}
 --- !u!1 &459696148
 GameObject:
   m_ObjectHideFlags: 0
@@ -18188,6 +18192,9 @@ MonoBehaviour:
   SO_pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
   SO_PawnAmount: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
   S_DefenceManager: {fileID: 1070556042}
+  SO_Text: {fileID: 0}
+  S_TextOnScreen: {fileID: 0}
+  GO_ChangeFirePoint: {fileID: 0}
 --- !u!4 &866218733
 Transform:
   m_ObjectHideFlags: 0
@@ -26342,6 +26349,9 @@ MonoBehaviour:
   SO_pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
   SO_PawnAmount: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
   S_DefenceManager: {fileID: 1070556042}
+  SO_Text: {fileID: 11400000, guid: b4c872af91bf6824eab71e40f54ce152, type: 2}
+  S_TextOnScreen: {fileID: 1403782403}
+  GO_ChangeFirePoint: {fileID: 456595037}
 --- !u!4 &1805372052
 Transform:
   m_ObjectHideFlags: 0

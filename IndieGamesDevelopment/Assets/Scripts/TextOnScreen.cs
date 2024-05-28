@@ -6,6 +6,7 @@ using TMPro;
 public class TextOnScreen : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
+    private bool isTimeBased = false;
     private void Animation(bool isComingIn)
     {
         if (isComingIn)
@@ -19,10 +20,14 @@ public class TextOnScreen : MonoBehaviour
     }
     public void makeTextAppear(TextOnScreenScriptableObjects SO_Text)
     {
+        isTimeBased = SO_Text.isTimeBased;
         Debug.Log("TEXT APPEARING");
         text.enabled = true;
         text.text = SO_Text.screenText;
-        Invoke("makeTextDisappear", 1);
+        if (isTimeBased)
+        {
+            Invoke("makeTextDisappear", 1);
+        }
     }
     private void makeTextDisappear()
     {

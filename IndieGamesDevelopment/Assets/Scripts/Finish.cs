@@ -11,6 +11,7 @@ public class Finish : MonoBehaviour
     [SerializeField] private bool differentSceneOnDeath;
     [SerializeField] private string SceneName;
     [SerializeField] private GameObject UIToActivate;
+    [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
 
     private DefaultEnemy enemyScript = null;
 
@@ -30,6 +31,7 @@ public class Finish : MonoBehaviour
             //Debug.Log("the health is" + Health);
             enemyScript = null;
 
+            SO_EnemyCounter.numberOfEnemies--;
             //destroy enemy
             Destroy(collider.gameObject.transform.parent.gameObject);
 

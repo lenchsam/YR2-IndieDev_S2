@@ -14,8 +14,6 @@ public class EnemyDefault : MonoBehaviour
     protected int counter;
     protected bool done;
 
-    [HideInInspector] public bool frozen = false;
-    [SerializeField] protected int freezeTimer;
     [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
 
     [SerializeField] protected Spawner spawnerScript;

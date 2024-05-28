@@ -31,7 +31,7 @@ public class Finish : MonoBehaviour
             //Debug.Log("the health is" + Health);
             enemyScript = null;
 
-            SO_EnemyCounter.numberOfEnemies--;
+            SO_EnemyCounter.numberOfEnemies--;//removes enemy from enemy counter when it reaches the finish point
             //destroy enemy
             Destroy(collider.gameObject.transform.parent.gameObject);
 

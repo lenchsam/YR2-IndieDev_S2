@@ -39,8 +39,8 @@ public class SingularDefence : DefenceDefault
             Effects.DEFire(enemyscript);
         }else if (typeOfEffect == effectType.Shadow)
         {
-            ThingToDamage.GetComponent<EnemyDefault>().frozen = true;
-            //Effects.DEFreeze(enemyscript);
+            //picks a position from the knightPositions array
+            //instantiates a knight at that position
         }
     }
 }

@@ -20,6 +20,10 @@ public class DefenceDefault : MonoBehaviour
     [SerializeField] protected SpriteRenderer SRtoActivate;
     [SerializeField] protected GameObject GOtoActivate;
     [SerializeField] protected GameObject setInactive;
+
+    [Header("Effects Settings")]
+    [SerializeField] protected GameObject WarriorPrefab;
+    [SerializeField] protected Transform[] warriorPositions;
     public enum effectType
     {
         None,
@@ -65,4 +69,5 @@ public class DefenceDefault : MonoBehaviour
         SRtoActivate.enabled = true;
         GOtoActivate.SetActive(true);
     }
+    
 }

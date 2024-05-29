@@ -134,7 +134,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00933671, y: 0.43154573}
+  m_Offset: {x: 0, y: 0.43154573}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -618,10 +618,10 @@ MonoBehaviour:
   SRtoActivate: {fileID: 1314518843877670593}
   GOtoActivate: {fileID: 1037046274784538148}
   setInactive: {fileID: 7116776664148636288}
+  WarriorPrefab: {fileID: 795814882930205597, guid: 4adcc0b15c8c89c46ab53161ff3e1d96, type: 3}
+  warriorPositions: []
   Effects: {fileID: 0}
   bullet: {fileID: 2672684229307064724, guid: 71c614a47ef686c4f8f2047b54a8329c, type: 3}
-  WarriorPrefab: {fileID: 1355776336189978103, guid: 294f10c1f4e166a479462323227f057d, type: 3}
-  warriorPositions: []
   turretFire:
   - {fileID: 8300000, guid: 07def21cfc9a31e4c8112bc184f4bbfa, type: 3}
   - {fileID: 8300000, guid: d080664b90017d54090ab24426f07fe2, type: 3}

@@ -146,6 +146,8 @@ MonoBehaviour:
   SRtoActivate: {fileID: 2779389767510283146}
   GOtoActivate: {fileID: 2206284363001884884}
   setInactive: {fileID: 8152233045925699725}
+  WarriorPrefab: {fileID: 795814882930205597, guid: 4adcc0b15c8c89c46ab53161ff3e1d96, type: 3}
+  warriorPositions: []
   explosionEffect: {fileID: 8454031576849100166, guid: d3afbaf0442d8d34184df28c523a0dec, type: 3}
   firePosition: {fileID: 1367965635198876813}
   damageRadius: 1
@@ -177,7 +179,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.7565596}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -188,7 +190,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.6722288, y: 3.473104}
   m_EdgeRadius: 0
 --- !u!1 &1367965635198876812
 GameObject:

@@ -10,12 +10,20 @@ public class Knight : MonoBehaviour
     [Header("Base Settings")]
     [SerializeField] private int damage;
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float attackSpeed;
 
     [Header("Animations")]
-    [SerializeField] protected Animator anim;
+    [SerializeField] private Animator anim;
 
+    [Header("Sound Settings")]
+    [SerializeField] private AudioClip[] swordSwing;
+    private AudioManager AM;
+    private AudioSource AS;
+    private AudioClip swordSwingAudio;
+
+    private float time;
     private List<Transform> targets = new List<Transform>();
-    [SerializeField] private Transform primaryTarget;
+    private Transform primaryTarget;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.tag != "Enemy")
@@ -36,31 +44,47 @@ public class Knight : MonoBehaviour
     {
         //Debug.Log("enemy exit collider");
 
-        //if what left the collider was the primary target, reset primary target to null.
-        if (collider.transform == primaryTarget)
-            primaryTarget = null;
-
         //removes whatever left the collider from the list
         targets.Remove(collider.transform);
+        if (targets.Count == 0)
+        {
+            primaryTarget = null;
+        }
+        else
+        {
+            primaryTarget = targets[0];
+        }
     }
-
+    private void Start()
+    {
+        AM = GameObject.Find("----AudioManager----").GetComponent<AudioManager>();
+        AS = gameObject.GetComponent<AudioSource>();
+    }
     void Update()
     {
+        time += Time.deltaTime;
         //moveTowardsEnemy
-        if(primaryTarget != null)
+        if (primaryTarget != null)
         {
             //what angle is the enemy?
             float angle = Mathf.Rad2Deg * (Mathf.Atan2(primaryTarget.position.y - transform.position.y, primaryTarget.position.x - transform.position.x));
             //Set the animation variables depending on what the angle of the enemy is
-            anim.SetFloat("Angle", angle);
-            anim.SetBool("isAttacking", true);
-            flipBool();
+            if (time >= attackSpeed)
+            {
+                anim.SetFloat("Angle", angle);
+                anim.SetBool("isAttacking", true);
+                flipBool();
+
+                Debug.Log("attacking");
+                damageEnemy(primaryTarget.gameObject,damage);
+                time = 0;
+            }
             //moveTowardsPosition(primaryTarget.position);
         }
-        else
-        {
-            anim.SetBool("isAttacking", false);
-        }
+        //else
+        //{
+        //    anim.SetBool("isAttacking", false);
+        //}
     }
     private void moveTowardsPosition(Vector3 targetPosition)
     {
@@ -78,5 +102,15 @@ public class Knight : MonoBehaviour
         {
             anim.SetBool("isTurnOne", true);
         }
+    }
+    private void damageEnemy(GameObject ThingToDamage, int Damage)
+    {
+        //play audio for sword swing
+        swordSwingAudio = AM.getRandAudio(swordSwing);
+        AS.PlayOneShot(swordSwingAudio);
+        AS.volume = AM.GetComponent<AudioSource>().volume;
+
+        DefaultEnemy enemyscript = ThingToDamage.GetComponentInParent<DefaultEnemy>();
+        enemyscript.Damage(Damage);
     }
 }

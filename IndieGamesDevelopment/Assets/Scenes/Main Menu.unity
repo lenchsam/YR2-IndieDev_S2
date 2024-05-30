@@ -2544,6 +2544,7 @@ MonoBehaviour:
   SO_pawnLocations: {fileID: 11400000, guid: c8eb683db4e779c408be379c61a5962a, type: 2}
   SO_amountOfPawns: {fileID: 11400000, guid: af1af8e0109511c45bad9b6624ca1698, type: 2}
   SO_enemyCounter: {fileID: 11400000, guid: deb447f6d9809ee45a959a80f1bc5150, type: 2}
+  SO_Text: {fileID: 11400000, guid: 385b60dfd0d9d27409f8e00c48a41254, type: 2}
 --- !u!4 &709342742
 Transform:
   m_ObjectHideFlags: 0

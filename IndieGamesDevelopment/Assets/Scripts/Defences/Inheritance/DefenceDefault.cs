@@ -24,6 +24,15 @@ public class DefenceDefault : MonoBehaviour
     [Header("Effects Settings")]
     [SerializeField] protected GameObject WarriorPrefab;
     [SerializeField] protected Transform[] warriorPositions;
+
+    [Header("Sound Settings")]
+    [SerializeField] protected AudioClip[] fire;
+    [SerializeField] protected AudioClip[] fire2;
+    [SerializeField] protected AudioClip normalEffect;
+    [SerializeField] protected AudioClip fireEffect;
+    [SerializeField] protected AudioClip shadowEffect;
+    protected AudioManager AM;
+    protected AudioSource AS;
     public enum effectType
     {
         None,
@@ -34,6 +43,8 @@ public class DefenceDefault : MonoBehaviour
     {
         if (typeOfEffect == effectType.None)
         {
+            AS.volume = AM.GetComponent<AudioSource>().volume;
+            AS.PlayOneShot(normalEffect);
             //basic tower active
             effectTowers[0].SetActive(true);
 
@@ -44,6 +55,8 @@ public class DefenceDefault : MonoBehaviour
         //Debug.Log(gameObject.transform.parent.gameObject);
         if (typeOfEffect == effectType.Fire)
         {
+            AS.volume = AM.GetComponent<AudioSource>().volume;
+            AS.PlayOneShot(fireEffect);
             //fire tower active
             effectTowers[1].SetActive(true);
 
@@ -53,6 +66,8 @@ public class DefenceDefault : MonoBehaviour
         }
         else if (typeOfEffect == effectType.Shadow)
         {
+            AS.volume = AM.GetComponent<AudioSource>().volume;
+            AS.PlayOneShot(shadowEffect);
             Debug.Log("changing to shadow");
             //Shadow tower active
             effectTowers[2].SetActive(true);

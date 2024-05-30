@@ -620,22 +620,13 @@ MonoBehaviour:
   setInactive: {fileID: 7116776664148636288}
   WarriorPrefab: {fileID: 795814882930205597, guid: 4adcc0b15c8c89c46ab53161ff3e1d96, type: 3}
   warriorPositions: []
-  Effects: {fileID: 0}
-  bullet: {fileID: 2672684229307064724, guid: 71c614a47ef686c4f8f2047b54a8329c, type: 3}
-  turretFire:
-  - {fileID: 8300000, guid: 07def21cfc9a31e4c8112bc184f4bbfa, type: 3}
-  - {fileID: 8300000, guid: d080664b90017d54090ab24426f07fe2, type: 3}
-  - {fileID: 8300000, guid: b38001b244c4b7449983c3322ecf1fdd, type: 3}
-  - {fileID: 8300000, guid: 27cebfeda196d9b46b314e8537ff80d3, type: 3}
-  - {fileID: 8300000, guid: ca7172e296776b4458d58e5439727771, type: 3}
-  - {fileID: 8300000, guid: 2b483b07b3a4dbc409bef45257f8779f, type: 3}
-  - {fileID: 8300000, guid: ba671b8f038c9e94894a74798a8daf9d, type: 3}
-  - {fileID: 8300000, guid: 453adf02f3629ee4293d675bca1d0938, type: 3}
-  fireTrail:
-  - {fileID: 8300000, guid: fb308f81297b57e429b96c5967785e3f, type: 3}
-  - {fileID: 8300000, guid: 34aca33a4fa78a74a9072d6aff6dd682, type: 3}
-  - {fileID: 8300000, guid: 29afc7d7d24358b4e815a08171df1aee, type: 3}
-  - {fileID: 8300000, guid: 40a6af4a88357b841b7e9acb04ae571a, type: 3}
+  fire:
+  - {fileID: 8300000, guid: 2b46ba2751be7449db6fb4c3cf02e3cc, type: 3}
+  fire2: []
+  normalEffect: {fileID: 8300000, guid: ecf5a3d81c2574fecabe38800324abf3, type: 3}
+  fireEffect: {fileID: 8300000, guid: bf31fe28ae80848c4b8a33506a12a1bc, type: 3}
+  shadowEffect: {fileID: 8300000, guid: 9504b4aa9cf004143bc43d4c315fd51e, type: 3}
+  projectile: {fileID: 2672684229307064724, guid: 71c614a47ef686c4f8f2047b54a8329c, type: 3}
 --- !u!212 &1314518843877670593 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3145930339509849796, guid: 958f30717884e3e4287acab4ec20ff00, type: 3}

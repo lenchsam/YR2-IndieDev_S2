@@ -63,7 +63,6 @@ public class Knight : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        //moveTowardsEnemy
         if (primaryTarget != null)
         {
             //what angle is the enemy?
@@ -75,22 +74,11 @@ public class Knight : MonoBehaviour
                 anim.SetBool("isAttacking", true);
                 flipBool();
 
-                Debug.Log("attacking");
+                //Debug.Log("attacking");
                 damageEnemy(primaryTarget.gameObject,damage);
                 time = 0;
             }
-            //moveTowardsPosition(primaryTarget.position);
         }
-        //else
-        //{
-        //    anim.SetBool("isAttacking", false);
-        //}
-    }
-    private void moveTowardsPosition(Vector3 targetPosition)
-    {
-        Debug.Log("moving");
-        var step = movementSpeed * Time.deltaTime; // calculate distance to move
-        transform.GetChild(0).position = Vector3.MoveTowards(transform.position, targetPosition, step);
     }
     private void flipBool()
     {
@@ -107,8 +95,8 @@ public class Knight : MonoBehaviour
     {
         //play audio for sword swing
         swordSwingAudio = AM.getRandAudio(swordSwing);
-        AS.PlayOneShot(swordSwingAudio);
         AS.volume = AM.GetComponent<AudioSource>().volume;
+        AS.PlayOneShot(swordSwingAudio);
 
         DefaultEnemy enemyscript = ThingToDamage.GetComponentInParent<DefaultEnemy>();
         enemyscript.Damage(Damage);

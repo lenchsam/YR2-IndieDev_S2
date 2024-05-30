@@ -148,6 +148,11 @@ MonoBehaviour:
   setInactive: {fileID: 8152233045925699725}
   WarriorPrefab: {fileID: 795814882930205597, guid: 4adcc0b15c8c89c46ab53161ff3e1d96, type: 3}
   warriorPositions: []
+  turretFire: []
+  fireTrail: []
+  normalEffect: {fileID: 8300000, guid: ecf5a3d81c2574fecabe38800324abf3, type: 3}
+  fireEffect: {fileID: 8300000, guid: bf31fe28ae80848c4b8a33506a12a1bc, type: 3}
+  shadowEffect: {fileID: 8300000, guid: 9504b4aa9cf004143bc43d4c315fd51e, type: 3}
   explosionEffect: {fileID: 8454031576849100166, guid: d3afbaf0442d8d34184df28c523a0dec, type: 3}
   firePosition: {fileID: 1367965635198876813}
   damageRadius: 1

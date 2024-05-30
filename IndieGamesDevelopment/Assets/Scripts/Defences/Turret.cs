@@ -68,7 +68,7 @@ public class Turret : SingularDefence
             {
                 //fire bullet
 
-                GameObject Bullet = Instantiate(bullet, gameObject.transform.position, gameObject.transform.rotation);
+                GameObject Bullet = Instantiate(projectile, gameObject.transform.position, gameObject.transform.rotation);
                 Bullet.GetComponent<BulletSettings>().target = primaryTarget;
                 
                 BulletSettings bulletScript = Bullet.GetComponent<BulletSettings>();

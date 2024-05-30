@@ -3,25 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 public class SingularDefence : DefenceDefault
 {
-    [SerializeField] protected DamageEffects Effects;
+    protected DamageEffects Effects;
 
-    [SerializeField] protected GameObject bullet;
+    [Header("Misc")]
+    [SerializeField] protected GameObject projectile;
     protected List<Transform> targets = new List<Transform>();
-
-    [Header("Sound Settings")]
-    [SerializeField] protected AudioClip[] turretFire;
-    [SerializeField] protected AudioClip[] fireTrail;
 
     protected AudioClip turretFireAudio;
     protected AudioClip fireTrailAudio;
 
-    protected AudioManager AM;
-    protected AudioSource AS;
-
     protected void damageSingular(GameObject ThingToDamage, int Damage)
     {
-        turretFireAudio = AM.getRandAudio(turretFire);
-        fireTrailAudio = AM.getRandAudio(fireTrail);
+        turretFireAudio = AM.getRandAudio(fire);
+        //fireTrailAudio = AM.getRandAudio(fire2);
 
         DefaultEnemy enemyscript = ThingToDamage.GetComponentInParent<DefaultEnemy>();
         enemyscript.Damage(Damage);
@@ -29,7 +23,7 @@ public class SingularDefence : DefenceDefault
         if (typeOfEffect == effectType.None)
         {
             //float _time;
-            //AS.PlayOneShot(turretFireAudio);
+            AS.PlayOneShot(turretFireAudio);
             AS.volume = AM.GetComponent<AudioSource>().volume;
             //Debug.Log(fireTrailAudio);
             //AS.PlayOneShot

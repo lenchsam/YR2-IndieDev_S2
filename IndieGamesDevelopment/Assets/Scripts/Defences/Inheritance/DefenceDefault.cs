@@ -21,16 +21,15 @@ public class DefenceDefault : MonoBehaviour
     [SerializeField] protected GameObject GOtoActivate;
     [SerializeField] protected GameObject setInactive;
 
-    [Header("Effects Settings")]
-    [SerializeField] protected GameObject WarriorPrefab;
-    [SerializeField] protected Transform[] warriorPositions;
-
     [Header("Sound Settings")]
     [SerializeField] protected AudioClip[] fire;
     [SerializeField] protected AudioClip[] fire2;
     [SerializeField] protected AudioClip normalEffect;
     [SerializeField] protected AudioClip fireEffect;
     [SerializeField] protected AudioClip shadowEffect;
+
+    [Header("Misc")]
+    [SerializeField] protected bool warriorSpawned = false;
     protected AudioManager AM;
     protected AudioSource AS;
     public enum effectType

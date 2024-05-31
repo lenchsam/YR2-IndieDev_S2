@@ -31,8 +31,10 @@ public class SingularDefence : DefenceDefault
         else if (typeOfEffect == effectType.Fire)
         {
             Effects.DEFire(enemyscript);
-        }else if (typeOfEffect == effectType.Shadow)
+        }else if (typeOfEffect == effectType.Shadow && !warriorSpawned)
         {
+            Effects.DEShadow(gameObject.transform.position);
+            warriorSpawned = true;
             //picks a position from the knightPositions array
             //instantiates a knight at that position
         }

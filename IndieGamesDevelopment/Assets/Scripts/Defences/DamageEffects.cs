@@ -7,16 +7,17 @@ public class DamageEffects : MonoBehaviour
     [Header("Fire Effect")]
     [SerializeField] private int FireDamage;
     [SerializeField] private int TimeBetweenDamage;
+
     [Header("Shadow Effect")]
-    [Range(1f, 3.0f)]
-    [SerializeField] private float AmountOfSlow;
+    [SerializeField] private float SpawnRange;
+    [SerializeField] private GameObject PrefabWarrior;
+    [SerializeField] private LayerMask LM;
 
     private bool isWaiting = false;
-    public void DEShadow(DefaultEnemy enemy)
+    public void DEShadow(Vector3 center)
     {
-        //SpriteRenderer sr = enemy.gameObject.GetComponent<SpriteRenderer>();
-        //sr.color = new Color(0.3f, 0.5f, 0.8f);
-        //enemy.movementSpeed *= AmountOfSlow;
+        Transform positionToSpawn = GetSpawnPosition(center, SpawnRange);
+        Instantiate(PrefabWarrior, positionToSpawn.position, transform.rotation);
     }
     public void DEFire(DefaultEnemy enemy)
     {
@@ -34,5 +35,12 @@ public class DamageEffects : MonoBehaviour
         isWaiting = true;
         yield return new WaitForSeconds(TimeBetweenDamage);
         isWaiting = false;
+    }
+    private Transform GetSpawnPosition(Vector3 center, float radius)
+    {
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(center, radius, LM);
+        int rand = Random.Range(0, hitColliders.Length);
+        //Debug.Log("HIT " + hitColliders.Length);
+        return hitColliders[rand].transform;
     }
 }

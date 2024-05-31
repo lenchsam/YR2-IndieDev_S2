@@ -9,6 +9,8 @@ TagManager:
   - Ground
   - house
   - Prefab
+  - pawn
+  - warriorSpawnPosition
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - EnemyTrack
   - PostProcessing
   - Ground
-  - 
+  - warriorSpawnPositions
   - 
   - 
   - 

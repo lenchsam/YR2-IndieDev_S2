@@ -10,7 +10,7 @@ public class Points : MonoBehaviour
     public int totalPoints = 0;
 
     private TMP_Text _pointsText;
-    private TMP_Text _PointsPerRoundText;
+    //private TMP_Text _PointsPerRoundText;
     private FarmingManager _farmingManager;
     //making the gameobject stay between scenes
 
@@ -20,7 +20,7 @@ public class Points : MonoBehaviour
     {
         //gets all components needed to run the script
         _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
-        _PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
+        //_PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
         _farmingManager = GameObject.Find("----FarmingManager----").GetComponent<FarmingManager>();
 
         UpdatePointsText();
@@ -32,7 +32,7 @@ public class Points : MonoBehaviour
         if (scene.name != "Main Menu")
         {
             _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
-            _PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
+            //_PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
         }
 
         _farmingManager = GameObject.Find("----FarmingManager----").GetComponent<FarmingManager>();
@@ -54,7 +54,7 @@ public class Points : MonoBehaviour
     {
         //Debug.Log("changed points text");
         _pointsText.text = totalPoints.ToString();
-        _PointsPerRoundText.text = (_farmingManager._farmNumber * _farmingManager.PointsPerFarm).ToString();
+        //_PointsPerRoundText.text = (_farmingManager._farmNumber * _farmingManager.PointsPerFarm).ToString();
     }
     public void UpdateTotalPoints(int PointsToGive)
     {

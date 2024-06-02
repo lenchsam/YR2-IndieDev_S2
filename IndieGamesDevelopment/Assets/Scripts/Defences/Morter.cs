@@ -24,6 +24,9 @@ public class Morter : ExplosiveDefence
         //chooseFirePosition = GameObject.Find("----ChangeFirePosition----");
         //chooseFirePosition.SetActive(true);
 
+        AM = GameObject.Find("----AudioManager----").GetComponent<AudioManager>();
+        AS = gameObject.GetComponent<AudioSource>();
+
         continueToWaveButton = GameObject.Find("NextWave").GetComponent<Button>();
         continueToWaveButton.onClick.AddListener(() => activateDefence()); //listen to button click.
     }
@@ -32,12 +35,15 @@ public class Morter : ExplosiveDefence
         if (!isWaiting && constructionGO.activeSelf == false)
         {
             //Debug.Log("FIRE");
-            StartCoroutine(fire());
+            StartCoroutine(Fire());
         }
     }
 
-    IEnumerator fire()
+    IEnumerator Fire()
     {
+        AudioClip audioToPlay = AM.getRandAudio(fire);
+        AS.volume = AM.GetComponent<AudioSource>().volume;
+        AS.PlayOneShot(audioToPlay);
         DTExplosive(damageRadius, new Vector2(firePosition.position.x, firePosition.position.y), contactFilter, ref results);
         Instantiate(explosionEffect, firePosition.transform);
         results.Clear();

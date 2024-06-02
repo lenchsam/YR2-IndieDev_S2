@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Finish : MonoBehaviour
 {
     [SerializeField] private float Health;
+    [SerializeField] private float maxHealth = 100.0f;
+    [SerializeField] private Slider healthBar;
 
     [Header("DeathScreenSettings")]
     [SerializeField] private bool differentSceneOnDeath;
@@ -26,7 +29,7 @@ public class Finish : MonoBehaviour
 
             //use the variable in enemyscript called damage to know the amount of damage to do to the finish
             Health -= enemyScript.damage;
-
+            healthBar.value = Health / maxHealth;
             //assign the enemyscript to null to stop getting errors when the enemy is destroyed
             //Debug.Log("the health is" + Health);
             enemyScript = null;

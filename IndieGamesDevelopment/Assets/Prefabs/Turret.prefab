@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1037046274784538149}
   - component: {fileID: 1037046274784538138}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: TowerBlue
-  m_TagString: Defence
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -618,14 +618,13 @@ MonoBehaviour:
   SRtoActivate: {fileID: 1314518843877670593}
   GOtoActivate: {fileID: 1037046274784538148}
   setInactive: {fileID: 7116776664148636288}
-  WarriorPrefab: {fileID: 795814882930205597, guid: 4adcc0b15c8c89c46ab53161ff3e1d96, type: 3}
-  warriorPositions: []
   fire:
   - {fileID: 8300000, guid: 2b46ba2751be7449db6fb4c3cf02e3cc, type: 3}
   fire2: []
   normalEffect: {fileID: 8300000, guid: ecf5a3d81c2574fecabe38800324abf3, type: 3}
   fireEffect: {fileID: 8300000, guid: bf31fe28ae80848c4b8a33506a12a1bc, type: 3}
   shadowEffect: {fileID: 8300000, guid: 9504b4aa9cf004143bc43d4c315fd51e, type: 3}
+  warriorSpawned: 0
   projectile: {fileID: 2672684229307064724, guid: 71c614a47ef686c4f8f2047b54a8329c, type: 3}
 --- !u!212 &1314518843877670593 stripped
 SpriteRenderer:

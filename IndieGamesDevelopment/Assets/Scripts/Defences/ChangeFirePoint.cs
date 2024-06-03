@@ -10,6 +10,7 @@ public class ChangeFirePoint : MonoBehaviour
     public GameObject firePoint;
     [SerializeField] private Button escapeButton;
     [SerializeField] private TMP_Text ScreenText;
+    [SerializeField] private GameObject defenceMenu;
 
     // Update is called once per frame
     void Update()
@@ -19,6 +20,7 @@ public class ChangeFirePoint : MonoBehaviour
     }
     public void ChangeFirePosition()
     {
+        defenceMenu.SetActive( false );
         //if touched something
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
@@ -35,6 +37,7 @@ public class ChangeFirePoint : MonoBehaviour
                 //Gizmos.DrawWireSphere(firePoint.transform.position, 1);
                 escapeButton.gameObject.SetActive(true);
                 ScreenText.text = "";
+                defenceMenu.SetActive(true);
                 gameObject.SetActive(false);
             }
         }

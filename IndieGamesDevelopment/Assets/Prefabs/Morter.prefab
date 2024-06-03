@@ -472,9 +472,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5241128705069239712}
   - component: {fileID: 3705438174467499402}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: TowerBlue
-  m_TagString: Defence
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

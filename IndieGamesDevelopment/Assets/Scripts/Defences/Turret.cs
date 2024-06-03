@@ -46,7 +46,7 @@ public class Turret : SingularDefence
         anim = GetComponent<Animator>();
 
         continueToWaveButton = GameObject.Find("NextWave").GetComponent<Button>();
-        continueToWaveButton.onClick.AddListener(() => activateDefence()); //listen to button click.
+        continueToWaveButton.onClick.AddListener(() => activateDefence(gameObject.transform.parent.GetChild(0).gameObject)); //listen to button click.
     }
     private void Update()
     {

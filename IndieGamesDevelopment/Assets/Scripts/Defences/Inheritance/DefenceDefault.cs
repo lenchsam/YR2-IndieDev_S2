@@ -30,6 +30,7 @@ public class DefenceDefault : MonoBehaviour
 
     [Header("Misc")]
     [SerializeField] protected bool warriorSpawned = false;
+    [SerializeField] protected int currentEffect = 0;
     protected AudioManager AM;
     protected AudioSource AS;
     public enum effectType
@@ -76,8 +77,10 @@ public class DefenceDefault : MonoBehaviour
             effectTowers[1].SetActive(false);
         }
     }
-    protected void activateDefence()
+    protected void activateDefence(GameObject contructionGO)
     {
+        if (!contructionGO.activeSelf)
+            return;
         //Debug.Log("LISTENED TO EVENTTTTTTT");
         setInactive.SetActive(false);
         SRtoActivate.enabled = true;

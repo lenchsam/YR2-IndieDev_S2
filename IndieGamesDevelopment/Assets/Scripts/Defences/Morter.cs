@@ -28,7 +28,7 @@ public class Morter : ExplosiveDefence
         AS = gameObject.GetComponent<AudioSource>();
 
         continueToWaveButton = GameObject.Find("NextWave").GetComponent<Button>();
-        continueToWaveButton.onClick.AddListener(() => activateDefence()); //listen to button click.
+        continueToWaveButton.onClick.AddListener(() => activateDefence(gameObject.transform.GetChild(0).gameObject)); //listen to button click.
     }
     public void Update()
     {

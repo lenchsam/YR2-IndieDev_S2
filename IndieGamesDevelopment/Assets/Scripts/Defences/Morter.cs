@@ -42,12 +42,16 @@ public class Morter : ExplosiveDefence
 
     IEnumerator Fire()
     {
+        //audio
         AudioClip audioToPlay = AM.getRandAudio(fire);
         AS.volume = AM.GetComponent<AudioSource>().volume;
         AS.PlayOneShot(audioToPlay);
+        //shoot
         DTExplosive(damageRadius, new Vector2(firePosition.position.x, firePosition.position.y), contactFilter, ref results);
         Instantiate(explosionEffect, firePosition.transform);
-        results.Clear();
+        results.Clear();//clears results array from the DTExplosive method
+
+        //wait between shooting
         isWaiting = true;
         yield return new WaitForSeconds(fireRate);
         isWaiting = false;

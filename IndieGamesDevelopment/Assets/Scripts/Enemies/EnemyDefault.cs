@@ -23,16 +23,6 @@ public class EnemyDefault : MonoBehaviour
         var step = movementSpeed * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, targetPosition, step);
 
-        //if the enemy hsa been frozen by a defence
-        //if (frozen)
-        //{
-        //    time += Time.deltaTime;
-        //    if (time >= freezeTimer)
-        //    {
-        //        //frozen = false;
-        //    }
-        //}
-
         if (Vector3.Distance(transform.position, targetPosition) < 0.001f)
         {
             counter++;

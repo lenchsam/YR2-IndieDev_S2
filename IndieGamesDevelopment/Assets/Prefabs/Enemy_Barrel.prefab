@@ -120,14 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b55f8806440cfc45bdb2e4701b3efb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
-  Health: 100
+  movementSpeed: 2
+  Health: 200
   damage: 100
   sr: {fileID: 1049306142518709668}
   points: []
-  frozen: 0
-  freezeTimer: 1
   SO_EnemyCounter: {fileID: 11400000, guid: deb447f6d9809ee45a959a80f1bc5150, type: 2}
+  spawnerScript: {fileID: 0}
 --- !u!61 &2657908973763765984
 BoxCollider2D:
   m_ObjectHideFlags: 0

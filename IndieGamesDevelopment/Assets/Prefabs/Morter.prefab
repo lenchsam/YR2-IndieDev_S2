@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 3
-  typeOfEffect: 1
-  damage: 50
+  typeOfEffect: 0
+  damage: 49
   effectTowers:
   - {fileID: 2206284363001884884}
   - {fileID: 508265711784974836}

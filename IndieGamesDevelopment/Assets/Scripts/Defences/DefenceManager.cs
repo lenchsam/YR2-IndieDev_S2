@@ -43,12 +43,12 @@ public class DefenceManager : MonoBehaviour
             }
         }
     }
-    private void OnLevelWasLoaded(int level)
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        if(scene.name == "Level")
-            placeAllDefences();
-    }
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    Scene scene = SceneManager.GetActiveScene();
+    //    if(scene.name == "Level")
+    //        placeAllDefences();
+    //}
     public void updateBuilderText()//updates the UI text for the amount of builders the player has left/total
     {
 

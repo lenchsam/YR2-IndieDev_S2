@@ -154,6 +154,7 @@ MonoBehaviour:
   fireEffect: {fileID: 8300000, guid: bf31fe28ae80848c4b8a33506a12a1bc, type: 3}
   shadowEffect: {fileID: 8300000, guid: 9504b4aa9cf004143bc43d4c315fd51e, type: 3}
   warriorSpawned: 0
+  upgradeCosts: 000000000f0000001e000000
   explosionEffect: {fileID: 8454031576849100166, guid: d3afbaf0442d8d34184df28c523a0dec, type: 3}
   firePosition: {fileID: 1367965635198876813}
   damageRadius: 3

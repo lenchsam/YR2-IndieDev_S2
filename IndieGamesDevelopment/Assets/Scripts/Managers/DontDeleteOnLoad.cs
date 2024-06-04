@@ -7,10 +7,14 @@ using static GameManager;
 public class DontDeleteOnLoad : MonoBehaviour
 {
     static DontDeleteOnLoad instance;
-
-    private void Awake()
+    void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this; // In first scene, make us the singleton.
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+            Destroy(gameObject); // On reload, singleton already set, so destroy duplicate.
     }
 }

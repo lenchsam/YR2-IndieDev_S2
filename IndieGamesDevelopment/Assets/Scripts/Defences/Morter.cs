@@ -20,6 +20,7 @@ public class Morter : ExplosiveDefence
 
     private void Start()
     {
+        pointsScript = GameObject.Find("----PointsManager----").GetComponent<Points>();
         Effects = GameObject.Find("----DamageEffects----").GetComponent<DamageEffects>();
         //chooseFirePosition = GameObject.Find("----ChangeFirePosition----");
         //chooseFirePosition.SetActive(true);

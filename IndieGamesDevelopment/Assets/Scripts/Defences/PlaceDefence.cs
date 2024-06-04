@@ -56,7 +56,7 @@ public class PlaceDefence : MonoBehaviour
                     if (SO_pawnLocations.gameObjectList.Count > 0) //if none of the elements in the list have a sprite renderer active
                     {
                         //send pawn to build defence
-                        Debug.Log("making pawn go to build");
+                        //Debug.Log("making pawn go to build");
                         pawnScript = SO_pawnLocations.gameObjectList[Random.Range(0, SO_pawnLocations.gameObjectList.Count)].GetComponent<Pawn>();
                         SO_pawnLocations.gameObjectList.Remove(pawnScript.gameObject); //remove pawn from list so it isnt picked again to build a defence
                         pawnScript.gameObject.GetComponent<SpriteRenderer>().enabled = true;
@@ -69,7 +69,7 @@ public class PlaceDefence : MonoBehaviour
                         //display mortar text
                         if (instantiatedObject.name.Substring(0, 6) == "Morter")
                         {
-                            Debug.Log("MAKING TEXT APPEARRRRRRR");
+                            //Debug.Log("MAKING TEXT APPEARRRRRRR");
                             S_TextOnScreen.makeTextAppear(SO_Text);
                             GO_ChangeFirePoint.SetActive(true);
                             GO_ChangeFirePoint.GetComponent<ChangeFirePoint>().firePoint = instantiatedObject.transform.GetChild(5).gameObject;
@@ -106,7 +106,7 @@ public class PlaceDefence : MonoBehaviour
         //Debug.Log(GOToAdd.name);
         if (this.name == "----PlacePawn----")
         {
-            Debug.Log("addding to gameobejct list");
+            //Debug.Log("addding to gameobejct list");
             SO_pawnLocations.gameObjectList.Add(GOToAdd);
         }
     }

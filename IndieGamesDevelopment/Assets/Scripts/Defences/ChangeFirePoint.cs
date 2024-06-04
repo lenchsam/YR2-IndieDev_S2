@@ -11,6 +11,7 @@ public class ChangeFirePoint : MonoBehaviour
     [SerializeField] private Button escapeButton;
     [SerializeField] private TMP_Text ScreenText;
     [SerializeField] private GameObject defenceMenu;
+    private bool initialize = true;
 
     // Update is called once per frame
     void Update()
@@ -37,8 +38,10 @@ public class ChangeFirePoint : MonoBehaviour
                 //Gizmos.DrawWireSphere(firePoint.transform.position, 1);
                 escapeButton.gameObject.SetActive(true);
                 ScreenText.text = "";
-                defenceMenu.SetActive(true);
+                if (!initialize)
+                    defenceMenu.SetActive(true);
                 gameObject.SetActive(false);
+                initialize = false;
             }
         }
     }

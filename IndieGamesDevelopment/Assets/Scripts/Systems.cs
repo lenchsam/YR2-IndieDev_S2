@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Systems : MonoBehaviour
 {
-    static Systems instance;
+    Systems instance;
     private void Awake()
     {
         if (instance == null)

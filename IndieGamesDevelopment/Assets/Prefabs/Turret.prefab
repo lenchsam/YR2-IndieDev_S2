@@ -625,6 +625,7 @@ MonoBehaviour:
   fireEffect: {fileID: 8300000, guid: bf31fe28ae80848c4b8a33506a12a1bc, type: 3}
   shadowEffect: {fileID: 8300000, guid: 9504b4aa9cf004143bc43d4c315fd51e, type: 3}
   warriorSpawned: 0
+  upgradeCosts: 000000000f0000001e000000
   projectile: {fileID: 2672684229307064724, guid: 71c614a47ef686c4f8f2047b54a8329c, type: 3}
 --- !u!212 &1314518843877670593 stripped
 SpriteRenderer:

@@ -39,6 +39,7 @@ public class Turret : SingularDefence
     }
     private void Start()
     {
+        pointsScript = GameObject.Find("----PointsManager----").GetComponent<Points>();
         Effects = GameObject.Find("----DamageEffects----").GetComponent<DamageEffects>();
         
         AM = GameObject.Find("----AudioManager----").GetComponent<AudioManager>();

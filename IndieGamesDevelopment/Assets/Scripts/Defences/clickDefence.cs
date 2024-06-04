@@ -100,7 +100,7 @@ public class clickDefence : MonoBehaviour
         {
             m_DropOptions.Add(effectTypeNames[i]);
         }
-        Debug.Log(m_DropOptions);
+        //Debug.Log(m_DropOptions);
         effectsDropdown.AddOptions(m_DropOptions);
     }
     //called every time the user changes the dropdown menu value
@@ -163,7 +163,7 @@ public class clickDefence : MonoBehaviour
             if (children[i].gameObject.activeSelf && children[i].tag != "Prefab")
             {
                 //is the currently active 
-                Debug.Log(children[i].name);
+                //Debug.Log(children[i].name);
                 return i - 2;
             }
         }

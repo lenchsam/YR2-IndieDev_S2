@@ -5,6 +5,15 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     private AudioSource AS;
+    [SerializeField] private GameObject GO;
+    private void Awake()
+    {
+        GO = GameObject.Find("----AudioManager----");
+        if (GO == null)
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         AS = gameObject.GetComponent<AudioSource>();

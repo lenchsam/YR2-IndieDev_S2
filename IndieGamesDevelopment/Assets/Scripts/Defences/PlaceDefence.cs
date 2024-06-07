@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 public class PlaceDefence : MonoBehaviour
 {
@@ -35,10 +36,17 @@ public class PlaceDefence : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         //if touched something
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && pointScript.totalPoints >= 10)
         {
             Touch touch = Input.GetTouch(0);
+
+            if (EventSystem.current.IsPointerOverGameObject(Input.touches[0].fingerId))
+            {
+                SetInactive();
+                return;
+            }
 
             //fire raycast to world position of player touch
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(touch.position), Vector2.zero, Mathf.Infinity, LM);

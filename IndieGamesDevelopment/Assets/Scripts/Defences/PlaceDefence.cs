@@ -19,6 +19,7 @@ public class PlaceDefence : MonoBehaviour
     [SerializeField] private TextOnScreenScriptableObjects SO_Text;
     [SerializeField] private TextOnScreen S_TextOnScreen;
     [SerializeField] private GameObject GO_ChangeFirePoint;
+    [SerializeField] private GameObject[] everythingToSetInactive;
     private Pawn pawnScript;
 
     private GameManager gameManager;
@@ -45,6 +46,7 @@ public class PlaceDefence : MonoBehaviour
             //if hit something
             if (hit.collider != null && hit.collider.tag == "Ground")
             {
+                SetInactive();
                 GameObject instantiatedObject = Instantiate(DefencePrefab, hit.point, transform.rotation);
                 //Debug.Log("Target Position: " + hit.collider.gameObject.transform.position);
                 //Instantiate(DefencePrefab, hit.point, transform.rotation);
@@ -85,6 +87,7 @@ public class PlaceDefence : MonoBehaviour
                 }
                 else
                 {
+                    SetInactive();
                     //Debug.Log("building pawn");
                     //deploy pawn to build
                     SO_PawnAmount.amountOfPawns++;
@@ -108,6 +111,13 @@ public class PlaceDefence : MonoBehaviour
         {
             //Debug.Log("addding to gameobejct list");
             SO_pawnLocations.gameObjectList.Add(GOToAdd);
+        }
+    }
+    private void SetInactive()
+    {
+        foreach (GameObject GO in everythingToSetInactive)
+        {
+            GO.SetActive(false);
         }
     }
 }

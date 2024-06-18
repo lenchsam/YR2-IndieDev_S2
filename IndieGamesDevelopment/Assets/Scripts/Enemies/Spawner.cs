@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Points _points;
     [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
     [SerializeField] private TextOnScreenScriptableObjects SO_Text;
+    [SerializeField] private GameObject victoryScreen;
 
     public UnityEvent E_waveFinished;
 

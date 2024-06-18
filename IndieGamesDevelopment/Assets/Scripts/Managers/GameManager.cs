@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button continueToNext;
     [SerializeField] private GameObject DefenceUI;
     [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
+    [SerializeField] private GameObject victoryScreen;
 
     private void Update()
     {
@@ -18,6 +19,10 @@ public class GameManager : MonoBehaviour
         {
             continueToNext.gameObject.SetActive(true);
             DefenceUI.SetActive(true);
+            if (currentWave >= 5)
+            {
+                victoryScreen.SetActive(true);
+            }
         }
     }
 } 

@@ -15,6 +15,9 @@ public class clickDefence : MonoBehaviour
     [SerializeField] private LayerMask LM;
     [SerializeField] private GameObject ChooseFirePosition;
 
+    [Header("prices")]
+    [SerializeField] private int[] EffectPrices;
+
     string selectedOption; //will use to set the dropdown to a certain value
     Collider2D theHitObject;
 
@@ -22,6 +25,7 @@ public class clickDefence : MonoBehaviour
     private Turret turretScript;
     private Morter MorterScript;
     [SerializeField] private ChangeFirePoint ChangeFirePointScript;
+    [SerializeField] private Points pointsScript;
     //Start is called before the first frame update
     void Start()
     {
@@ -106,6 +110,12 @@ public class clickDefence : MonoBehaviour
     //called every time the user changes the dropdown menu value
     private void DropdownValueChanged(TMP_Dropdown change, Collider2D defence)
     {
+        if (EffectPrices[change.value] > pointsScript.totalPoints && getCurrentEffect() != change.value)
+        {
+            Debug.Log("cannot do");
+            change.value = getCurrentEffect();
+            return;
+        }
         Turret turretScript;
         Morter morterScript;
         string currentlySelected;

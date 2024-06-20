@@ -21,6 +21,12 @@ public class PlaceDefence : MonoBehaviour
     [SerializeField] private TextOnScreen S_TextOnScreen;
     [SerializeField] private GameObject GO_ChangeFirePoint;
     [SerializeField] private GameObject[] everythingToSetInactive;
+
+    [Header("rpices")]
+    [SerializeField] private int pawnPrice = 10;
+    [SerializeField] private int turretPrice = 20;
+    [SerializeField] private int morterPrice = 30;
+
     private Pawn pawnScript;
 
     private GameManager gameManager;
@@ -38,7 +44,7 @@ public class PlaceDefence : MonoBehaviour
     {
         
         //if touched something
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && pointScript.totalPoints >= 10)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             Touch touch = Input.GetTouch(0);
 
@@ -65,6 +71,15 @@ public class PlaceDefence : MonoBehaviour
 
                     if (SO_pawnLocations.gameObjectList.Count > 0) //if none of the elements in the list have a sprite renderer active
                     {
+                        //Check if they have enough money to build
+                        if ((instantiatedObject.name.Substring(0, 6) == "Turret" && pointScript.totalPoints < turretPrice) || (instantiatedObject.name.Substring(0, 6) == "Morter" && pointScript.totalPoints < morterPrice))
+                        {
+                            Debug.Log("NOT ENOUGH MONEY");
+                            Destroy(instantiatedObject);
+                            //pointScript.totalPoints += DefenceCost;
+                            //pointScript.UpdatePointsText();
+                            return;
+                        }
                         //send pawn to build defence
                         //Debug.Log("making pawn go to build");
                         pawnScript = SO_pawnLocations.gameObjectList[Random.Range(0, SO_pawnLocations.gameObjectList.Count)].GetComponent<Pawn>();
@@ -95,7 +110,13 @@ public class PlaceDefence : MonoBehaviour
                 }
                 else
                 {
+
                     SetInactive();
+                    if (pointScript.totalPoints < pawnPrice)
+                    {
+                        Destroy(instantiatedObject);
+                        return;
+                    }
                     //Debug.Log("building pawn");
                     //deploy pawn to build
                     SO_PawnAmount.amountOfPawns++;

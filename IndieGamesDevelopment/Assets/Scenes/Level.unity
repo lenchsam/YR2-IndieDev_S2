@@ -8001,6 +8001,9 @@ MonoBehaviour:
   everythingToSetInactive:
   - {fileID: 2084092512}
   - {fileID: 375617564}
+  pawnPrice: 10
+  turretPrice: 20
+  morterPrice: 30
 --- !u!4 &375617566
 Transform:
   m_ObjectHideFlags: 0
@@ -15070,6 +15073,9 @@ MonoBehaviour:
   everythingToSetInactive:
   - {fileID: 843034224}
   - {fileID: 866218731}
+  pawnPrice: 10
+  turretPrice: 20
+  morterPrice: 30
 --- !u!4 &866218733
 Transform:
   m_ObjectHideFlags: 0
@@ -19632,6 +19638,7 @@ MonoBehaviour:
   DefenceUI: {fileID: 656964231}
   SO_EnemyCounter: {fileID: 11400000, guid: deb447f6d9809ee45a959a80f1bc5150, type: 2}
   victoryScreen: {fileID: 1210388752}
+  MaxRounds: 7
 --- !u!1 &1133722877
 GameObject:
   m_ObjectHideFlags: 0
@@ -25007,7 +25014,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   ChooseFirePosition: {fileID: 1299583276}
+  EffectPrices: 000000000a0000001e000000
   ChangeFirePointScript: {fileID: 456595039}
+  pointsScript: {fileID: 1899752580}
 --- !u!4 &1641494004
 Transform:
   m_ObjectHideFlags: 0
@@ -26696,6 +26705,9 @@ MonoBehaviour:
   everythingToSetInactive:
   - {fileID: 834203928}
   - {fileID: 1805372050}
+  pawnPrice: 10
+  turretPrice: 20
+  morterPrice: 30
 --- !u!4 &1805372052
 Transform:
   m_ObjectHideFlags: 0
@@ -39265,12 +39277,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37e03f1515bfccf44aac821ba6499ed4, type: 2}
   - {fileID: 11400000, guid: f573f929590f13f4da7c1efdefea7e4c, type: 2}
   - {fileID: 11400000, guid: 6e6d8830682533843b220c4beaa44923, type: 2}
+  - {fileID: 11400000, guid: 3dedc288802411148af554b25983031e, type: 2}
+  - {fileID: 11400000, guid: 18b8185a5acd7514f8f82e084a0249cf, type: 2}
   continueToNext: {fileID: 589646147}
   DefenceUI: {fileID: 1562022609}
   _points: {fileID: 1899752580}
   SO_EnemyCounter: {fileID: 11400000, guid: deb447f6d9809ee45a959a80f1bc5150, type: 2}
   SO_Text: {fileID: 11400000, guid: 385b60dfd0d9d27409f8e00c48a41254, type: 2}
-  victoryScreen: {fileID: 1210388752}
   E_waveFinished:
     m_PersistentCalls:
       m_Calls: []

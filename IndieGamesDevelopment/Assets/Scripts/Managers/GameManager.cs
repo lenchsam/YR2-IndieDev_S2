@@ -12,14 +12,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject DefenceUI;
     [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
     [SerializeField] private GameObject victoryScreen;
+    [SerializeField] private int MaxRounds = 6;
 
-    private void Update()
+   private void Update()
     {
         if (SO_EnemyCounter.finishedSpawning && SO_EnemyCounter.numberOfEnemies == 0)
         {
             continueToNext.gameObject.SetActive(true);
             DefenceUI.SetActive(true);
-            if (currentWave >= 5)
+            if (currentWave >= MaxRounds)
             {
                 victoryScreen.SetActive(true);
             }

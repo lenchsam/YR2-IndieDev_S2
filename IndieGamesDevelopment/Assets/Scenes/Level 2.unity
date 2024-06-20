@@ -2666,7 +2666,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Music Volume
+  m_text: 'SFX Volume
 
 '
   m_isRightToLeft: 0
@@ -3234,7 +3234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'SFX Volume
+  m_text: 'Music Volume
 
 '
   m_isRightToLeft: 0
@@ -16576,7 +16576,7 @@ Tilemap:
       - {fileID: -409997952, guid: 94763006081d8f04083ddf5d224bc15c, type: 3}
       - {fileID: 2024839151, guid: 94763006081d8f04083ddf5d224bc15c, type: 3}
       - {fileID: -830977626, guid: 94763006081d8f04083ddf5d224bc15c, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -5, z: 0}

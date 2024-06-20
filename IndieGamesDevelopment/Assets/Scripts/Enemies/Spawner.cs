@@ -22,6 +22,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Points _points;
     [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
     [SerializeField] private TextOnScreenScriptableObjects SO_Text;
+    [SerializeField] private Finish finishScript;
 
     public UnityEvent E_waveFinished;
 
@@ -61,6 +62,7 @@ public class Spawner : MonoBehaviour
     {
         if (numWave < EnemyWaves.Length)
         {
+            finishScript.currentWave++;
             SO_EnemyCounter.finishedSpawning = false;
             _waitForWave = false;
         }

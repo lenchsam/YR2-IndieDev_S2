@@ -25,12 +25,12 @@ public class MainMenu : MonoBehaviour
         if (scene.name == "Level")
             spawnerScript = GameObject.Find("----Spawner----").GetComponent<Spawner>();
     }
-    private void OnLevelWasLoaded(int level)
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "Level")
-            spawnerScript = GameObject.Find("----Spawner----").GetComponent<Spawner>();
-    }
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    Scene scene = SceneManager.GetActiveScene();
+    //    if (scene.name == "Level")
+    //        spawnerScript = GameObject.Find("----Spawner----").GetComponent<Spawner>();
+    //}
     public void LoadScene(string SceneName)
     {
         //if the current scene is main menu, play the going into level scene sound

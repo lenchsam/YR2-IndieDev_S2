@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class Finish : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Finish : MonoBehaviour
     [SerializeField] private string SceneName;
     [SerializeField] private GameObject UIToActivate;
     [SerializeField] private EnemyCounterScriptableObject SO_EnemyCounter;
+    [SerializeField] private TMP_Text wavetext;
+    public int currentWave = 0;
 
     private DefaultEnemy enemyScript = null;
 
@@ -51,6 +54,9 @@ public class Finish : MonoBehaviour
         if (differentSceneOnDeath)
             SceneManager.LoadScene(SceneName);
         else
+        {
             UIToActivate.SetActive(true);
+            wavetext.text = "You Reached Wave: " + currentWave; 
+        }
     }
 }

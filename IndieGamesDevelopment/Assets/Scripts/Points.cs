@@ -21,33 +21,22 @@ public class Points : MonoBehaviour
         //gets all components needed to run the script
         _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
         //_PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
-        _farmingManager = GameObject.Find("----FarmingManager----").GetComponent<FarmingManager>();
 
         UpdatePointsText();
     }
-    private void OnLevelWasLoaded(int level)
-    {
-        //if scene isnt main menu then find ammount of points text
-        Scene scene = SceneManager.GetActiveScene();
-        if (scene.name != "Main Menu")
-        {
-            _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
-            //_PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
-        }
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    //if scene isnt main menu then find ammount of points text
+    //    Scene scene = SceneManager.GetActiveScene();
+    //    if (scene.name != "Main Menu")
+    //    {
+    //        _pointsText = GameObject.Find("AmmountOfPoints").GetComponent<TMP_Text>();
+    //        //_PointsPerRoundText = GameObject.Find("PointsPerRound").GetComponent<TMP_Text>();
+    //    }
 
-        _farmingManager = GameObject.Find("----FarmingManager----").GetComponent<FarmingManager>();
 
-        UpdatePointsText();
-    }
-    private void Update()
-    {
-        //every round it gives the player the points from their farms
-        if (nextRound)
-        {
-            UpdateTotalPoints(_farmingManager._farmNumber * _farmingManager.PointsPerFarm);
-            nextRound = false;
-        }
-    }
+    //    UpdatePointsText();
+    //}
     //function called in the farming script after the points are updated
     //This function changed the text to the new amount of points
     public void UpdatePointsText()

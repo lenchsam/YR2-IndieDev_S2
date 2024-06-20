@@ -1250,8 +1250,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  a_MenuAudioClips: []
-  a_GoIntoGame: {fileID: 0}
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 614d39e619e25114899e6350c9019148, type: 3}
+  a_GoIntoGame: {fileID: 8300000, guid: 614d39e619e25114899e6350c9019148, type: 3}
 --- !u!114 &309059561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,6 +1297,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 309059560}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 309059560}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: LoadScene
@@ -1379,8 +1392,8 @@ RectTransform:
   m_Father: {fileID: 1210694316}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.3, y: 0}
+  m_AnchorMax: {x: 0.3, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2535,7 +2548,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b743ec8705d10014f86a96d8df078744, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2945,8 +2958,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  a_MenuAudioClips: []
-  a_GoIntoGame: {fileID: 0}
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 614d39e619e25114899e6350c9019148, type: 3}
+  a_GoIntoGame: {fileID: 8300000, guid: 614d39e619e25114899e6350c9019148, type: 3}
 --- !u!114 &671695099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2991,6 +3005,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 671695098}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 671695098}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: LoadScene
@@ -3604,7 +3630,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 1371944853}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &802259743
 MonoBehaviour:
@@ -3650,6 +3680,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 802259742}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 802259742}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: setInactive
@@ -3880,7 +3922,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &859704747
 MonoBehaviour:
@@ -3926,6 +3972,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 859704746}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1145971493}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -4212,6 +4270,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 912393008}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 912393008}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ToggleUI
         m_Mode: 1
         m_Arguments:
@@ -4285,7 +4355,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 1368159575}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!1 &914984913
 GameObject:
@@ -4552,6 +4626,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 941888395}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 941888395}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: ToggleUI
         m_Mode: 1
         m_Arguments:
@@ -4625,7 +4711,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 914984913}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!1 &942780890
 GameObject:
@@ -4681,7 +4771,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 914984913}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &942780893
 MonoBehaviour:
@@ -4727,6 +4821,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 942780892}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 1371944853}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -5056,7 +5162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &981676498
 MonoBehaviour:
@@ -5102,6 +5212,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 981676497}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1315254758}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -5198,7 +5320,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0.3, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5327,7 +5449,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -5397,7 +5519,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1129480217
 MonoBehaviour:
@@ -5443,6 +5569,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1129480216}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 408271351}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -5715,7 +5853,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 619270681}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1175201028
 MonoBehaviour:
@@ -5761,6 +5903,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1175201027}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1166798602}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -6163,7 +6317,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 1371944853}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1242847713
 MonoBehaviour:
@@ -6209,6 +6367,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1242847712}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1242847712}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: setInactive
@@ -6401,7 +6571,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 619270681}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1302756945
 MonoBehaviour:
@@ -6447,6 +6621,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1302756944}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1166798602}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -7055,7 +7241,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1331757293
 MonoBehaviour:
@@ -7101,6 +7291,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1331757292}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 507687298}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -7807,7 +8009,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 0}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1476034253
 MonoBehaviour:
@@ -7853,6 +8059,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1476034252}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1166798602}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -8376,7 +8594,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 619270681}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1578961079
 MonoBehaviour:
@@ -8422,6 +8644,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1578961078}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1166798602}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -8795,7 +9029,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 619270681}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1626866181
 MonoBehaviour:
@@ -8841,6 +9079,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1626866180}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1166798602}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -9130,7 +9380,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 619270681}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1737046846
 MonoBehaviour:
@@ -9176,6 +9430,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1737046845}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1166798602}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -9841,7 +10107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingToToggle: {fileID: 1371944853}
-  a_MenuAudioClips: []
+  a_MenuAudioClips:
+  - {fileID: 8300000, guid: 92850262840e7ce4aa6dc0ec40826191, type: 3}
+  - {fileID: 8300000, guid: e0a36e533fa93b6438042e41b5a35800, type: 3}
+  - {fileID: 8300000, guid: c13f953bb895e9d4cb11079a93476c23, type: 3}
+  - {fileID: 8300000, guid: ae4d36cfe2e66634a858099ddb6c89ec, type: 3}
   a_GoIntoGame: {fileID: 0}
 --- !u!114 &1978980402
 MonoBehaviour:
@@ -9887,6 +10157,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1978980401}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: playSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1978980401}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: setInactive

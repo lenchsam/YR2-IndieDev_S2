@@ -12,6 +12,8 @@ public class ChangeFirePoint : MonoBehaviour
     [SerializeField] private TMP_Text ScreenText;
     [SerializeField] private GameObject defenceMenu;
     private bool initialize = true;
+    [SerializeField] private bool fromUI = false;
+    [SerializeField] private clickDefence clickDefenceScript;
 
     // Update is called once per frame
     void Update()
@@ -38,11 +40,17 @@ public class ChangeFirePoint : MonoBehaviour
                 //Gizmos.DrawWireSphere(firePoint.transform.position, 1);
                 escapeButton.gameObject.SetActive(true);
                 ScreenText.text = "";
-                if (!initialize)
+                if (!initialize && fromUI)
                     defenceMenu.SetActive(true);
                 gameObject.SetActive(false);
                 initialize = false;
+                fromUI = false;
             }
         }
+        clickDefenceScript.gameObject.SetActive(true);
+    }
+    public void setFromUI(bool option) 
+    {
+        fromUI = option;
     }
 }
